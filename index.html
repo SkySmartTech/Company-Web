@@ -7,87 +7,199 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script defer src="script.js"></script>
+  <style>
+    .scroll-bg {
+      background-color: white !important;
+    }
+    .scroll-text {
+      color: black !important;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-800">
+
   <!-- Header -->
-  <header id="site-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent">
-    <div class="flex items-center justify-between py-3">
-      <div class="flex items-center space-x-3 ml-6 md:ml-12">
+  <header id="site-header" class="fixed w-full top-0 z-10 transition-all duration-300 bg-transparent text-white">
+    <div class="flex items-center justify-between md:px-12">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
         <img src="img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32" />
-        <span class="text-white text-lg font-semibold">Sky Smart Technology</span>
+        <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
       </div>
-      <nav class="hidden md:flex space-x-6 font-medium pr-6 text-white">
-        <a href="#home" class="hover:text-blue-300 transition">Home</a>
-        <a href="#partnerships" class="hover:text-blue-300 transition">Partnerships</a>
-        <a href="#products" class="hover:text-blue-300 transition">Products</a>
-        <a href="#company" class="hover:text-blue-300 transition">Company</a>
-        <a href="#careers" class="hover:text-blue-300 transition">Careers & Team</a>
-        <a href="#cart" class="hover:text-blue-300 transition">Cart</a>
-      </nav>
+
+      <!-- Nav Menu -->
+<nav class="hidden md:flex space-x-6 font-medium nav-links">
+  <a href="#home" class="hover:text-blue-500 transition">Home</a>
+  <a href="#partnerships" class="hover:text-blue-500 transition">Partnerships</a>
+  <a href="#products" class="hover:text-blue-500 transition">Products</a>
+  <a href="#company" class="hover:text-blue-500 transition">Company</a>
+
+  <!-- Dropdown Wrapper -->
+  <div class="relative">
+    <button id="dropdownButton" class="hover:text-blue-500 transition flex items-center gap-1">
+      Careers & Team
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+
+    <!-- Dropdown Menu -->
+   <div id="dropdownMenu" class="absolute left-0 mt-2 w-44 bg-white/50 backdrop-blur-md text-black rounded-lg shadow-lg hidden z-20">
+      <a href="/careers" class="block px-4 py-2 hover:bg-black-100">Careers</a>
+      <a href="/team" class="block px-4 py-2 hover:bg-black-100">Our Team</a>
+    </div>
+  </div>
+
+  <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
+</nav>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden focus:outline-none text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 bg-white text-black py-4">
+      <a href="#home" class="hover:text-blue-600">Home</a>
+      <a href="#partnerships" class="hover:text-blue-600">Partnerships</a>
+      <a href="#products" class="hover:text-blue-600">Products</a>
+      <a href="#company" class="hover:text-blue-600">Company</a>
+      <a href="#careers" class="hover:text-blue-600">Careers & Team</a>
+      <a href="#cart" class="hover:text-blue-600">Cart</a>
     </div>
   </header>
 
-  <!-- Hero Section with Dynamic Slides -->
+  <!-- Hero Section -->
   <section id="home" class="relative w-full h-screen overflow-hidden text-white pt-20">
-    <div id="hero-slides" class="absolute inset-0 w-full h-full z-0">
-      <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100"
-        style="background-image: url('img/hero1.png');">
-        <div class="absolute inset-0 bg-black/40 flex flex-col items-start justify-center px-6 md:px-[120px] space-y-6">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">Empowering Smart Solutions</h1>
-          <p class="text-lg md:text-xl max-w-xl">Unlock the potential of next-gen technology with Sky Smart.</p>
-          <div class="flex space-x-4">
-            <button class="px-8 py-3 rounded-md font-semibold text-white bg-gradient-to-br from-blue-400 to-blue-700 hover:scale-105 transition">
-              Explore Now
-            </button>
-            <button class="px-8 py-3 rounded-md font-semibold text-white border-2 border-white hover:bg-white hover:text-blue-700 transition">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </div>
+    <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('img/hero2.png');">
+      <div class="relative w-full h-full flex items-end justify-start p-6 z-10">
+        <div class="slider-wrapper transition-transform duration-500 ease-in-out space-y-12 max-w-5xl">
 
-      <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
-        style="background-image: url('img/hero2.png');">
-        <div class="absolute inset-0 bg-black/40 flex flex-col items-start justify-center px-6 md:px-[120px] space-y-6">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">Revolutionize Your Workflow</h1>
-          <p class="text-lg md:text-xl max-w-xl">Seamless integration with smart technology for better productivity.</p>
-          <div class="flex space-x-4">
-            <button class="px-8 py-3 rounded-md font-semibold text-white bg-gradient-to-br from-indigo-400 to-indigo-700 hover:scale-105 transition">
-              Try Now
-            </button>
-            <button class="px-8 py-3 rounded-md font-semibold text-white border-2 border-white hover:bg-white hover:text-indigo-700 transition">
-              Discover More
-            </button>
+          <!-- Slide 1 -->
+          <div class="slide space-y-4">
+            <div class="flex items-center space-x-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
+                <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
+              </svg>
+              <p class="font-medium text-lg">Your Next Level Partner in</p>
+            </div>
+            <div class="flex items-center space-x-4 mt-2">
+              <div class="px-4 py-1 rounded-md text-white text-sm font-bold" style="background: linear-gradient(91deg, #0028ac 0.55%, #3cc8ff 99.85%)">New Features</div>
+              <h1 class="text-5xl font-bold">Empowering Innovation</h1>
+            </div>
+            <h1 class="text-5xl font-bold leading-tight">
+              Through <br class="block md:hidden" /> Technology.
+            </h1>
+            <div class="flex space-x-4 mt-4">
+              <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">Contact Us</a>
+              <a href="/automations/selfhosted-workflow-automation" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition">Explore More</a>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0"
-        style="background-image: url('img/hero3.png');">
-        <div class="absolute inset-0 bg-black/40 flex flex-col items-start justify-center px-6 md:px-[120px] space-y-6">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">Future-Ready Technology</h1>
-          <p class="text-lg md:text-xl max-w-xl">Join the innovation wave and stay ahead of the curve.</p>
-          <div class="flex space-x-4">
-            <button class="px-8 py-3 rounded-md font-semibold text-white bg-gradient-to-br from-green-400 to-green-700 hover:scale-105 transition">
-              Get Started
-            </button>
-            <button class="px-8 py-3 rounded-md font-semibold text-white border-2 border-white hover:bg-white hover:text-green-700 transition">
-              Contact Us
-            </button>
+          <!-- Slide 2 -->
+          <div class="slide space-y-4 hidden">
+            <div class="flex items-center space-x-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
+                <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
+              </svg>
+              <p class="font-medium text-lg">Let's build future together</p>
+            </div>
+            <div class="flex items-center space-x-4 mt-2">
+              <div class="px-4 py-1 rounded-md text-white text-sm font-bold bg-blue-600">New Solutions</div>
+              <h1 class="text-5xl font-bold">Transforming Ideas into</h1>
+            </div>
+            <h1 class="text-5xl font-bold leading-tight">
+              Intelligent <br class="block md:hidden" /> Solutions.
+            </h1>
+            <div class="flex space-x-4 mt-4">
+              <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">Contact Us</a>
+              <a href="/ai-assisted-software-development-at-codimite/" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition">Explore More</a>
+            </div>
           </div>
+
+          <!-- Slide 3 -->
+          <div class="slide space-y-4 hidden">
+            <div class="flex items-center space-x-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
+                <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
+              </svg>
+              <p class="font-medium text-lg">Your Vision Our Code</p>
+            </div>
+            <div class="flex items-center space-x-4 mt-2">
+              <div class="px-4 py-1 rounded-md text-white text-sm font-bold bg-green-600">New strategy</div>
+              <h1 class="text-5xl font-bold">Smart Software</h1>
+            </div>
+            <h1 class="text-5xl font-bold leading-tight">
+              Seamless <br class="block md:hidden" /> Grow.
+            </h1>
+            <div class="flex space-x-4 mt-4">
+              <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">Contact Us</a>
+              <a href="/smart-solutions" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition">Explore More</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Content Sections -->
-  <section id="partnerships" class="h-screen bg-gray-100 flex items-center justify-center">
-    <h2 class="text-3xl" data-aos="fade-up">Partnerships</h2>
-  </section>
+  <!-- Other Sections -->
+<section
+  id="partnerships"
+  class="flex items-center"
+  style="height: 427px; background: radial-gradient(circle, #0075FF 0%, #001C78 100%);"
+>
+  <div class="ml-[350px] text-left">
+    <h2 class="text-white text-5xl font-semibold leading-snug" data-aos="fade-right">
+      A technology <a href="/partnership" class="text-[#80E1FF] hover:text-[#000247] transition">Partner</a> that<br />
+      Clears the Way.
+  </h2>
+  </div>
+
+   <!-- Partner logos area -->
+  <div class="flex gap-6 ml-[250px]" data-aos="fade-left">
+    <!-- Logo container -->
+    <div
+      class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]"
+    >
+      <img src="img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="bg-white py-12 px-4">
+  <div class="max-w-7xl mx-auto relative">
+    <!-- Scrollable container -->
+    <div id="carousel" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300">
+      <!-- Example image (repeat this block for 10 images) -->
+      <div class="flex-shrink-0 w-[402px] h-[522px] rounded-[50px] overflow-hidden transition-transform duration-300">
+        <img src="https://via.placeholder.com/402x522" alt="Gallery" class="w-full h-full object-cover" />
+      </div>
+      <!-- Repeat this div 9 more times with different images -->
+    </div>
+
+    <!-- Left arrow -->
+    <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-black w-10 h-10 rounded-full flex justify-center items-center shadow-md">
+      &#8592;
+    </button>
+
+    <!-- Right arrow -->
+    <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-black w-10 h-10 rounded-full flex justify-center items-center shadow-md">
+      &#8594;
+    </button>
+  </div>
+</section>
+
+
   <section id="products" class="h-screen bg-white flex items-center justify-center">
     <h2 class="text-3xl" data-aos="fade-up">Our Products</h2>
   </section>
+
+
   <section id="company" class="h-screen bg-gray-100 flex items-center justify-center">
     <h2 class="text-3xl" data-aos="fade-up">Company Info</h2>
   </section>
@@ -98,8 +210,78 @@
     <h2 class="text-3xl" data-aos="fade-up">Your Cart</h2>
   </section>
 
+  <!-- Scripts -->
   <script>
     AOS.init();
+
+    const header = document.getElementById("site-header");
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const companyName = document.querySelector(".company-name");
+    const dropdownBtn = document.getElementById('dropdownButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+  dropdownBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent closing immediately
+    dropdownMenu.classList.toggle('hidden');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', () => {
+    dropdownMenu.classList.add('hidden');
+  });
+
+    // Toggle mobile menu
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Scroll effect for header
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        header.classList.add("scroll-bg");
+        header.classList.remove("text-white");
+        navLinks.forEach(link => {
+          link.classList.remove("text-white");
+          link.classList.add("text-black");
+        });
+        companyName.classList.add("text-black");
+      } else {
+        header.classList.remove("scroll-bg");
+        header.classList.add("text-white");
+        navLinks.forEach(link => {
+          link.classList.add("text-white");
+          link.classList.remove("text-black");
+        });
+        companyName.classList.remove("text-black");
+      }
+    });
+
+    // === Auto Slide Logic ===
+   const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.classList.add('active');
+      slide.classList.remove('hidden');
+    } else {
+      slide.classList.remove('active');
+      slide.classList.add('hidden');
+    }
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+setInterval(nextSlide, 5000);
+
   </script>
 </body>
 </html>
