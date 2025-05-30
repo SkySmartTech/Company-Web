@@ -6,6 +6,8 @@
   <title>Sky Smart Technology</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="products.css">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <style>
     .scroll-bg {
@@ -147,57 +149,179 @@
     </div>
   </section>
 
-  <!-- Other Sections -->
-<section
-  id="partnerships"
-  class="flex items-center"
-  style="height: 427px; background: radial-gradient(circle, #0075FF 0%, #001C78 100%);"
->
-  <div class="ml-[350px] text-left">
-    <h2 class="text-white text-5xl font-semibold leading-snug" data-aos="fade-right">
-      A technology <a href="/partnership" class="text-[#80E1FF] hover:text-[#000247] transition">Partner</a> that<br />
-      Clears the Way.
-  </h2>
-  </div>
+  <!-- Partnership Section -->
 
-   <!-- Partner logos area -->
-  <div class="flex gap-6 ml-[250px]" data-aos="fade-left">
-    <!-- Logo container -->
-    <div
-      class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]"
-    >
-      <img src="img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
+<section id="partnerships-clients" style="background: radial-gradient(circle, #0075FF 0%, #001C78 100%); padding: 60px 0;">
+  <div class="flex items-start">
+    <div class="ml-[350px] text-left">
+      <h2 class="text-white text-5xl font-semibold leading-snug" data-aos="fade-right">
+        A technology <a href="/partnership" class="text-[#80E1FF] hover:text-[#000247] transition">Partner</a> that<br />
+        Clears the Way.
+      </h2>
     </div>
-  </div>
-</section>
-
-<section id="gallery" class="bg-white py-12 px-4">
-  <div class="max-w-7xl mx-auto relative">
-    <!-- Scrollable container -->
-    <div id="carousel" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar transition-all duration-300">
-      <!-- Example image (repeat this block for 10 images) -->
-      <div class="flex-shrink-0 w-[402px] h-[522px] rounded-[50px] overflow-hidden transition-transform duration-300">
-        <img src="https://via.placeholder.com/402x522" alt="Gallery" class="w-full h-full object-cover" />
+    <div class="flex gap-6 ml-[250px]" data-aos="fade-left">
+      <div
+        class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]"
+      >
+        <img src="img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
       </div>
-      <!-- Repeat this div 9 more times with different images -->
     </div>
+  </div>
 
-    <!-- Left arrow -->
-    <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-black w-10 h-10 rounded-full flex justify-center items-center shadow-md">
-      &#8592;
-    </button>
-
-    <!-- Right arrow -->
-    <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-black w-10 h-10 rounded-full flex justify-center items-center shadow-md">
-      &#8594;
-    </button>
+  <!-- Clients Section -->
+  <div class="flex items-start mt-[100px]">
+    <div class="ml-[350px] text-left">
+      <h2 class="text-white text-5xl font-semibold leading-snug" data-aos="fade-right">
+        Our <a href="/clients" class="text-[#80E1FF] hover:text-[#000247] transition">Clients</a> that<br />
+        Trust in Us.
+      </h2>
+    </div>
+    <div class="flex gap-6 ml-[470px]" data-aos="fade-left">
+      <div class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]">
+          <img id="client-logo" src="img/clients_logo/client_logo3.png" alt="Client Logo" class="h-36 object-contain transition-opacity duration-1000 opacity-100" />
+      </div>
+    </div>
   </div>
 </section>
 
 
-  <section id="products" class="h-screen bg-white flex items-center justify-center">
-    <h2 class="text-3xl" data-aos="fade-up">Our Products</h2>
-  </section>
+
+ <section class="gallery-section">
+    <!-- Gallery Heading and Quote -->
+       <div class="mb-12">
+          <div class="text-left ml-[250px]">
+            <h2 class="text-5xl font-bold text-[#0A2472]">
+              <span class="text-5xl text-[#0A2472] font-semibold">The </span>
+              <span class="bg-gradient-to-b from-blue-300 to-blue-700 text-transparent bg-clip-text text-8xl font-extrabold">Gallery</span>
+            </h2>
+          </div>
+          <div class="text-center mt-2 ml-[450px]" >
+            <p class="text-5xl text-[#0A2472] font-semibold">That Builds Tomorrow.</p>
+          </div>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery-track" id="galleryTrack">
+                <div class="gallery-item active">
+                    <img src="img/company_gallery/ind_01.jpg" alt="Mountain Lake">
+                </div>
+                <div class="gallery-item next">
+                    <img src="img/company_gallery/ind_02.jpg" alt="Forest Path">
+                </div>
+                <div class="gallery-item hidden-right">
+                    <img src="img/company_gallery/ind_03.jpg" alt="Mountain Vista">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_04.jpg" alt="Sunset Mountains">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_05.jpg" alt="Alpine Lake">
+                </div>
+                <div class="gallery-item hidden-right">
+                    <img src="img/company_gallery/ind_06.jpg" alt="Mountain Vista">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_07.jpg" alt="Sunset Mountains">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_08.jpg" alt="Alpine Lake">
+                </div>
+                <div class="gallery-item hidden-right">
+                    <img src="img/company_gallery/ind_09.jpg" alt="Mountain Vista">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_10.jpg" alt="Sunset Mountains">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_10.jpg" alt="Alpine Lake">
+                </div>
+                <div class="gallery-item hidden-right">
+                    <img src="img/company_gallery/ind_11.jpg" alt="Mountain Vista">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_12.jpg" alt="Sunset Mountains">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_13.jpg" alt="Alpine Lake">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_14.jpg" alt="Alpine Lake">
+                </div>
+                <div class="gallery-item hidden-right">
+                    <img src="img/company_gallery/ind_15.jpg" alt="Mountain Vista">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_16.jpg" alt="Sunset Mountains">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_18.jpg" alt="Alpine Lake">
+                </div>
+                <div class="gallery-item far-hidden">
+                    <img src="img/company_gallery/ind_19.jpg" alt="Alpine Lake">
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-dots" id="galleryDots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+            <span class="dot" data-slide="5"></span>
+            <span class="dot" data-slide="6"></span>
+            <span class="dot" data-slide="7"></span>
+            <span class="dot" data-slide="8"></span>
+            <span class="dot" data-slide="9"></span>
+            <span class="dot" data-slide="10"></span>
+            <span class="dot" data-slide="11"></span>
+            <span class="dot" data-slide="12"></span>
+            <span class="dot" data-slide="13"></span>
+            <span class="dot" data-slide="14"></span>
+            <span class="dot" data-slide="15"></span>
+            <span class="dot" data-slide="16"></span>
+            <span class="dot" data-slide="17"></span>
+        </div>
+    </section>
+
+<section id="products" style="background: linear-gradient(to bottom, #01103F, #000B2C); padding: 60px 0;" class="min-h-[500px] px-6 py-10">
+  <h2 class="text-5xl font-black leading-tight mb-10 text-center text-blue-600" data-aos="fade-up">
+    SHOP<br>OUR PRODUCTS
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+    <!-- Casual Wear -->
+    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/Products_logo/product_1.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
+        <h3 class="text-2xl font-bold mb-2">Smart Andon System</h3>
+        <button onclick="window.location.href='/respective-page-url'" class="bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
+          See all →
+        </button>
+      </div>
+    </div>
+
+    <!-- Activewear -->
+    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/Products_logo/product_2.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
+        <h3 class="text-2xl font-bold mb-2">Software Development</h3>
+        <button onclick="window.location.href='/respective-page-url'" class="bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
+          See all →
+        </button>
+      </div>
+    </div>
+
+    <!-- Formal Attire -->
+    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/Products_logo/product_3.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
+        <h3 class="text-2xl font-bold mb-2">Innovations</h3>
+        <button onclick="window.location.href='/respective-page-url'" class="bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
+          See all →
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
 
   <section id="company" class="h-screen bg-gray-100 flex items-center justify-center">
@@ -283,5 +407,8 @@ showSlide(currentSlide);
 setInterval(nextSlide, 5000);
 
   </script>
+      <script src="gallery.js"></script>
+      <script src="clients.js"></script>
+
 </body>
 </html>
