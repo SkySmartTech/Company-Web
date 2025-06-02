@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Smart Technology-Company</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+<header id="site-header" class="fixed w-full top-0 z-10 bg-white text-black shadow-md">
+  <div class="flex items-center justify-between md:px-12 p-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32" />
+      <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
+    </div>
+
+    <!-- Nav Menu -->
+    <nav class="hidden md:flex space-x-6 font-medium nav-links">
+      <a href="../index.html" class="hover:text-blue-500 transition">Home</a>
+      <a href="#company" class="hover:text-blue-600">Company</a>
+      <a href="#partnerships" class="hover:text-blue-500 transition">Partnerships</a>
+      <a href="#products" class="hover:text-blue-500 transition">Products</a>
+
+      <!-- Dropdown -->
+      <div class="relative">
+        <button id="dropdownButton" class="hover:text-blue-500 font-semibold transition flex items-center gap-1">
+          Careers & Team
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="dropdownMenu" class="absolute left-0 mt-2 w-44 bg-white/50 backdrop-blur-md text-black rounded-lg shadow-lg hidden z-20">
+          <a href="/careers" class="block px-4 py-2 hover:bg-gray-100">Careers</a>
+          <a href="/team" class="block px-4 py-2 hover:bg-gray-100">Our Team</a>
+        </div>
+      </div>
+
+      <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden focus:outline-none text-black">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 bg-white text-black py-4">
+    <a href="#home" class="hover:text-blue-600">Home</a>
+    <a href="#company" class="hover:text-blue-600">Company</a>
+    <a href="#partnerships" class="hover:text-blue-600">Partnerships</a>
+    <a href="#products" class="hover:text-blue-600">Products</a>
+    <a href="#careers" class="hover:text-blue-600">Careers & Team</a>
+    <a href="#cart" class="hover:text-blue-600">Cart</a>
+  </div>
+</header>
+
+  <!-- 1. Hero Section -->
+<section id="hero" data-aos="fade-up" class="pt-40 bg-white text-white text-center py-28 px-6">
+  <div class="relative z-10 text-center opacity-0 animate-fade-up mt-20">
+    <div class="flex items-center justify-center space-x-6 mb-4">
+      <h1 class="text-9xl font-extrabold text-blue-700">About</h1>
+      <img src="img/sky-smart-logo.png" alt="Company Logo" style="height: 240px; width: auto;" />
+    </div>
+    <p class="text-sm max-w-xl mx-auto text-gray-600">
+     Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+    </p>
+  </div>
+</section>
+
+
+  <!-- 2. Who We Are Section -->
+<section class="py-20 text-white" style="background: radial-gradient(circle, #01103F 0%, #000B2C 100%);">
+  <div class="container mx-auto px-6 max-w-7xl">
+    <div class="flex flex-col xl:flex-row items-center gap-12">
+      
+      <!-- Left Content -->
+      <div class="w-full xl:w-1/2 text-center xl:text-center"  data-aos="fade-right">
+        <h2 class="text-6xl font-extrabold mb-6">
+          Who <span class="text-blue-600">we</span> are
+        </h2>
+        <p class="max-w-4xl mx-auto text-justify text-gray-300 leading-relaxed">
+  Founded in 2010, <strong>Sky Smart Technology</strong> has grown from a small startup into a reputable leader in smart technology solutions. Over the years, we have expanded our expertise, partnered with industry leaders, and continuously innovated to meet evolving market needs.
+  <br>
+  Sky Smart Technology specializes in developing <strong>custom web applications</strong>, <strong>enterprise software</strong>, and <strong>intelligent systems</strong> that improve operational efficiency and business intelligence. Our capabilities extend to <strong>software automation</strong>, <strong>real-time monitoring systems</strong>, <strong>IoT-based solutions</strong>, and <strong>AI-powered platforms</strong>, delivering end-to-end support for digital transformation.
+  <br>
+  One of our standout innovations, the <strong>Andon alarm system</strong>, is widely implemented in garment factories. It boosts production line efficiency by immediately notifying responsible personnel of failures, enabling instant responses, and automatically logging accurate downtime data — all with minimal disruption to ongoing operations.
+  <br>
+  Whether it’s <strong>engineering hardware</strong>, <strong>software platforms</strong>, or <strong>web technologies</strong>, Sky Smart Technology continues to drive innovation, reliability, and excellence across every sector we serve.
+</p>
+
+
+        <!-- Counters -->
+        <div class="flex justify-center xl:justify-start space-x-12">
+          <div class="text-center">
+            <div class="text-5xl font-extrabold text-blue-600 counter" data-target="10">0</div>
+            <div class="mt-2 text-gray-600 dark:text-gray-400 uppercase tracking-wide">Years Of Experience</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl font-extrabold text-blue-600 counter" data-target="20">0</div>
+            <div class="mt-2 text-gray-600 dark:text-gray-400 uppercase tracking-wide">Employees</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl font-extrabold text-blue-600 counter" data-target="5">0</div>
+            <div class="mt-2 text-gray-600 dark:text-gray-400 uppercase tracking-wide">Clients Worldwide</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="w-full xl:w-1/2"  data-aos="fade-left" >
+        <img src="img/whoweare.jpg" alt="connect2025" class="rounded-xl mx-auto" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Vision and Mission Section -->
+<section id="vision-mission" class="bg-white py-20 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+    
+    <!-- Vision -->
+    <div class="md:w-1/3 -mt-6 self-start" data-aos="fade-down">
+      <h3 class="text-6xl font-bold mb-4">
+        <span class="text-gray-900">Our</span> <span class="text-blue-600">Vision</span>
+      </h3>
+      <p class="text-gray-800 leading-relaxed text-xl-justify">
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.<br><br>
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+      </p>
+    </div>
+
+    <!-- Center Logo -->
+    <div class="md:w-1/3 flex justify-center" data-aos="zoom-in">
+      <img src="img/skysmart.png" alt="SK Smart Logo" class="w-[250px] h-auto" />
+    </div>
+
+    <!-- Mission-->
+    <div class="md:w-1/3 mt-40 self-end" data-aos="fade-up">
+      <h3 class="text-6xl font-bold mb-4">
+        <span class="text-gray-900">Our</span> <span class="text-blue-600">Mission</span>
+      </h3>
+      <p class="text-gray-800 leading-relaxed text-xl-justify">
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.<br><br>
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- 4. History Section -->
+  <section id="history" class="max-w-6xl mx-auto px-6 py-20 text-center" data-aos="fade-up" >
+    <h2 class="text-6xl font-semibold ">
+         <span class="text-white">Our</span> <span class="text-blue-600">History</span>
+    </h2>
+    <p class="max-w-4xl mx-auto text-center text-gray-300 leading-relaxed mt-8 ">
+      Founded in 2010, Sky Smart Technology has grown from a small startup to a reputable leader in smart technology solutions. Over the years, we have expanded our expertise, partnered with industry leaders, and continuously innovated to meet evolving market needs. <br>
+      Sky Technologies was established in Madampe in year 2004. Initially we created decorative LED light systems, projects support for engineering students,created some alarm systems and control systems for private and government sector institutes.In 2009 we have transferred our head office to Kegalle and had the opportunity to research and develop alarm systems for garment factories called “Andon Systems” in broader scale than earlier. Until now we have developed Andon Systems with various modern technologies like GSM,Wi-Fi and Radio Frequency Identification and also integrate with many systems for various customer requirements in order to optimize the accuracy, productivity and efficiency through automate the fault reporting and logging activities in a factory.From year 2010 onward, Sky Technologies have done the lighting up elephants for Perahera Festivals Island wide.Year 2010, it was the first time that lighted up all the elephants in Kandy "Dalanda Perahera" history.That was a golden milestone to us and glad to contribute for the historical event.
+    </p>
+
+  <div class="flex justify-center mt-10">
+    <img src="img/kandy.jpg" alt="Company History" class="w-[300px] h-auto" />
+  </div>
+
+  </section>
+
+  <!-- 5. Success Story Section -->
+  <section id="success-story" class="bg-blue-50 py-20 px-6" >
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-semibold mb-6 text-center text-blue-600">Success Stories</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold mb-2">Smart Packaging Revolution</h3>
+          <p class="text-gray-700 leading-relaxed">
+            We developed a cutting-edge smart packaging system using RFID and NFC that helped a leading FMCG company reduce waste by 30% and improve supply chain transparency.
+          </p>
+        </article>
+        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold mb-2">IoT Enabled Smart City Project</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Partnering with local governments, our IoT solutions enhanced urban infrastructure, reduced energy consumption, and increased public safety.
+          </p>
+        </article>
+        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-2xl font-semibold mb-2">AI-driven Customer Insights</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Implemented AI analytics tools for a retail chain, resulting in a 25% increase in customer retention and personalized marketing strategies.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- 6. Contact Us Section -->
+<section id="contact" class="bg-gray-100 py-20 px-6">
+  <h2 class="text-6xl font-semibold text-center mb-10">
+    <span class="text-blue-900">Contact</span> <span class="text-blue-600">Us</span>
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-2 text-center text-gray-800">
+    <!-- Address -->
+    <div>
+      <h3 class="text-xl font-semibold mb-1">Head Office</h3>
+      <p>No. 123, Main Street,<br>Colombo 03,<br>Sri Lanka</p>
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <h3 class="text-xl font-semibold mb-1">Call Us</h3>
+      <p>Hotline: +94 77 123 4567<br>Office: +94 11 234 5678</p>
+    </div>
+
+    <!-- Email -->
+    <div>
+      <h3 class="text-xl font-semibold mb-1">Email</h3>
+      <p>info@skysmart.lk<br>support@skysmart.lk</p>
+    </div>
+  </div>
+</section>
+
+
+
+   <!-- Footer section -->
+<footer class="bg-gradient-to-b from-[#000C2E] to-[#001437] text-white pt-10 px-10">
+<div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-10 text-sm pb-10">
+
+    <!-- Expanded Logo & Description -->
+    <div class="md:col-span-2">
+      <img src="img/sky-smart-logo.png" alt="Logo" class="h-20">
+      <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+      </p>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Company</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Contact</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">General Message</a></li>
+        <li><a href="#">Job Vacancy</a></li>
+        <li><a href="#">Start a Project</a></li>
+        <li><a href="#">Become a Partner</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Quick Links</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">Software Development</a></li>
+        <li><a href="#">Chasseur Dynamics</a></li>
+        <li><a href="#">Zoho Cliq</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Solutions</a></li>
+      </ul>
+    </div>
+
+    <!-- Location -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Location</h3>
+      <p class="text-gray-300 leading-relaxed">
+        A/59, Hungampola,<br>
+        Moronthota,<br>
+        Kegalle,<br>
+        Sri Lanka.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="border-t border-gray-700 pt-5 pb-6 text-center text-sm text-gray-400">
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto">
+      <p>© Sky Smart Technology (Pvt) Ltd. All Rights Reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#"><img src="img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
+        <a href="#"><img src="img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
+        <a href="#"><img src="img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
+        <a href="#"><img src="img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
+        <a href="#"><img src="img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Navbar Scripts -->
+<!-- AOS Library -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<!-- Your custom JavaScript file -->
+<script src="company.js"></script>
+
+</body>
+</html>

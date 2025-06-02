@@ -32,9 +32,10 @@
       <!-- Nav Menu -->
 <nav class="hidden md:flex space-x-6 font-medium nav-links">
   <a href="#home" class="hover:text-blue-500 transition">Home</a>
+  <a href="Companypage/company.html" class="hover:text-blue-500 transition">Company</a>
   <a href="#partnerships" class="hover:text-blue-500 transition">Partnerships</a>
   <a href="#products" class="hover:text-blue-500 transition">Products</a>
-  <a href="#company" class="hover:text-blue-500 transition">Company</a>
+
 
   <!-- Dropdown Wrapper -->
   <div class="relative">
@@ -67,9 +68,9 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 bg-white text-black py-4">
       <a href="#home" class="hover:text-blue-600">Home</a>
+      <a href="#company" class="hover:text-blue-600">Company</a>
       <a href="#partnerships" class="hover:text-blue-600">Partnerships</a>
       <a href="#products" class="hover:text-blue-600">Products</a>
-      <a href="#company" class="hover:text-blue-600">Company</a>
       <a href="#careers" class="hover:text-blue-600">Careers & Team</a>
       <a href="#cart" class="hover:text-blue-600">Cart</a>
     </div>
@@ -324,15 +325,109 @@
 </section>
 
 
-  <section id="company" class="h-screen bg-gray-100 flex items-center justify-center">
-    <h2 class="text-3xl" data-aos="fade-up">Company Info</h2>
-  </section>
-  <section id="careers" class="h-screen bg-white flex items-center justify-center">
-    <h2 class="text-3xl" data-aos="fade-up">Careers & Team</h2>
-  </section>
-  <section id="cart" class="h-screen bg-gray-100 flex items-center justify-center">
-    <h2 class="text-3xl" data-aos="fade-up">Your Cart</h2>
-  </section>
+<section id="company" class="bg-gray-100 py-16 px-10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+    
+    <!-- Left Side: Image -->
+    <div class="w-full md:w-1/2" data-aos="fade-right">
+      <img src="img/Products_logo/product_1.jpg" alt="Smart Andon System" class="w-full rounded-xl shadow-lg" />
+    </div>
+    
+    <!-- Right Side: Text -->
+    <div class="w-full md:w-1/2 space-y-6" data-aos="fade-left">
+      <!-- Heading -->
+      <h2 class="text-3xl font-bold leading-tight">
+        Try our <span class="text-6xl text-[#0075FF] font-extrabold">Smart Andon</span> system
+      </h2>
+
+      <!-- Description -->
+      <p class="text-lg text-gray-800">
+        <strong>"Smart Andon Systems"</strong> is the latest development from Sky Technologies that caters to all your idle time capture and monitoring needs at minimal cost.
+        This allows you to instantly know the problem in every aspect of your factory wherever you are.
+      </p>
+
+      <button onclick="window.location.href='/cart';" class="mt-4 bg-[#0075FF] text-white px-4 py-2 rounded-full text-lg font-semibold hover:bg-[#005fc2] transition duration-300">
+        Add to Cart
+      </button>
+    </div>
+    
+  </div>
+</section>
+
+
+    <!-- Footer section -->
+<footer class="bg-gradient-to-b from-[#000C2E] to-[#001437] text-white pt-10 px-10">
+<div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-10 text-sm pb-10">
+
+    <!-- Expanded Logo & Description -->
+    <div class="md:col-span-2">
+      <img src="img/sky-smart-logo.png" alt="Logo" class="h-40">
+      <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+      </p>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Company</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Contact</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">General Message</a></li>
+        <li><a href="#">Job Vacancy</a></li>
+        <li><a href="#">Start a Project</a></li>
+        <li><a href="#">Become a Partner</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Quick Links</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">Software Development</a></li>
+        <li><a href="#">Chasseur Dynamics</a></li>
+        <li><a href="#">Zoho Cliq</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Solutions</a></li>
+      </ul>
+    </div>
+
+    <!-- Location -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Location</h3>
+      <p class="text-gray-300 leading-relaxed">
+        A/59, Hungampola,<br>
+        Moronthota,<br>
+        Kegalle,<br>
+        Sri Lanka.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="border-t border-gray-700 pt-5 pb-6 text-center text-sm text-gray-400">
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto">
+      <p>© Sky Smart Technology (Pvt) Ltd. All Rights Reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#"><img src="img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
+        <a href="#"><img src="img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
+        <a href="#"><img src="img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
+        <a href="#"><img src="img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
+        <a href="#"><img src="img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
   <!-- Scripts -->
   <script>
