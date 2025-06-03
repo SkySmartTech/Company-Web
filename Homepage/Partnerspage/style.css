@@ -1,3 +1,4 @@
+/* Animation */
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -12,4 +13,128 @@
 .animate-fade-up {
   animation: fadeUp 1s ease-out forwards;
   animation-delay: 0.3s;
+}
+
+/* Partner Section */
+.left-content {
+  flex: 1 1 55%;
+}
+
+.right-content {
+  flex: 1 1 35%;
+}
+
+.left-content h4 {
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.left-content h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.partners-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 10%;
+  background: linear-gradient(to right, #9bbeff65, #e8f0ff);
+  gap: 40px;
+}
+
+.partner-logo {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  height: 120px;
+  width: 250px;
+}
+
+.partner-logo img {
+  max-width: 350%;
+  max-height: 200px;
+}
+
+.partner-logo2 {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  height: 120px;
+  width: 250px;
+}
+
+.partner-logo2 img {
+  max-width: 350%;
+  max-height: 140px;
+}
+
+.partner-logo3 {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  height: 120px;
+  width: 250px;
+}
+
+.partner-logo3 img {
+  max-width: 90%;
+  max-height: 100px;
+}
+
+
+.right-content p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.join-partners {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatars img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: -10px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.cta h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.cta button {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
 }

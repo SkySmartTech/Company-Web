@@ -1,60 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.getElementById("slider");
-    const slides = document.querySelectorAll('#slider .slide');
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
+  // Header and Menu variables
+  const header = document.getElementById("site-header");
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const companyName = document.querySelector(".company-name");
+  const dropdownBtn = document.getElementById('dropdownButton');
+  const dropdownMenu = document.getElementById('dropdownMenu');
 
-    let current = 0;
-    const total = slides.length;
-    const scrollAmount = 420;
+  // Dropdown toggle (if elements exist)
+  if (dropdownBtn && dropdownMenu) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('hidden');
+    });
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        if (i === index) {
-          slide.classList.remove('opacity-0', 'pointer-events-none');
-          slide.classList.add('opacity-100', 'pointer-events-auto');
-        } else {
-          slide.classList.add('opacity-0', 'pointer-events-none');
-          slide.classList.remove('opacity-100', 'pointer-events-auto');
-        }
-      });
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.add('hidden');
+    });
+  }
 
-      // Scroll to the slide
-      const targetSlide = slides[index];
-      const offsetLeft = targetSlide.offsetLeft - carousel.offsetLeft;
-      carousel.scrollTo({ left: offsetLeft, behavior: "smooth" });
-    }
+  // Toggle mobile menu (if elements exist)
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
 
-    function nextSlide() {
-      current = (current + 1) % total;
-      showSlide(current);
-    }
-
-    function prevSlide() {
-      current = (current - 1 + total) % total;
-      showSlide(current);
-    }
-
-    function scaleSlides() {
-      const center = carousel.scrollLeft + carousel.offsetWidth / 2;
-      slides.forEach((item) => {
-        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-        const distance = Math.abs(center - itemCenter);
-        const scale = distance < 100 ? 1.1 : 1;
-        item.style.transform = `scale(${scale})`;
-      });
-    }
-
-    // Auto slide every 5s
-    showSlide(current);
-    setInterval(nextSlide, 5000);
-
-    // Arrows
-    prevBtn.addEventListener("click", prevSlide);
-    nextBtn.addEventListener("click", nextSlide);
-
-    // Center scaling on scroll
-    carousel.addEventListener("scroll", scaleSlides);
-    window.addEventListener("load", scaleSlides);
-  });
-
+  // Scroll effect for header (if elements exist)
+  if (header) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        header.classList.add("scroll-bg");
+        header.classList.remove("text-white");
+        navLinks.forEach(link => {
+          link.classList.remove("text-white");
+          link.classList.add("text-black");
+        });
+        if (companyName) companyName.classList.add("text-black");
+      } else {
+        header.classList.remove("scroll-bg");
+        header.classList.add("text-white");
+        navLinks.forEach(link => {
+          link.classList.add("text-white");
+          link.classList.remove("text-black");
+        });
+        if (companyName) companyName.classList.remove("text-black");
+      }
+    });
+  }
+});

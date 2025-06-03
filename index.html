@@ -6,8 +6,8 @@
   <title>Sky Smart Technology</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="gallery.css">
-  <link rel="stylesheet" href="products.css">
+  <link rel="stylesheet" href="Homepage/gallery.css">
+  <link rel="stylesheet" href="Homepage/products.css">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <style>
     .scroll-bg {
@@ -25,15 +25,16 @@
     <div class="flex items-center justify-between md:px-12">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <img src="img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32" />
+        <img src="Homepage/img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32" />
         <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
       </div>
 
       <!-- Nav Menu -->
 <nav class="hidden md:flex space-x-6 font-medium nav-links">
   <a href="#home" class="hover:text-blue-500 transition">Home</a>
-  <a href="Companypage/company.html" class="hover:text-blue-500 transition">Company</a>
-  <a href="#partnerships" class="hover:text-blue-500 transition">Partnerships</a>
+  <a href="Homepage/Companypage/company.html" class="hover:text-blue-500 transition">Company</a>
+  <a href="Homepage/Partnerspage/partnership.html" class="hover:text-blue-500 transition">Partnerships</a>
+  <a href="#successtories" class="hover:text-blue-500 transition">Success-Story</a>
   <a href="#products" class="hover:text-blue-500 transition">Products</a>
 
 
@@ -78,7 +79,7 @@
 
   <!-- Hero Section -->
   <section id="home" class="relative w-full h-screen overflow-hidden text-white pt-20">
-    <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('img/hero2.png');">
+    <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('Homepage/img/hero2.png');">
       <div class="relative w-full h-full flex items-end justify-start p-6 z-10">
         <div class="slider-wrapper transition-transform duration-500 ease-in-out space-y-12 max-w-5xl">
 
@@ -164,7 +165,7 @@
       <div
         class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]"
       >
-        <img src="img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
+        <img src="Homepage/img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
       </div>
     </div>
   </div>
@@ -179,7 +180,7 @@
     </div>
     <div class="flex gap-6 ml-[470px]" data-aos="fade-left">
       <div class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]">
-          <img id="client-logo" src="img/clients_logo/client_logo3.png" alt="Client Logo" class="h-36 object-contain transition-opacity duration-1000 opacity-100" />
+          <img id="client-logo" src="Homepage/img/clients_logo/client_logo3.png" alt="Client Logo" class="h-36 object-contain transition-opacity duration-1000 opacity-100" />
       </div>
     </div>
   </div>
@@ -188,103 +189,112 @@
 
 
  <section class="gallery-section">
-    <!-- Gallery Heading and Quote -->
-       <div class="mb-12">
-          <div class="text-left ml-[250px]">
-            <h2 class="text-5xl font-bold text-[#0A2472]">
-              <span class="text-5xl text-[#0A2472] font-semibold">The </span>
-              <span class="bg-gradient-to-b from-blue-300 to-blue-700 text-transparent bg-clip-text text-8xl font-extrabold">Gallery</span>
-            </h2>
-          </div>
-          <div class="text-center mt-2 ml-[450px]" >
-            <p class="text-5xl text-[#0A2472] font-semibold">That Builds Tomorrow.</p>
-          </div>
-        </div>
+  <!-- Gallery Heading and Quote -->
+  <div class="mb-12">
+    <div class="text-left ml-[250px]">
+      <h2 class="text-5xl font-bold text-[#0A2472]">
+        <span class="text-5xl text-[#0A2472] font-semibold">The </span>
+        <a href="Homepage/Gallerypage/gallery.html">
+        <span class="bg-gradient-to-b from-blue-300 to-blue-700 text-transparent bg-clip-text text-8xl font-extrabold">Gallery</span></a>
+      </h2>
+    </div>
+    <div class="text-center mt-2 ml-[450px]">
+      <p class="text-5xl text-[#0A2472] font-semibold">That Builds Tomorrow.</p>
+    </div>
+  </div>
 
-        <div class="gallery-container">
-            <div class="gallery-track" id="galleryTrack">
-                <div class="gallery-item active">
-                    <img src="img/company_gallery/ind_01.jpg" alt="Mountain Lake">
-                </div>
-                <div class="gallery-item next">
-                    <img src="img/company_gallery/ind_02.jpg" alt="Forest Path">
-                </div>
-                <div class="gallery-item hidden-right">
-                    <img src="img/company_gallery/ind_03.jpg" alt="Mountain Vista">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_04.jpg" alt="Sunset Mountains">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_05.jpg" alt="Alpine Lake">
-                </div>
-                <div class="gallery-item hidden-right">
-                    <img src="img/company_gallery/ind_06.jpg" alt="Mountain Vista">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_07.jpg" alt="Sunset Mountains">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_08.jpg" alt="Alpine Lake">
-                </div>
-                <div class="gallery-item hidden-right">
-                    <img src="img/company_gallery/ind_09.jpg" alt="Mountain Vista">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_10.jpg" alt="Sunset Mountains">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_10.jpg" alt="Alpine Lake">
-                </div>
-                <div class="gallery-item hidden-right">
-                    <img src="img/company_gallery/ind_11.jpg" alt="Mountain Vista">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_12.jpg" alt="Sunset Mountains">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_13.jpg" alt="Alpine Lake">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_14.jpg" alt="Alpine Lake">
-                </div>
-                <div class="gallery-item hidden-right">
-                    <img src="img/company_gallery/ind_15.jpg" alt="Mountain Vista">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_16.jpg" alt="Sunset Mountains">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_18.jpg" alt="Alpine Lake">
-                </div>
-                <div class="gallery-item far-hidden">
-                    <img src="img/company_gallery/ind_19.jpg" alt="Alpine Lake">
-                </div>
-            </div>
-        </div>
-        
-        <div class="gallery-dots" id="galleryDots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-            <span class="dot" data-slide="3"></span>
-            <span class="dot" data-slide="4"></span>
-            <span class="dot" data-slide="5"></span>
-            <span class="dot" data-slide="6"></span>
-            <span class="dot" data-slide="7"></span>
-            <span class="dot" data-slide="8"></span>
-            <span class="dot" data-slide="9"></span>
-            <span class="dot" data-slide="10"></span>
-            <span class="dot" data-slide="11"></span>
-            <span class="dot" data-slide="12"></span>
-            <span class="dot" data-slide="13"></span>
-            <span class="dot" data-slide="14"></span>
-            <span class="dot" data-slide="15"></span>
-            <span class="dot" data-slide="16"></span>
-            <span class="dot" data-slide="17"></span>
-        </div>
-    </section>
+  <div class="gallery-container relative">
+    <!-- Left arrow -->
+    <button id="prevBtn" class="absolute top-1/2 left-0 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-r-md px-3 py-2 text-3xl font-bold text-[#0A2472] shadow-md z-20 select-none">
+      ‹
+    </button>
+
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gallery-item active">
+        <img src="Homepage/img/company_gallery/ind_01.jpg" alt="Image 1" />
+      </div>
+      <div class="gallery-item next">
+        <img src="Homepage/img/company_gallery/ind_02.jpg" alt="Image 2" />
+      </div>
+      <div class="gallery-item hidden-right">
+        <img src="Homepage/img/company_gallery/ind_03.jpg" alt="Image 3" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_04.jpg" alt="Image 4" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_05.jpg" alt="Image 5" />
+      </div>
+      <div class="gallery-item hidden-right">
+        <img src="Homepage/img/company_gallery/ind_06.jpg" alt="Image 6" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_07.jpg" alt="Image 7" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_08.jpg" alt="Image 8" />
+      </div>
+      <div class="gallery-item hidden-right">
+        <img src="Homepage/img/company_gallery/ind_09.jpg" alt="Image 9" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_10.jpg" alt="Image 10" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_11.jpg" alt="Image 11" />
+      </div>
+      <div class="gallery-item hidden-right">
+        <img src="Homepage/img/company_gallery/ind_12.jpg" alt="Image 12" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_13.jpg" alt="Image 13" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_14.jpg" alt="Image 14" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_15.jpg" alt="Image 15" />
+      </div>
+      <div class="gallery-item hidden-right">
+        <img src="Homepage/img/company_gallery/ind_16.jpg" alt="Image 16" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_18.jpg" alt="Image 18" />
+      </div>
+      <div class="gallery-item far-hidden">
+        <img src="Homepage/img/company_gallery/ind_19.jpg" alt="Image 19" />
+      </div>
+    </div>
+
+    <!-- Right arrow -->
+    <button id="nextBtn"
+      class="absolute top-1/2 right-0 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-l-md px-3 py-2 text-3xl font-bold text-[#0A2472] shadow-md z-20 select-none">
+›
+    </button>
+  </div>
+
+  <div class="gallery-dots" id="galleryDots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+    <span class="dot" data-slide="3"></span>
+    <span class="dot" data-slide="4"></span>
+    <span class="dot" data-slide="5"></span>
+    <span class="dot" data-slide="6"></span>
+    <span class="dot" data-slide="7"></span>
+    <span class="dot" data-slide="8"></span>
+    <span class="dot" data-slide="9"></span>
+    <span class="dot" data-slide="10"></span>
+    <span class="dot" data-slide="11"></span>
+    <span class="dot" data-slide="12"></span>
+    <span class="dot" data-slide="13"></span>
+    <span class="dot" data-slide="14"></span>
+    <span class="dot" data-slide="15"></span>
+    <span class="dot" data-slide="16"></span>
+    <span class="dot" data-slide="17"></span>
+  </div>
+</section>
 
 <section id="products" style="background: linear-gradient(to bottom, #01103F, #000B2C); padding: 60px 0;" class="min-h-[500px] px-6 py-10">
   <h2 class="text-5xl font-black leading-tight mb-10 text-center text-blue-600" data-aos="fade-up">
@@ -293,7 +303,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
     <!-- Smart Andon System -->
-    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/Products_logo/product_1.jpg');">
+    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_1.jpg');">
       <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
         <h3 class="text-2xl font-bold mb-2">Smart Andon System</h3>
         <button onclick="window.location.href='/respective-page-url'" class="bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
@@ -303,7 +313,7 @@
     </div>
 
     <!-- Software Development -->
-    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/Products_logo/product_2.jpg');">
+    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_2.jpg');">
       <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
         <h3 class="text-2xl font-bold mb-2">Software Development</h3>
         <button onclick="window.location.href='/respective-page-url'" class="bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
@@ -313,7 +323,7 @@
     </div>
 
     <!-- Innovation -->
-    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('img/Products_logo/product_3.jpg');">
+    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_3.jpg');">
       <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
         <h3 class="text-2xl font-bold mb-2">Innovations</h3>
         <button onclick="window.location.href='/respective-page-url'" class="bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
@@ -330,7 +340,7 @@
     
     <!-- Left Side: Image -->
     <div class="w-full md:w-1/2" data-aos="fade-right">
-      <img src="img/Products_logo/product_1.jpg" alt="Smart Andon System" class="w-full rounded-xl shadow-lg" />
+      <img src="Homepage/img/Products_logo/product_1.jpg" alt="Smart Andon System" class="w-full rounded-xl shadow-lg" />
     </div>
     
     <!-- Right Side: Text -->
@@ -361,7 +371,7 @@
 
     <!-- Expanded Logo & Description -->
     <div class="md:col-span-2">
-      <img src="img/sky-smart-logo.png" alt="Logo" class="h-40">
+      <img src="Homepage/img/sky-smart-logo.png" alt="Logo" class="h-40">
       <p class="text-gray-300 text-sm leading-relaxed max-w-md">
         Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
       </p>
@@ -418,11 +428,11 @@
     <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto">
       <p>© Sky Smart Technology (Pvt) Ltd. All Rights Reserved.</p>
       <div class="flex space-x-4 mt-4 md:mt-0">
-        <a href="#"><img src="img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
-        <a href="#"><img src="img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
-        <a href="#"><img src="img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
-        <a href="#"><img src="img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
-        <a href="#"><img src="img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
+        <a href="#"><img src="Homepage/img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
+        <a href="#"><img src="Homepage/img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
+        <a href="#"><img src="Homepage/img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
+        <a href="#"><img src="Homepage/img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
+        <a href="#"><img src="Homepage/img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
       </div>
     </div>
   </div>
@@ -431,79 +441,11 @@
 
   <!-- Scripts -->
   <script>
-    AOS.init();
-
-    const header = document.getElementById("site-header");
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navLinks = document.querySelectorAll(".nav-links a");
-    const companyName = document.querySelector(".company-name");
-    const dropdownBtn = document.getElementById('dropdownButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-
-  dropdownBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Prevent closing immediately
-    dropdownMenu.classList.toggle('hidden');
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', () => {
-    dropdownMenu.classList.add('hidden');
-  });
-
-    // Toggle mobile menu
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    // Scroll effect for header
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        header.classList.add("scroll-bg");
-        header.classList.remove("text-white");
-        navLinks.forEach(link => {
-          link.classList.remove("text-white");
-          link.classList.add("text-black");
-        });
-        companyName.classList.add("text-black");
-      } else {
-        header.classList.remove("scroll-bg");
-        header.classList.add("text-white");
-        navLinks.forEach(link => {
-          link.classList.add("text-white");
-          link.classList.remove("text-black");
-        });
-        companyName.classList.remove("text-black");
-      }
-    });
-
-    // === Auto Slide Logic ===
-   const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    if (i === index) {
-      slide.classList.add('active');
-      slide.classList.remove('hidden');
-    } else {
-      slide.classList.remove('active');
-      slide.classList.add('hidden');
-    }
-  });
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-showSlide(currentSlide);
-setInterval(nextSlide, 5000);
-
+    AOS.init(); 
   </script>
-      <script src="gallery.js"></script>
-      <script src="clients.js"></script>
+      <script src="Homepage/script.js"></script>
+      <script src="Homepage/gallery.js"></script>
+      <script src="Homepage/clients.js"></script>
 
 </body>
 </html>

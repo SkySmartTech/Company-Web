@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- Header -->
+  <header class="header">
+    <div class="logo-title">
+    <img src="../img/sky-smart-logo.png" alt="Company Logo" />
+    <h1 class="header-title">Photo Gallery</h1>
+  </div>
+    <nav class="nav">
+      <a href="#nature" class="nav-link">Album 1</a>
+      <a href="#urban" class="nav-link">Album 2</a>
+      <a href="#portraits" class="nav-link">Album 3</a>
+    </nav>
+  </header>
+
+    <!-- Main Gallery Section -->
+    <main class="main-container">
+        <!-- Albums Overview -->
+        <section class="albums-overview">
+            <h2 class="section-title">Featured Albums</h2>
+            <div class="albums-grid">
+                <!-- Nature Album -->
+                <div class="album-card" data-target="nature">
+                    <div class="album-image">
+                        <img src="../img/hero1.png" />
+                        <div class="album-overlay">
+                            <h3 class="album-title">Album 1 </h3>
+                            <p class="album-count">24 Photos</p>
+                            <button class="view-album-btn">View Album</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Urban Album -->
+                <div class="album-card" data-target="urban">
+                    <div class="album-image">
+                        <img src="../img/hero2.png" />
+                        <div class="album-overlay">
+                            <h3 class="album-title">Album 2</h3>
+                            <p class="album-count">18 Photos</p>
+                            <button class="view-album-btn">View Album</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portraits Album -->
+                <div class="album-card" data-target="portraits">
+                    <div class="album-image">
+                        <img src="../img/hero3.png" />
+                        <div class="album-overlay">
+                            <h3 class="album-title">Album 3</h3>
+                            <p class="album-count">12 Photos</p>
+                            <button class="view-album-btn">View Album</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nature Section -->
+        <section id="nature" class="gallery-section">
+            <div class="section-header">
+                <h2 class="section-title">Album 01</h2>
+                <button class="back-btn" data-target="top">← Back to Albums</button>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="company_gallery/ind_01.jpg"  />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_02.jpg"  />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_03.jpg"  />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_04.jpg"  />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_05.jpg" />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_06.jpg"  />
+                </div>
+            </div>
+        </section>
+
+        <!-- Urban Section -->
+        <section id="urban" class="gallery-section">
+            <div class="section-header">
+                <h2 class="section-title">Album 02</h2>
+                <button class="back-btn" data-target="top">← Back to Albums</button>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="company_gallery/ind_07.jpg"/>
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_08.jpg"/>
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_08.jpg"/>
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_09.jpg"/>
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_10.jpg"/>
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_11.jpg"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portraits Section -->
+        <section id="portraits" class="gallery-section">
+            <div class="section-header">
+                <h2 class="section-title">Album 03</h2>
+                <button class="back-btn" data-target="top">← Back to Albums</button>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="company_gallery/ind_12.jpg" alt="Portrait 1" />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_13.jpg" alt="Portrait 2" />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_14.jpg" alt="Portrait 3" />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_15.jpg" alt="Portrait 4" />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_16.jpg" alt="Portrait 5" />
+                </div>
+                <div class="photo-item">
+                    <img src="company_gallery/ind_19.jpg" alt="Portrait 6" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
