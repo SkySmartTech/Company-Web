@@ -1,7 +1,7 @@
   const logos = [
-    "img/clients_logo/client_logo3.png",
-    "img/clients_logo/client_logo2.png",
-    "img/clients_logo/client_logo1.png"
+    "Homepage/img/clients_logo/client_logo3.png",
+    "Homepage/img/clients_logo/client_logo1.png",
+    "Homepage/img/clients_logo/client_logo2.png"
   ];
 
   let current = 0;

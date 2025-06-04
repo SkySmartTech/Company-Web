@@ -58,3 +58,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+  function showTeam(categoryId) {
+    // Hide all team categories
+    document.querySelectorAll('.team-category').forEach(section => {
+      section.classList.add('hidden');
+    });
+
+    // Show selected category
+    const selected = document.getElementById(categoryId);
+    if (selected) {
+      selected.classList.remove('hidden');
+    }
+
+    // Remove active styles from all buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('text-white', 'shadow-xl', 'bg-blue-500', 'shadow-lg');
+      btn.classList.add('text-gray-700', 'hover:text-white-500', 'shadow-md', 'hover:shadow-xl');
+    });
+
+    // Add active style to clicked button
+    const activeBtn = [...document.querySelectorAll('.tab-btn')].find(btn => btn.getAttribute('onclick').includes(categoryId));
+    if (activeBtn) {
+      activeBtn.classList.add('bg-blue-500', 'text-white', 'shadow-lg');
+      activeBtn.classList.remove('text-gray-700');
+    }
+  }
+
+  // Initialize with IT Department visible
+  document.addEventListener('DOMContentLoaded', () => {
+    showTeam('IT_Department');
+  });

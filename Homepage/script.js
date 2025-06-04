@@ -5,20 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenu = document.getElementById("mobile-menu");
   const navLinks = document.querySelectorAll(".nav-links a");
   const companyName = document.querySelector(".company-name");
-  const dropdownBtn = document.getElementById('dropdownButton');
-  const dropdownMenu = document.getElementById('dropdownMenu');
 
-  // Dropdown toggle (if elements exist)
-  if (dropdownBtn && dropdownMenu) {
-    dropdownBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dropdownMenu.classList.toggle('hidden');
-    });
 
-    document.addEventListener('click', () => {
-      dropdownMenu.classList.add('hidden');
-    });
-  }
 
   // Toggle mobile menu (if elements exist)
   if (menuBtn && mobileMenu) {

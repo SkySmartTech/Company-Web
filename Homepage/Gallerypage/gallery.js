@@ -111,7 +111,7 @@ class PhotoGallery {
         // Handle browser back/forward buttons
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.substring(1);
-            if (hash && ['nature', 'urban', 'portraits'].includes(hash)) {
+            if (hash && ['Album1', 'Album2', 'Album3'].includes(hash)) {
                 this.showGallerySection(hash);
             } else {
                 this.showAlbumsOverview();
@@ -120,7 +120,7 @@ class PhotoGallery {
 
         // Handle initial load with hash
         const initialHash = window.location.hash.substring(1);
-        if (initialHash && ['nature', 'urban', 'portraits'].includes(initialHash)) {
+        if (initialHash && ['Album1', 'Album2', 'Album3'].includes(initialHash)) {
             setTimeout(() => {
                 this.showGallerySection(initialHash);
             }, 100);
