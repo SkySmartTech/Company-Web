@@ -38,3 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+  const helpBtn = document.getElementById('helpButton');
+  helpBtn.addEventListener('mouseover', () => {
+    helpBtn.style.boxShadow = '0 0 12px 4px rgba(0, 255, 255, 0.7), 0 0 20px 6px rgba(0, 255, 255, 0.5)';
+  });
+  helpBtn.addEventListener('mouseout', () => {
+    helpBtn.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+  });
+
+  helpBtn.addEventListener('click', () => {
+    window.location.href = '/help'; // Change to your help page
+  });

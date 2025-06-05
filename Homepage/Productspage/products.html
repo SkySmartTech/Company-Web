@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="products.css">
 </head>
 <body class="bg-white text-gray-800">
 
@@ -17,7 +17,7 @@
   <div class="flex items-center justify-between md:px-12 p-4">
     <!-- Logo -->
     <div class="flex items-center space-x-3">
-      <img src="img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32" />
+      <img src="../img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32" />
       <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
     </div>
 
@@ -53,67 +53,60 @@
 </header>
 
   <!-- 1. Hero Section -->
-<section id="hero" data-aos="fade-up" class="pt-40 bg-white text-center py-28 px-6">
-  <div class="relative z-10 mt-20"> 
-    <div class="flex items-center justify-center mb-4">
-      <h1 class="text-6xl md:text-8xl font-extrabold text-gray-900">Our</h1>
+<section id="hero" data-aos="fade-up" class="pt-45 bg-white text-white text-center py-28 px-6">
+  <div class="relative z-10 text-center opacity-100 animate-fade-up mt-20">
+    <div class="flex items-center justify-center space-x-6 mb-4">
+      <img src="../img/sky-smart-logo.png" alt="Company Logo" style="height: 240px; width: auto;" />
+      <h1 class="text-9xl font-extrabold text-blue-700">Products</h1>
     </div>
-    <div class="flex items-center justify-center mb-6">
-      <h1 class="text-6xl md:text-8xl font-extrabold text-blue-700">Clients & Partners</h1>
-    </div>
-    <p class="text-base md:text-lg max-w-3xl mx-auto text-gray-600">
-      Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+    <p class="text-sm max-w-xl mx-auto text-gray-600">
+    Founded in 2006, we’ve grown from LED lighting pioneers into a hub for electronics research, IoT-powered real-time monitoring, ANDON systems, and bespoke web applications. Serving South Asia and beyond, we deliver innovative solutions that exceed expectations.
     </p>
   </div>
 </section>
 
-<!-- 2. Partnership Section -->
-<section id="partnerships-clients" style="background: radial-gradient(circle, #0075FF 0%, #001C78 100%); padding: 60px 0;">
-  <div class="flex items-start">
-    <div class="ml-[350px] text-left">
-      <h2 class="text-white text-5xl font-semibold leading-snug" data-aos="fade-right">
-        A technology <a href="/partnership" class="text-[#80E1FF] hover:text-[#000247] transition">Partner</a> that<br />
-        Clears the Way.
-      </h2>
-    </div>
-    <div class="flex gap-6 ml-[250px]" data-aos="fade-left">
-      <div
-        class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]"
-      >
-        <img src="../img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Albums Overview -->
+<section class="albums-overview bg-gradient-to-b from-[#000C2E] to-[#001437]">
+            <h2 class="section-title">Products Category</h2>
+            <div class="albums-grid">
+                <!-- Album 1 --> 
+                <div class="album-card" data-target="Smart Andon System" >
+                    <div class="album-image">
+                        <img src="../img/Products_logo/product_1.jpg" />
+                        <div class="album-overlay">
+                            <h3 class="album-title">Smart Andon System</h3>
+                            <p class="album-count">Digital alert and monitoring tool used in factories to show real-time production status</p>
+                            <button class="view-album-btn">View Products</button>
+                        </div>
+                    </div>
+                </div>
 
-<section class="partners-section" data-aos="fade-up">
-  <div class="left-content">
-    <h2>Beyond Expectations: Personalized Service, Proven Impact</h2>
-    <div class="partners-grid">
-      <div class="partner-logo" data-aos="fade-up"><img src="../img/clients_logo/client_logo1.png" alt="Partner 1" /></div>
-      <div class="partner-logo2" data-aos="fade-up"><img src="../img/clients_logo/client_logo2.png" alt="Partner 2" /></div>
-      <div class="partner-logo3" data-aos="fade-up"><img src="../img/clients_logo/client_logo3.png" alt="Partner 3" /></div>
-    </div>
-  </div>
-  <div class="right-content">
-    <p>
-Empowering client relationships and delivering tailored solutions to achieve exceptional outcomes.
-Our commitment to understanding your needs and aligning with your vision creates meaningful impact, driving sustainable growth and innovation.
-    </p>
-    <div class="avatar-grid">
-      <div class="avatars">
-        <img src="../img/Avatar Images/avatar1.png" alt="Avatar 1" />
-        <img src="../img/Avatar Images/avatar2.png" alt="Avatar 2" />
-        <img src="../img/Avatar Images/avatar3.png" alt="Avatar 3" />
-        <img src="../img/Avatar Images/avatar4.png" alt="Avatar 4" />
-      </div>
-      <div class="cta">
-        <h3>Join the partners network</h3>
-        <button onclick="becomePartner()">Become a partner</button>
-      </div>
-    </div>
-  </div>
-</section>
+                <!-- Album 2-->
+                <div class="album-card" data-target="Software Development">
+                    <div class="album-image">
+                        <img src="../img/Products_logo/product_2.jpg" />
+                        <div class="album-overlay">
+                            <h3 class="album-title">Software Development</h3>
+                            <p class="album-count">designing, coding, testing, and maintaining computer programs and applications</p>
+                            <button class="view-album-btn">View Products</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album 3-->
+                <div class="album-card" data-target="Innovation">
+                    <div class="album-image">
+                        <img src="../img/Products_logo/product_3.jpg" />
+                        <div class="album-overlay">
+                            <h3 class="album-title">Innovation</h3>
+                            <p class="album-count">ocused on turning cutting‑edge ideas into practical solutions</p>
+                            <button class="view-album-btn">View Products</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 <button id="helpButton"
   class="fixed bottom-5 right-5 z-50 bg-white py-3 px-6 rounded-full shadow-lg flex items-center gap-2 transition duration-300 hover:brightness-125"
@@ -128,7 +121,7 @@ Our commitment to understanding your needs and aligning with your vision creates
 
     <!-- Expanded Logo & Description -->
     <div class="md:col-span-2">
-      <img src="img/sky-smart-logo.png" alt="Logo" class="h-20">
+      <img src="../img/sky-smart-logo.png" alt="Logo" class="h-20">
       <p class="text-gray-300 text-sm leading-relaxed max-w-md">
         Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
       </p>
@@ -185,11 +178,11 @@ Our commitment to understanding your needs and aligning with your vision creates
     <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto">
       <p>© Sky Smart Technology (Pvt) Ltd. All Rights Reserved.</p>
       <div class="flex space-x-4 mt-4 md:mt-0">
-        <a href="#"><img src="img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
-        <a href="#"><img src="img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
-        <a href="#"><img src="img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
-        <a href="#"><img src="img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
-        <a href="#"><img src="img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
+        <a href="#"><img src="../img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
+        <a href="#"><img src="../img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
+        <a href="#"><img src="../img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
+        <a href="#"><img src="../img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
+        <a href="#"><img src="../img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
       </div>
     </div>
   </div>
@@ -201,7 +194,7 @@ Our commitment to understanding your needs and aligning with your vision creates
 <script>AOS.init();</script>
 
 <!-- Your custom JavaScript file -->
-<script src="partnership.js"></script>
+<script src="product.js"></script>
 
 </body>
 </html>

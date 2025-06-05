@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sky Smart Technology-Company</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -22,24 +22,11 @@
     <!-- Nav Menu -->
     <nav class="hidden md:flex space-x-6 font-medium nav-links">
       <a href="../../index.html" class="hover:text-blue-500 transition">Home</a>
-      <a href="#company" class="hover:text-blue-600">Company</a>
+      <a href="../Companypage/company.html" class="hover:text-blue-600">Company</a>
       <a href="../Partnerspage/partnership.html" class="hover:text-blue-500 transition">Partnerships</a>
-      <a href="#products" class="hover:text-blue-500 transition">Products</a>
-
-      <!-- Dropdown -->
-      <div class="relative">
-        <button id="dropdownButton" class="hover:text-blue-500 font-semibold transition flex items-center gap-1">
-          Careers & Team
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div id="dropdownMenu" class="absolute left-0 mt-2 w-44 bg-white/50 backdrop-blur-md text-black rounded-lg shadow-lg hidden z-20">
-          <a href="/careers" class="block px-4 py-2 hover:bg-gray-100">Careers</a>
-          <a href="/team" class="block px-4 py-2 hover:bg-gray-100">Our Team</a>
-        </div>
-      </div>
-
+      <a href="../Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
+      <a href="../Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
+      <a href="#products" class="hover:text-blue-500 transition">Careers</a>
       <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
     </nav>
 
@@ -180,7 +167,7 @@
   </section> -->
 
 <section id="team-ceo" class="bg-blue-50 bg-opacity-95 py-20 px-4">
-  <div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.2)] p-10" data-aos="fade-up">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.2)] p-10" data-aos="fade-up">
     <div class="flex flex-col md:flex-row items-center gap-8">
       <!-- Image column -->
       <div class="w-[150px] md:w-4/12">
@@ -209,7 +196,7 @@
   </div>
 </div>
 
-<div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.2)] p-10 mt-20" data-aos="fade-up">
+<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.2)] p-10 mt-20" data-aos="fade-up">
   <div class="flex flex-col md:flex-row-reverse items-center gap-8">
     
     <!-- Image column (now on the right for md and above) -->
@@ -320,71 +307,107 @@
       <button onclick="showTeam('HW_Electronic_Tech')" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:text-white-500 shadow-md hover:shadow-xl">
         H/W Electronic & Tech
       </button>
-      <button onclick="showTeam('Production_Department')" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:text-white-500 shadow-md hover:shadow-xl">
-        Production Department
-      </button>
       <button onclick="showTeam('Finance_HR_Department')" class="tab-btn px-5 py-2 rounded-full text-sm font-semibold text-gray-700 hover:text-white-500 shadow-md hover:shadow-xl">
         Finance & HR Department
       </button>
     </div>
 
     <!-- IT Department-->
-<div id="IT_Department" class="team-category grid grid-cols-3 gap-x-2 gap-y-2">
-  <div class="text-center col-span-1">
-    <img src="../img/Team/7.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-    <h4 class="font-semibold text-lg">Malindu Liyanage</h4>
-    <p class="text-sm text-gray-500">Tech Lead</p>
+
+<div id="IT_Department" class="space-y-10">
+     <hr>
+     <h3 class="text-2xl font-bold text-center text-gray-800">IT Team Leads</h3>
+  <!-- Team Leads -->
+  <div id="IT_Team_Leads" class="team-category grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10" data-aos="fade-up">
+    <div class="text-center">
+      <img src="../img/Team/7.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Malindu Liyanage</h4>
+      <p class="text-sm text-gray-500">Tech Lead</p>
+    </div>
+    <div class="text-center">
+      <img src="../img/Team/12.png" alt="Project Manager" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Chandima Samarakoon</h4>
+      <p class="text-sm text-gray-500">Project Manager</p>
+    </div>
+    <div class="text-center">
+      <img src="../img/Team/6.png" alt="Fullstack Developer" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Tharaka Prasad</h4>
+      <p class="text-sm text-gray-500">Fullstack Developer</p>
+    </div>
   </div>
-  <div class="text-center col-span-1">
-    <img src="../img/Team/12.png" alt="Project Manager" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-    <h4 class="font-semibold text-lg">Chandima Samarakoon</h4>
-    <p class="text-sm text-gray-500">Project Manager</p>
+
+  <!-- Full Stack Interns -->
+   <hr>
+     <h3 class="text-2xl font-bold text-center text-gray-800">Fullstack Interns</h3>
+  <div id="IT_fullstack_Interns" class="team-category grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10"  data-aos="fade-up">
+    <div class="text-center">
+      <img src="../img/Team/4.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Akila Manujitha</h4>
+      <p class="text-sm text-gray-500">Fullstack Intern</p>
+    </div>
+    <div class="text-center">
+      <img src="../img/Team/1.png" alt="Project Manager" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Sewmini Hewage</h4>
+      <p class="text-sm text-gray-500">Fullstack Intern</p>
+    </div>
+    <div class="text-center">
+      <img src="../img/Team/5.png" alt="Fullstack Developer" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Shiranthika Udayangani</h4>
+      <p class="text-sm text-gray-500">Fullstack Intern</p>
+    </div>
   </div>
-  <div class="text-center col-span-1">
-    <img src="../img/Team/6.png" alt="Fullstack Developer" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-    <h4 class="font-semibold text-lg">Tharaka Prasad</h4>
-    <p class="text-sm text-gray-500">Fullstack Developer</p>
-  </div>
-  <div class="text-center col-span-1">
-    <img src="../img/Team/10.png" alt="Consultant1" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-    <h4 class="font-semibold text-lg">Shanika Jayasinghe</h4>
-    <p class="text-sm text-gray-500">Consultant 1</p>
-  </div>
-  <div class="text-center col-span-1">
-    <img src="../img/Team/11.png" alt="Consultant2" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-    <h4 class="font-semibold text-lg">Nishen Sasanka</h4>
-    <p class="text-sm text-gray-500">Consultant 2</p>
+
+  <!-- Front end Interns -->
+     <hr>
+  <div id="IT_frontend_Interns" class="team-category grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-10"  data-aos="fade-up">
+    <div class="text-center">
+      <h3 class="text-2xl font-bold text-center mb-10 text-gray-800">Frontend Intern</h3>
+      <img src="../img/Team/9.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Praveen Nayanajith</h4>
+      <p class="text-sm text-gray-500">Frontend Intern</p>
+    </div>
+   <div class="text-center">
+      <h3 class="text-2xl font-bold text-center mb-10  text-gray-800">Web Developer Intern</h3>
+      <img src="../img/Team/8.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Nilmi Sarathchandra</h4>
+      <p class="text-sm text-gray-500">Web Developer Intern</p>
+    </div>
+       <div class="text-center">
+      <h3 class="text-2xl font-bold text-center mb-10  text-gray-800">Quality Assurance Intern</h3>
+      <img src="../img/Team/10.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Deshan Cooray</h4>
+      <p class="text-sm text-gray-500">Quality Assurance Intern</p>
+    </div>
+       <div class="text-center">
+      <h3 class="text-2xl font-bold text-center mb-10  text-gray-800">UI/UX Designer Intern</h3>
+      <img src="../img/Team/3.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Chathuranga Dissanayaka</h4>
+      <p class="text-sm text-gray-500">UI/UX Designer Intern</p>
+    </div>
+    <div class="text-center">
+      <img src="../img/Team/2.png" alt="Tech Lead" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+      <h4 class="text-black font-semibold text-lg">Thisath Achintha Bandara</h4>
+    </div>
   </div>
 </div>
 
     <!-- H/W Electronic & Tech -->
-    <div id="HW_Electronic_Tech" class="team-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <div id="HW_Electronic_Tech" class="team-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-8">
       <div class="text-center">
-        <img src="/team4.webp" alt="Hardware Engineer" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-        <h4 class="font-semibold text-lg">Nimal Perera</h4>
-        <p class="text-sm text-gray-500">Hardware Engineer</p>
+        <img src="../img/Team/13.png" alt="Hardware Engineer" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+        <h4 class="text-black font-semibold text-lg">Duleepa Kumara</h4>
+        <p class="text-sm text-gray-500">H/W Electronic Engineerr</p>
       </div>
-      <!-- Add more members... -->
     </div>
 
-    <!-- Production Department -->
-    <div id="Production_Department" class="team-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-      <div class="text-center">
-        <img src="/team5.webp" alt="Production Manager" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-        <h4 class="font-semibold text-lg">Kamal Silva</h4>
-        <p class="text-sm text-gray-500">Production Manager</p>
-      </div>
-      <!-- Add more members... -->
-    </div>
 
     <!-- Finance & HR Department -->
-    <div id="Finance_HR_Department" class="team-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <div id="Finance_HR_Department" class="team-category hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-8">
       <div class="text-center">
-        <img src="/team6.webp" alt="HR Manager" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
-        <h4 class="font-semibold text-lg">Samantha Jayasuriya</h4>
-        <p class="text-sm text-gray-500">HR Manager</p>
+        <img src="../img/Team/11.png" alt="HR Manager" class="w-40 h-40 mx-auto rounded-full object-cover mb-4">
+        <h4 class="text-black font-semibold text-lg">Vishmi Sandamali</h4>
+        <p class="text-sm text-gray-500">Account Assistant</p>
       </div>
-      <!-- Add more members... -->
     </div>
   </div>
   </section>
@@ -403,6 +426,7 @@
   </div>
 
   </section>
+
 
 <!-- 6. Contact Us Section -->
 <section id="contact" class="bg-gray-100 py-20 px-6">
@@ -430,6 +454,13 @@
     </div>
   </div>
 </section>
+
+
+<button id="helpButton"
+  class="fixed bottom-5 right-5 z-50 bg-white py-3 px-6 rounded-full shadow-lg flex items-center gap-2 transition duration-300 hover:brightness-125"
+  style="transition: box-shadow 0.3s ease;">
+  <img src="../img/support.png" alt="Help Icon" class="w-5 h-5">
+</button>
 
 
 

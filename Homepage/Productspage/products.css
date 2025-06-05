@@ -1,0 +1,198 @@
+/* --------- foundation --------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  min-height: 100vh;
+}
+
+/* container + heading */
+.main-container {
+  margin-top: 100px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  color: rgb(6, 37, 160);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 450;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+}
+
+
+/* --------- album grid --------- */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+  padding: 0 1rem;
+}
+
+.album-card {
+  width: 100%;
+  max-width: 450px;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all .3s ease;
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .2);
+  margin: 0 auto;
+}
+
+.album-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
+}
+
+/* cover image */
+.album-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.album-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.album-card:hover .album-image img {
+  transform: scale(1.1);
+}
+
+/* overlay info */
+.album-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  color: #fff;
+}
+
+.album-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.album-count {
+  font-size: 1rem;
+  opacity: .8;
+  margin-bottom: 1rem;
+}
+
+.view-album-btn {
+  background: rgba(255, 255, 255, .2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .3);
+  padding: .75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all .3s ease;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.view-album-btn:hover {
+  background: rgba(255, 255, 255, .3);
+  transform: translateY(-2px);
+}
+
+/* --------- gallery sections --------- */
+.gallery-section {
+  display: none;
+  animation: fadeIn .5s ease-in-out;
+}
+
+.gallery-section.active {
+  display: block;
+}
+
+/* header inside each gallery section */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  background: rgba(0, 0, 0, .2);
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, .3);
+  padding: .75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all .3s ease;
+  font-size: 1rem;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, .3);
+  transform: translateY(-2px);
+}
+
+/* animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.albums-overview {
+  animation: fadeIn .5s ease-in-out;
+}
+
+/* --------- quick responsiveness --------- */
+@media (max-width: 768px) {
+  .main-container {
+    margin-top: 140px;
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .albums-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .album-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .album-image {
+    height: 200px;
+  }
+}

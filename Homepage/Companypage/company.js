@@ -1,7 +1,5 @@
-// main.js
-
-// Counter animation on scroll
 document.addEventListener("DOMContentLoaded", () => {
+  // Counter animation (unchanged)
   const counters = document.querySelectorAll(".counter");
   const speed = 200;
 
@@ -30,11 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.5 });
 
-  counters.forEach((counter) => {
-    observer.observe(counter);
-  });
+  counters.forEach((counter) => observer.observe(counter));
 
-  // Mobile menu & dropdown toggle
+  // Mobile menu & dropdown
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const dropdownBtn = document.getElementById('dropdownButton');
@@ -57,35 +53,42 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Show IT Department by default
+  showTeam('IT_Department');
 });
 
-  function showTeam(categoryId) {
-    // Hide all team categories
-    document.querySelectorAll('.team-category').forEach(section => {
-      section.classList.add('hidden');
-    });
+function showTeam(deptId) {
+  // Hide all departments
+  ['IT_Department', 'HW_Electronic_Tech', 'Finance_HR_Department'].forEach(id => {
+    const section = document.getElementById(id);
+    if (section) section.classList.add('hidden');
+  });
 
-    // Show selected category
-    const selected = document.getElementById(categoryId);
-    if (selected) {
-      selected.classList.remove('hidden');
+  // Show the selected department
+  const selected = document.getElementById(deptId);
+  if (selected) selected.classList.remove('hidden');
+
+  // Style buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('bg-blue-500', 'text-white', 'shadow-lg');
+    btn.classList.add('text-gray-700', 'hover:text-white-500', 'shadow-md', 'hover:shadow-xl');
+
+    if (btn.getAttribute('onclick')?.includes(deptId)) {
+      btn.classList.add('bg-blue-500', 'text-white', 'shadow-lg');
+      btn.classList.remove('text-gray-700');
     }
+  });
+}
 
-    // Remove active styles from all buttons
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.remove('text-white', 'shadow-xl', 'bg-blue-500', 'shadow-lg');
-      btn.classList.add('text-gray-700', 'hover:text-white-500', 'shadow-md', 'hover:shadow-xl');
-    });
+  const helpBtn = document.getElementById('helpButton');
+  helpBtn.addEventListener('mouseover', () => {
+    helpBtn.style.boxShadow = '0 0 12px 4px rgba(0, 255, 255, 0.7), 0 0 20px 6px rgba(0, 255, 255, 0.5)';
+  });
+  helpBtn.addEventListener('mouseout', () => {
+    helpBtn.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+  });
 
-    // Add active style to clicked button
-    const activeBtn = [...document.querySelectorAll('.tab-btn')].find(btn => btn.getAttribute('onclick').includes(categoryId));
-    if (activeBtn) {
-      activeBtn.classList.add('bg-blue-500', 'text-white', 'shadow-lg');
-      activeBtn.classList.remove('text-gray-700');
-    }
-  }
-
-  // Initialize with IT Department visible
-  document.addEventListener('DOMContentLoaded', () => {
-    showTeam('IT_Department');
+  helpBtn.addEventListener('click', () => {
+    window.location.href = '/help'; // Change to your help page
   });
