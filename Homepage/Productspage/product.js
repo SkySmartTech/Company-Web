@@ -15,81 +15,77 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-  const helpBtn = document.getElementById('helpButton');
-  helpBtn.addEventListener('mouseover', () => {
-    helpBtn.style.boxShadow = '0 0 12px 4px rgba(0, 255, 255, 0.7), 0 0 20px 6px rgba(0, 255, 255, 0.5)';
+
+  function showProductCategory(categoryId) {
+    ['andon', 'software', 'innovation'].forEach(id => {
+      const section = document.getElementById(id);
+      if (section) section.classList.add('hidden');
+    });
+
+    const selected = document.getElementById(categoryId);
+    if (selected) selected.classList.remove('hidden');
+  }
+
+  // Show default category
+  document.addEventListener("DOMContentLoaded", () => {
+    showProductCategory('andon');
   });
-  helpBtn.addEventListener('mouseout', () => {
-    helpBtn.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+
+
+    function openProductModal(card) {
+    const modal = document.getElementById('productModal');
+    modal.querySelector('#modalTitle').textContent = card.dataset.title;
+    modal.querySelector('#modalImg').src = card.dataset.img;
+    modal.querySelector('#modalImg').alt = card.dataset.title;
+    modal.querySelector('#modalDesc').textContent = card.dataset.desc;
+    modal.querySelector('#modalLink').href = card.dataset.link;
+    modal.classList.remove('hidden');
+  }
+
+  function closeProductModal() {
+    document.getElementById('productModal').classList.add('hidden');
+  }
+
+  // Close when clicking outside the modal content
+  document.getElementById('productModal').addEventListener('click', e => {
+    if (e.target.id === 'productModal') closeProductModal();
   });
 
-  helpBtn.addEventListener('click', () => {
-    window.location.href = '/help'; // Change to your help page
+
+  const helpButton = document.getElementById('helpButton');
+  const pdfModal = document.getElementById('pdfModal');
+  const closeModal = document.getElementById('closeModal');
+  const docSelect = document.getElementById('docSelect');
+  const pdfViewer = document.getElementById('pdfViewer');
+  const videoViewer = document.getElementById('videoViewer');
+  const downloadLink = document.getElementById('downloadLink');
+
+  helpButton.addEventListener('click', () => {
+    pdfModal.classList.remove('hidden');
   });
 
-class PhotoGallery {
-    constructor() {
-        this.init();
+  closeModal.addEventListener('click', () => {
+    pdfModal.classList.add('hidden');
+    videoViewer.pause(); // Stop video if modal is closed
+  });
+
+  docSelect.addEventListener('change', () => {
+    const selected = docSelect.value;
+
+    if (selected.endsWith('.pdf')) {
+      // Show PDF
+      pdfViewer.classList.remove('hidden');
+      videoViewer.classList.add('hidden');
+      pdfViewer.src = selected;
+      downloadLink.href = selected;
+      downloadLink.classList.remove('hidden');
+    } else if (selected.endsWith('.mp4')) {
+      // Show Video
+      videoViewer.classList.remove('hidden');
+      pdfViewer.classList.add('hidden');
+      videoViewer.querySelector('source').src = selected;
+      videoViewer.load();
+      videoViewer.play();
+      downloadLink.classList.add('hidden'); // No download for videos
     }
-
-    init() {
-        this.setupEventListeners();
-        this.showAlbumsOverview();
-    }
-
-    setupEventListeners() {
-        // Album card clicks
-        const albumCards = document.querySelectorAll('.album-card');
-        albumCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const target = card.getAttribute('data-target');
-                this.showGallerySection(target);
-            });
-        });
-    }
-
-    showAlbumsOverview() {
-        const albumsOverview = document.querySelector('.albums-overview');
-        albumsOverview.style.display = 'block';
-
-        // Hide all gallery sections
-        const gallerySections = document.querySelectorAll('.gallery-section');
-        gallerySections.forEach(section => section.classList.remove('active'));
-
-        this.scrollToTop();
-        window.location.hash = '';
-    }
-
-    showGallerySection(sectionId) {
-        const albumsOverview = document.querySelector('.albums-overview');
-        albumsOverview.style.display = 'none';
-
-        const gallerySections = document.querySelectorAll('.gallery-section');
-        gallerySections.forEach(section => section.classList.remove('active'));
-
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.classList.add('active');
-            setTimeout(() => {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 100);
-
-            window.location.hash = sectionId;
-        }
-    }
-
-    scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Initialize on DOM load
-document.addEventListener('DOMContentLoaded', () => {
-    new PhotoGallery();
-});
+  });

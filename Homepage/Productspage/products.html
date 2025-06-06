@@ -67,69 +67,264 @@
   </div>
 </section>
 
-        <!-- Albums Overview -->
-<section class="albums-overview bg-gradient-to-b from-[#000C2E] to-[#001437]">
-            <h2 class="section-title">Products Category</h2>
-            <div class="albums-grid">
-                <!-- Album 1 --> 
-                <div class="album-card" data-target="Smart Andon System" >
-                    <div class="album-image">
-                        <img src="../img/Products_logo/product_1.jpg" />
-                        <div class="album-overlay">
-                            <h3 class="album-title">Smart Andon System</h3>
-                            <p class="album-count">Digital alert and monitoring tool used in factories to show real-time production status</p>
-                            <button class="view-album-btn">View Products</button>
-                        </div>
-                    </div>
-                </div>
+<section class="bg-blue-100 py-16">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-blue-900">Explore <span class="text-blue-600">Our Products</span></h2>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+        Discover our innovative solutions driving industry transformation.
+      </p>
+    </div>
 
-                <!-- Album 2-->
-                <div class="album-card" data-target="Software Development">
-                    <div class="album-image">
-                        <img src="../img/Products_logo/product_2.jpg" />
-                        <div class="album-overlay">
-                            <h3 class="album-title">Software Development</h3>
-                            <p class="album-count">designing, coding, testing, and maintaining computer programs and applications</p>
-                            <button class="view-album-btn">View Products</button>
-                        </div>
-                    </div>
-                </div>
+    <!-- Category Image Buttons -->
+    <div class="flex justify-center flex-wrap gap-6 mb-10">
+      <div onclick="showProductCategory('andon')" class="cursor-pointer text-center">
+        <img src="../img/Products_logo/product_1.jpg" alt="Smart Andon" class="w-40 h-40 rounded-full object-cover border-4 border-blue-200 hover:border-blue-600 transition-all duration-300">
+        <p class="mt-2 font-semibold text-gray-800">Smart Andon</p>
+      </div>
+      <div onclick="showProductCategory('software')" class="cursor-pointer text-center">
+        <img src="../img/Products_logo/product_2.jpg" alt="Software Dev" class="w-40 h-40 rounded-full object-cover border-4 border-blue-200 hover:border-blue-600 transition-all duration-300">
+        <p class="mt-2 font-semibold text-gray-800">Software Development</p>
+      </div>
+      <div onclick="showProductCategory('innovation')" class="cursor-pointer text-center">
+        <img src="../img/Products_logo/product_3.jpg" alt="Innovation" class="w-40 h-40 rounded-full object-cover border-4 border-blue-200 hover:border-blue-600 transition-all duration-300">
+        <p class="mt-2 font-semibold text-gray-800">Innovation</p>
+      </div>
+    </div>
 
-                <!-- Album 3-->
-                <div class="album-card" data-target="Innovation">
-                    <div class="album-image">
-                        <img src="../img/Products_logo/product_3.jpg" />
-                        <div class="album-overlay">
-                            <h3 class="album-title">Innovation</h3>
-                            <p class="album-count">ocused on turning cutting‑edge ideas into practical solutions</p>
-                            <button class="view-album-btn">View Products</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Smart Andon -->
+<div id="andon"
+     class="product-category grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+     data-aos="fade-up">
 
-<section id="smart-andon-system" class="gallery-section hidden">
-    <button class="text-white bg-blue-600 p-2 rounded mb-4">← Back to Products</button>
-    <!-- Products for Smart Andon System -->
+  <!-- Lite Package -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Smart Andon System Lite Package"
+       data-img="../img/Products_logo/product_1.jpg"
+       data-desc="Entry‑level Andon kit for quick line‑stop alerts and real‑time status lights."
+       data-link="https://example.com/andon-lite"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_1.jpg" alt="Andon Lite"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Smart Andon System Lite Package</h4>
+    <p class="text-sm text-gray-600">Real‑time floor‑level monitoring</p>
+  </div>
+
+  <!-- Essential Package -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Smart Andon System Essential Package"
+       data-img="../img/Products_logo/product_1.jpg"
+       data-desc="Includes wireless call buttons, dashboard display, and email/SMS escalation."
+       data-link="https://example.com/andon-essential"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_1.jpg" alt="Andon Essential"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Smart Andon System Essential Package</h4>
+    <p class="text-sm text-gray-600">Alerts • Dashboard • Escalation</p>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Smart Andon System Premium Package"
+       data-img="../img/Products_logo/product_1.jpg"
+       data-desc="Full‑featured Andon suite with OEE analytics, API integration, and cloud reports."
+       data-link="https://example.com/andon-premium"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_1.jpg" alt="Andon Premium"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Smart Andon System Premium Package</h4>
+    <p class="text-sm text-gray-600">OEE • Cloud Analytics</p>
+  </div>
+
+</div>
+
+<div id="software"
+     class="product-category hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+     data-aos="fade-up">
+
+  <!-- Product 1 -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Software Development 1"
+       data-img="../img/Products_logo/product_2.jpg"
+       data-desc="Custom ERP with real-time floor-level monitoring for manufacturing processes."
+       data-link="https://example.com/demo1"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_2.jpg" alt="Software Development 1"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Software Development 1</h4>
+    <p class="text-sm text-gray-600">ERP • Real-time monitoring</p>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Software Development 2"
+       data-img="../img/Products_logo/product_2.jpg"
+       data-desc="Mobile app for warehouse inventory management with barcode scanning."
+       data-link="https://example.com/demo2"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_2.jpg" alt="Software Development 2"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Software Development 2</h4>
+    <p class="text-sm text-gray-600">Inventory • Mobile App</p>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Software Development 3"
+       data-img="../img/Products_logo/product_2.jpg"
+       data-desc="Dashboard solution for production KPIs and machine utilization tracking."
+       data-link="https://example.com/demo3"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_2.jpg" alt="Software Development 3"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Software Development 3</h4>
+    <p class="text-sm text-gray-600">Dashboard • KPI Tracking</p>
+  </div>
+
+  <!-- Product 4 -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Software Development 4"
+       data-img="../img/Products_logo/product_2.jpg"
+       data-desc="HR management system including employee attendance and payroll."
+       data-link="https://example.com/demo4"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_2.jpg" alt="Software Development 4"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Software Development 4</h4>
+    <p class="text-sm text-gray-600">HR • Payroll</p>
+  </div>
+
+  <!-- Product 5 -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Software Development 5"
+       data-img="../img/Products_logo/product_2.jpg"
+       data-desc="Customer support ticketing system integrated with WhatsApp and email."
+       data-link="https://example.com/demo5"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_2.jpg" alt="Software Development 5"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Software Development 5</h4>
+    <p class="text-sm text-gray-600">Support • Integration</p>
+  </div>
+
+  <!-- Product 6 -->
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Software Development 6"
+       data-img="../img/Products_logo/product_2.jpg"
+       data-desc="Manufacturing execution system (MES) for batch tracking and analytics."
+       data-link="https://example.com/demo6"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_2.jpg" alt="Software Development 6"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Software Development 6</h4>
+    <p class="text-sm text-gray-600">MES • Batch Analytics</p>
+  </div>
+</div>
+
+<!-- SHARED MODAL WINDOW -->
+<div id="productModal"
+     class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/40 backdrop-blur-sm">
+
+  <div class="bg-white rounded-xl shadow-xl w-11/12 max-w-lg relative p-6">
+    <!-- close button -->
+    <button onclick="closeProductModal()"
+            class="absolute top-3 right-3 text-gray-500 hover:text-gray-900 text-2xl">
+      ✕
+    </button>
+
+    <!-- modal image -->
+    <img id="modalImg" src="" alt=""
+         class="w-full h-60 object-cover rounded-md mb-4">
+
+    <!-- modal title -->
+    <h3 id="modalTitle" class="text-2xl font-bold text-blue-900 mb-2"></h3>
+
+    <!-- modal description -->
+    <p id="modalDesc" class="text-gray-600 mb-6"></p>
+
+    <!-- demo link -->
+    <a id="modalLink"
+       href="#"
+       target="_blank"
+       class="inline-block bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition">
+       View Demo
+    </a>
+  </div>
+</div>
+
+    <!-- Innovation -->
+<div id="innovation" class="product-category hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" data-aos="fade-up">
+
+  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Automated Quality Inspection"
+       data-img="../img/Products_logo/product_3.jpg"
+       data-desc="A computer vision solution that detects product defects in real-time with high precision and minimal human intervention."
+       data-link="https://example.com/innovation-demo"
+       onclick="openProductModal(this)">
+       
+    <img src="../img/Products_logo/product_3.jpg" alt="Innovation"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Innovation</h4>
+    <p class="text-sm text-gray-600">Automated quality inspection powered by computer vision.</p>
+  </div>
+
+</div>
 </section>
 
-<section id="software-development" class="gallery-section hidden">
-    <button class=" text-white bg-blue-600 p-2 rounded mb-4">← Back to Products</button>
-    <!-- Products for Software Development -->
-</section>
 
-<section id="innovation" class="gallery-section hidden">
-    <button class=" text-white bg-blue-600 p-2 rounded mb-4">← Back to Products</button>
-    <!-- Products for Innovation -->
-</section>
-
-
+<!-- Help Button -->
 <button id="helpButton"
-  class="fixed bottom-5 right-5 z-50 bg-white py-3 px-6 rounded-full shadow-lg flex items-center gap-2 transition duration-300 hover:brightness-125"
-  style="transition: box-shadow 0.3s ease;">
+  class="fixed bottom-5 right-5 z-50 bg-white py-3 px-6 rounded-full shadow-lg flex items-center gap-2 hover:brightness-125">
   <img src="../img/support.png" alt="Help Icon" class="w-5 h-5">
+  <span class="text-sm font-semibold text-blue-900">Help</span>
 </button>
+
+<!-- Modal -->
+<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+  <div class="bg-white w-[95%] max-w-5xl rounded-xl shadow-lg p-6 relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+    <h2 class="text-xl font-bold text-blue-900 mb-4">Help Center</h2>
+
+    <!-- Category Selector -->
+    <div class="mb-4">
+      <label for="docSelect" class="text-sm font-medium text-gray-700">Select a document or video:</label>
+      <select id="docSelect" class="ml-2 border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
+        <optgroup label="01. User Manuals">
+          <option value="../Resources/Andon Operation Manual.pdf">Andon Operation Manual</option>
+          <option value="../Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start_Guide</option>
+          <option value="../Resources/Andon System premio (Tab System).pdf">Andon System Premio Tab</option>
+          <option value="../Resources/Andon Wiring Diagram.pdf">Andon Wiring Diagram</option>
+          <option value="../Resources/Centralized DT Monitoring System - Operation.pdf">Centralized DT Monitoring System</option>
+          <option value="../Resources/DCS1447A_320 Error Code Keypad User Manual.pdf">DCS1447A 320 Error Code</option>
+          <option value="../Resources/DCS1447A_330 Department Display User Manual.pdf">DCS1447A 330 Department Display</option>
+          <option value="../Resources/Electronic Andon User Guid-96res.pdf">Electronic Andon User Guide</option>
+          <option value="../Resources/How to Configure Tab Wi-Fi Setting.pdf">Tab WiFi Setting Guide</option>
+          <option value="../Resources/Smart Andon System-Overview.pdf">Smart Andon Overview</option>
+          <option value="../Resources/WIFI_Module_User_Manual.pdf">WIFI Module User Manual</option>
+        </optgroup>
+        <optgroup label="02. Setup Guides">
+          <option value="../Resources/Team Viewer Start Guide.pdf">Team Viewer Start Guide</option>
+        </optgroup>
+        <optgroup label="03. Setup Guide Videos">
+          <option value="https://www.youtube.com/watch?v=7zjlF_WhlJg&t=4s">Counters_QCO_CDD-2002A</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Viewer Area -->
+    <div id="viewerArea" class="w-full h-[500px] border rounded-lg shadow">
+      <embed id="pdfViewer" src="docs/andon-software-guide.pdf" type="application/pdf" class="w-full h-full hidden" />
+      <video id="videoViewer" controls class="w-full h-full hidden rounded-lg">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Download Link -->
+    <a id="downloadLink" href="docs/andon-software-guide.pdf" download
+      class="block text-blue-600 text-sm mt-3 hover:underline">Download this file</a>
+  </div>
+</div>
 
 
    <!-- Footer section -->
