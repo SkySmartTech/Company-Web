@@ -13,23 +13,6 @@ if (menuBtn && mobileMenu) {
   });
 }
 
-// Dropdown toggle
-const dropdownBtn = document.getElementById('dropdownButton');
-const dropdownMenu = document.getElementById('dropdownMenu');
-
-if (dropdownBtn && dropdownMenu) {
-  dropdownBtn.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('hidden');
-  });
-
-  // Hide dropdown if click outside
-  window.addEventListener('click', (e) => {
-    if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-      dropdownMenu.classList.add('hidden');
-    }
-  });
-}
-
 
   const helpBtn = document.getElementById('helpButton');
   helpBtn.addEventListener('mouseover', () => {

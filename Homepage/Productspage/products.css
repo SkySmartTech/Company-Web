@@ -119,14 +119,15 @@ body {
 }
 
 /* --------- gallery sections --------- */
+
 .gallery-section {
   display: none;
-  animation: fadeIn .5s ease-in-out;
 }
 
 .gallery-section.active {
   display: block;
 }
+
 
 /* header inside each gallery section */
 .section-header {

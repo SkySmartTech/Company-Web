@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('show');
+    } else {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('show');
+    }
+  });
+});
+
+
 // Gallery JavaScript
 class PhotoGallery {
     constructor() {

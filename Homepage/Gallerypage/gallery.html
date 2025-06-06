@@ -5,20 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery</title>
     <link rel="stylesheet" href="gallery.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
-    <!-- Header -->
-  <header class="header">
-    <div class="logo-title">
-    <img src="../img/sky-smart-logo.png" alt="Company Logo" />
-    <h1 class="header-title">Photo Gallery</h1>
-  </div>
-    <nav class="nav">
-      <a href="/album1" class="nav-link">Album 1</a>
-      <a href="/album2" class="nav-link">Album 2</a>
-      <a href="/album3" class="nav-link">Album 3</a>
+ <header id="site-header" class="fixed w-full top-0 z-10 bg-white text-black shadow-md">
+  <div class="flex items-center justify-between md:px-12 p-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <a href="../../index.html">
+            <img src="../img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32">
+        </a>
+      <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
+    </div>
+
+    <!-- Nav Menu -->
+    <nav class="hidden md:flex space-x-6 font-medium nav-links">
+      <a href="../../index.html" class="hover:text-blue-500 transition">Home</a>
+      <a href="../Companypage/company.html" class="hover:text-blue-600">Company</a>
+      <a href="../Partnerspage/partnership.html" class="hover:text-blue-500 transition">Partnerships</a>
+      <a href="../Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
+      <a href="../Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
+      <a href="#products" class="hover:text-blue-500 transition">Careers</a>
+      <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
     </nav>
-  </header>
+
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden focus:outline-none text-black">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 bg-white text-black py-4">
+    <a href="#home" class="hover:text-blue-600">Home</a>
+    <a href="#company" class="hover:text-blue-600">Company</a>
+    <a href="#partnerships" class="hover:text-blue-600">Partnerships</a>
+    <a href="#products" class="hover:text-blue-600">Products</a>
+    <a href="#careers" class="hover:text-blue-600">Careers & Team</a>
+    <a href="#cart" class="hover:text-blue-600">Cart</a>
+  </div>
+</header>
 
     <!-- Main Gallery Section -->
     <main class="main-container">
@@ -27,7 +59,7 @@
             <h2 class="section-title">Featured Albums</h2>
             <div class="albums-grid">
                 <!-- Album 1 -->
-                <div class="album-card" data-target="nature">
+                <div class="album-card" data-target="Album1">
                     <div class="album-image">
                         <img src="../img/hero1.png" />
                         <div class="album-overlay">
@@ -39,7 +71,7 @@
                 </div>
 
                 <!-- Album 2-->
-                <div class="album-card" data-target="urban">
+                <div class="album-card" data-target="Album2">
                     <div class="album-image">
                         <img src="../img/hero2.png" />
                         <div class="album-overlay">
@@ -51,7 +83,7 @@
                 </div>
 
                 <!-- Album 3-->
-                <div class="album-card" data-target="portraits">
+                <div class="album-card" data-target="Album3">
                     <div class="album-image">
                         <img src="../img/hero3.png" />
                         <div class="album-overlay">

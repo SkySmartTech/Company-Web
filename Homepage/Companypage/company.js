@@ -92,3 +92,5 @@ function showTeam(deptId) {
   helpBtn.addEventListener('click', () => {
     window.location.href = '/help'; // Change to your help page
   });
+
+  
