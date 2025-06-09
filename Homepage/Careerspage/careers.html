@@ -6,6 +6,7 @@
     <title>Careers - Join Our Team</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="careers.css">
+    <link rel="stylesheet" href="../helpbutton.css">
 </head>
 <body class="bg-gray-50">
       <!-- Header -->
@@ -295,6 +296,61 @@
             </div>
         </div>
     </section>
+
+<!-- Help Button -->
+<button id="helpButton"
+  class="fixed bottom-5 right-5 z-50 bg-white py-3 px-6 rounded-full shadow-lg flex items-center gap-2 hover:brightness-125">
+  <img src="../img/support.png" alt="Help Icon" class="w-5 h-5">
+  <span class="text-sm font-semibold text-blue-900">Help</span>
+</button>
+
+<!-- Help Modal -->
+<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+  <div class="bg-white w-[95%] max-w-5xl rounded-xl shadow-lg p-6 relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+    <h2 class="text-xl font-bold text-blue-900 mb-4">Help Center</h2>
+
+    <!-- Dropdown -->
+    <div class="mb-4">
+      <label for="docSelect" class="text-sm font-medium text-gray-700">Select a document or video:</label>
+      <select id="docSelect" class="ml-2 border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
+        <optgroup label="01. User Manuals">
+          <option value="Homepage/Resources/Andon Operation Manual.pdf">Andon Operation Manual</option>
+          <option value="Homepage/Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start_Guide</option>
+          <option value="Homepage/Resources/Andon System premio (Tab System).pdf">Andon System Premio Tab</option>
+          <option value="Homepage/Resources/Andon Wiring Diagram.pdf">Andon Wiring Diagram</option>
+          <option value="Homepage/Resources/Centralized DT Monitoring System - Operation.pdf">Centralized DT Monitoring System</option>
+          <option value="Homepage/Resources/DCS1447A_320 Error Code Keypad User Manual.pdf">DCS1447A 320 Error Code</option>
+          <option value="Homepage/Resources/DCS1447A_330 Department Display User Manual.pdf">DCS1447A 330 Department Display</option>
+          <option value="Homepage/Resources/Electronic Andon User Guid-96res.pdf">Electronic Andon User Guide</option>
+          <option value="Homepage/Resources/How to Configure Tab Wi-Fi Setting.pdf">Tab WiFi Setting Guide</option>
+          <option value="Homepage/Resources/Smart Andon System-Overview.pdf">Smart Andon Overview</option>
+          <option value="Homepage/Resources/WIFI_Module_User_Manual.pdf">WIFI Module User Manual</option>
+        </optgroup>
+        <optgroup label="02. Setup Guides">
+          <option value="Homepage/Resources/Team Viewer Start Guide.pdf">Team Viewer Start Guide</option>
+        </optgroup>
+        <optgroup label="03. Setup Guide Videos">
+          <option value="https://www.youtube.com/watch?v=7zjlF_WhlJg&t=4s">Counters_QCO_CDD-2002A</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Viewers -->
+    <div class="w-full h-[500px] border rounded-lg shadow">
+      <embed id="pdfViewer" type="application/pdf" class="w-full h-full hidden" />
+      <video id="videoViewer" controls class="w-full h-full hidden rounded-lg">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Download -->
+    <a id="downloadLink" href="" download class="block text-blue-600 text-sm mt-3 hover:underline hidden">Download this file</a>
+  </div>
+</div>
+
+
    <!-- Footer section -->
 <footer class="bg-gradient-to-b from-[#000C2E] to-[#001437] text-white pt-10 px-10">
 <div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-10 text-sm pb-10">
@@ -370,5 +426,6 @@
 
 
     <script src="careers.js"></script>
+    <script src="../helpbutton.js"></script>
 </body>
 </html>

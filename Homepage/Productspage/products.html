@@ -341,7 +341,7 @@
   <span class="text-sm font-semibold text-blue-900">Help</span>
 </button>
 
-<!-- Help Modal -->
+<!-- Modal -->
 <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
   <div class="bg-white w-[95%] max-w-5xl rounded-xl shadow-lg p-6 relative">
     <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
@@ -353,8 +353,16 @@
       <select id="docSelect" class="ml-2 border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
         <optgroup label="01. User Manuals">
           <option value="../Resources/Andon Operation Manual.pdf">Andon Operation Manual</option>
-          <option value="../Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start Guide</option>
+          <option value="../Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start_Guide</option>
           <option value="../Resources/Andon System premio (Tab System).pdf">Andon System Premio Tab</option>
+          <option value="../Resources/Andon Wiring Diagram.pdf">Andon Wiring Diagram</option>
+          <option value="../Resources/Centralized DT Monitoring System - Operation.pdf">Centralized DT Monitoring System</option>
+          <option value="../Resources/DCS1447A_320 Error Code Keypad User Manual.pdf">DCS1447A 320 Error Code</option>
+          <option value="../Resources/DCS1447A_330 Department Display User Manual.pdf">DCS1447A 330 Department Display</option>
+          <option value="../Resources/Electronic Andon User Guid-96res.pdf">Electronic Andon User Guide</option>
+          <option value="../Resources/How to Configure Tab Wi-Fi Setting.pdf">Tab WiFi Setting Guide</option>
+          <option value="../Resources/Smart Andon System-Overview.pdf">Smart Andon Overview</option>
+          <option value="../Resources/WIFI_Module_User_Manual.pdf">WIFI Module User Manual</option>
         </optgroup>
         <optgroup label="02. Setup Guides">
           <option value="../Resources/Team Viewer Start Guide.pdf">Team Viewer Start Guide</option>
@@ -366,8 +374,8 @@
     </div>
 
     <!-- Viewer Area -->
-    <div class="w-full h-[500px] border rounded-lg shadow">
-      <embed id="pdfViewer" type="application/pdf" class="w-full h-full hidden" />
+    <div id="viewerArea" class="w-full h-[500px] border rounded-lg shadow">
+      <embed id="pdfViewer" src="docs/andon-software-guide.pdf" type="application/pdf" class="w-full h-full hidden" />
       <video id="videoViewer" controls class="w-full h-full hidden rounded-lg">
         <source src="" type="video/mp4">
         Your browser does not support the video tag.
@@ -375,7 +383,8 @@
     </div>
 
     <!-- Download Link -->
-    <a id="downloadLink" href="" download class="block text-blue-600 text-sm mt-3 hover:underline hidden">Download this file</a>
+    <a id="downloadLink" href="docs/andon-software-guide.pdf" download
+      class="block text-blue-600 text-sm mt-3 hover:underline">Download this file</a>
   </div>
 </div>
 
