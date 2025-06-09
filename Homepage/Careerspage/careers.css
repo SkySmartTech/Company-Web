@@ -1,0 +1,404 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.floating-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    animation: float 20s infinite linear;
+}
+
+.shape-1 {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 20%;
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+.shape-4 {
+    width: 250px;
+    height: 250px;
+    top: 10%;
+    right: 10%;
+    animation-delay: -15s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(90deg); }
+    50% { transform: translateY(-40px) rotate(180deg); }
+    75% { transform: translateY(-20px) rotate(270deg); }
+}
+
+.hero-title {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button {
+    animation: fadeInUp 1s ease-out 0.6s both;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+.cta-button:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Values Section */
+.value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.value-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+    margin-bottom: 1.5rem;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+    transform: scale(1.1);
+}
+
+/* Job Positions */
+.filter-tab {
+    padding: 12px 24px;
+    border: 2px solid #e5e7eb;
+    background: white;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.job-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+    border: 2px solid transparent;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.job-card.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.job-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    flex: 1;
+}
+
+.job-type {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.job-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.job-location:before {
+    content: "📍 ";
+    margin-right: 4px;
+}
+
+.job-salary:before {
+    content: "💰 ";
+    margin-right: 4px;
+}
+
+.job-description {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #f3f4f6;
+    color: #374151;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background: #e5e7eb;
+    transform: scale(1.05);
+}
+
+/* Benefits Section */
+.benefit-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.benefit-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* CTA Buttons */
+.primary-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #667eea;
+    padding: 16px 32px;
+    border: 2px solid #667eea;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .job-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .filter-tab {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Scroll Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+/* Loading animations */
+.counter {
+    transition: all 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

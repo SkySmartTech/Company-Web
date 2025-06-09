@@ -1,4 +1,5 @@
   const logos = [
+    "Homepage/img/clients_logo/client_logo4.png",
     "Homepage/img/clients_logo/client_logo3.png",
     "Homepage/img/clients_logo/client_logo1.png",
     "Homepage/img/clients_logo/client_logo2.png"

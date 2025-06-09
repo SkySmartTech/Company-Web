@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
   function showProductCategory(categoryId) {
     ['andon', 'software', 'innovation'].forEach(id => {
       const section = document.getElementById(id);
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeProductModal() {
     document.getElementById('productModal').classList.add('hidden');
   }
+
 
   // Close when clicking outside the modal content
   document.getElementById('productModal').addEventListener('click', e => {

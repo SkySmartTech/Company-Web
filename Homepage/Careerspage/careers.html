@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Join Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="careers.css">
+</head>
+<body class="bg-gray-50">
+      <!-- Header -->
+<header id="site-header" class="fixed w-full top-0 z-10 bg-white text-black shadow-md">
+  <div class="flex items-center justify-between md:px-12 p-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <a href="../../index.html">
+        <img src="../img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32">
+      </a>
+      <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
+    </div>
+
+    <!-- Nav Menu -->
+    <nav class="hidden md:flex space-x-6 font-medium nav-links">
+      <a href="../../index.html" class="hover:text-blue-500 transition">Home</a>
+      <a href="../Companypage/company.html" class="hover:text-blue-600">Company</a>
+      <a href="../Partnerspage/partnership.html" class="hover:text-blue-500 transition">Partnerships</a>
+      <a href="../Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
+      <a href="../Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
+      <a href="../Careerspage/careers.html" class="hover:text-blue-500 transition">Careers</a>
+      <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden focus:outline-none text-black">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+           viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 bg-white text-black py-4">
+    <a href="#home" class="hover:text-blue-600">Home</a>
+    <a href="#company" class="hover:text-blue-600">Company</a>
+    <a href="#partnerships" class="hover:text-blue-600">Partnerships</a>
+    <a href="#products" class="hover:text-blue-600">Products</a>
+    <a href="#careers" class="hover:text-blue-600">Careers & Team</a>
+    <a href="#cart" class="hover:text-blue-600">Cart</a>
+  </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 hero-title">
+                Build The
+                <span class="gradient-text">Future</span>
+                With Us
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 hero-subtitle">
+                Join a team of innovators, dreamers, and change-makers shaping tomorrow's technology
+            </p>
+            <button class="cta-button group relative overflow-hidden px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
+                <span class="relative z-10">Explore Opportunities</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full transition-all duration-300 group-hover:from-pink-600 group-hover:to-purple-600"></div>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">Our Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="value-card group cursor-pointer">
+                    <div class="value-icon">
+                       <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                            <img src="../img/Core_values/innovation.png" alt="Icon" class="w-8 h-8 object-contain">
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Innovation</h3>
+                    <p class="text-gray-600 leading-relaxed">We push boundaries and challenge the status quo to create groundbreaking solutions that make a difference.</p>
+                </div>
+                
+                <div class="value-card group cursor-pointer">
+                    <div class="value-icon">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">
+                            <img src="../img/Core_values/collaboration1.png" alt="Icon" class="w-8 h-8 object-contain">
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Collaboration</h3>
+                    <p class="text-gray-600 leading-relaxed">Together we achieve more. We believe in the power of diverse minds working towards common goals.</p>
+                </div>
+                
+                <div class="value-card group cursor-pointer">
+                    <div class="value-icon">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">
+                            <img src="../img/Core_values/growth.png" alt="Icon" class="w-8 h-8 object-contain">
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Growth</h3>
+                    <p class="text-gray-600 leading-relaxed">We invest in your development and provide opportunities to learn, grow, and advance your career.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Positions -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-800">Open Positions</h2>
+            
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center mb-12 gap-4">
+                <button class="filter-tab active" data-filter="all">All Positions</button>
+                <button class="filter-tab" data-filter="engineering">Engineering</button>
+                <button class="filter-tab" data-filter="design">Design</button>
+                <button class="filter-tab" data-filter="marketing">Marketing</button>
+                <button class="filter-tab" data-filter="sales">Sales</button>
+            </div>
+
+            <!-- Job Cards -->
+            <div class="job-grid grid gap-6">
+                <!-- Engineering Jobs -->
+                <div class="job-card engineering" data-category="engineering">
+                    <div class="job-header">
+                        <h3 class="job-title">Senior Full Stack Developer</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-location">Remote</span>
+                        <span class="job-salary">$120k - $160k</span>
+                    </div>
+                    <p class="job-description">Build scalable web applications using modern technologies. Work with React, Node.js, and cloud platforms.</p>
+                    <div class="job-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="job-card engineering" data-category="engineering">
+                    <div class="job-header">
+                        <h3 class="job-title">DevOps Engineer</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-location">Remote</span>
+                        <span class="job-salary">$110k - $140k</span>
+                    </div>
+                    <p class="job-description">Manage infrastructure and deployment pipelines. Experience with Docker, Kubernetes, and CI/CD required.</p>
+                    <div class="job-tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+
+                <!-- Design Jobs -->
+                <div class="job-card design" data-category="design">
+                    <div class="job-header">
+                        <h3 class="job-title">UX/UI Designer</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-location">Kegalle,SL</span>
+                        <span class="job-salary">$90k - $120k</span>
+                    </div>
+                    <p class="job-description">Create beautiful and intuitive user experiences. Work closely with product and engineering teams.</p>
+                    <div class="job-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Prototyping</span>
+                        <span class="tag">User Research</span>
+                    </div>
+                </div>
+
+                <!-- Marketing Jobs -->
+                <div class="job-card marketing" data-category="marketing">
+                    <div class="job-header">
+                        <h3 class="job-title">Digital Marketing Manager</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-location">Kegalle,SL</span>
+                        <span class="job-salary">$80k - $100k</span>
+                    </div>
+                    <p class="job-description">Drive growth through digital marketing channels. Manage campaigns across social media, email, and content.</p>
+                    <div class="job-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Content Marketing</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+
+                <!-- Sales Jobs -->
+                <div class="job-card sales" data-category="sales">
+                    <div class="job-header">
+                        <h3 class="job-title">Senior Quality Assurance Engineer</h3>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-location">Remote</span>
+                        <span class="job-salary">$60k - $80k + Commission</span>
+                    </div>
+                    <p class="job-description">Generate new business opportunities and build relationships with potential clients. Great growth potential.</p>
+                    <div class="job-tags">
+                        <span class="tag">CRM</span>
+                        <span class="tag">Lead Generation</span>
+                        <span class="tag">Communication</span>
+                    </div>
+                </div>
+
+                <div class="job-card design" data-category="design">
+                    <div class="job-header">
+                        <h3 class="job-title">Product Designer</h3>
+                        <span class="job-type">Contract</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-location">Remote</span>
+                        <span class="job-salary">$70 - $90 /hour</span>
+                    </div>
+                    <p class="job-description">Lead product design initiatives from concept to launch. Define user journeys and design systems.</p>
+                    <div class="job-tags">
+                        <span class="tag">Design Systems</span>
+                        <span class="tag">User Journey</span>
+                        <span class="tag">Wireframing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Why Work With Us?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3 class="text-xl font-bold mb-3">Competitive Salary</h3>
+                    <p class="opacity-90">Market-leading compensation packages with equity options and performance bonuses.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏥</div>
+                    <h3 class="text-xl font-bold mb-3">Health & Wellness</h3>
+                    <p class="opacity-90">Comprehensive health insurance, dental, vision, and mental health support.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌴</div>
+                    <h3 class="text-xl font-bold mb-3">Unlimited PTO</h3>
+                    <p class="opacity-90">Take the time you need to recharge with our flexible vacation policy.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎓</div>
+                    <h3 class="text-xl font-bold mb-3">Learning Budget</h3>
+                    <p class="opacity-90">$2,000 annual budget for conferences, courses, and professional development.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏠</div>
+                    <h3 class="text-xl font-bold mb-3">Remote Friendly</h3>
+                    <p class="opacity-90">Work from anywhere with our hybrid and fully remote positions available.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3 class="text-xl font-bold mb-3">Career Growth</h3>
+                    <p class="opacity-90">Clear advancement paths with mentorship and leadership development programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Ready to Join Us?</h2>
+            <p class="text-xl text-gray-600 mb-8">Don't see the perfect role? Send us your resume anyway. We're always looking for exceptional talent.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="primary-btn">Browse All Jobs</button>
+                <button class="secondary-btn">Submit Resume</button>
+            </div>
+        </div>
+    </section>
+   <!-- Footer section -->
+<footer class="bg-gradient-to-b from-[#000C2E] to-[#001437] text-white pt-10 px-10">
+<div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-10 text-sm pb-10">
+
+    <!-- Expanded Logo & Description -->
+    <div class="md:col-span-2">
+      <img src="../img/sky-smart-logo.png" alt="Logo" class="h-20">
+      <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+      </p>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Company</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Partners</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Contact</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">General Message</a></li>
+        <li><a href="#">Job Vacancy</a></li>
+        <li><a href="#">Start a Project</a></li>
+        <li><a href="#">Become a Partner</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Quick Links</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="#">Software Development</a></li>
+        <li><a href="#">Chasseur Dynamics</a></li>
+        <li><a href="#">Zoho Cliq</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Solutions</a></li>
+      </ul>
+    </div>
+
+    <!-- Location -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Location</h3>
+      <p class="text-gray-300 leading-relaxed">
+        A/59, Hungampola,<br>
+        Moronthota,<br>
+        Kegalle,<br>
+        Sri Lanka.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="border-t border-gray-700 pt-5 pb-6 text-center text-sm text-gray-400">
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto">
+      <p>© Sky Smart Technology (Pvt) Ltd. All Rights Reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#"><img src="../img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
+        <a href="#"><img src="../img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
+        <a href="#"><img src="../img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
+        <a href="#"><img src="../img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
+        <a href="#"><img src="../img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="careers.js"></script>
+</body>
+</html>
