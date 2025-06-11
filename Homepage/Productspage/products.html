@@ -80,7 +80,7 @@
     <div class="flex justify-center flex-wrap gap-6 mb-10">
       <div onclick="showProductCategory('andon')" class="cursor-pointer text-center">
         <img src="../img/Products_logo/product_1.jpg" alt="Smart Andon" class="w-40 h-40 rounded-full object-cover border-4 border-blue-200 hover:border-blue-600 transition-all duration-300">
-        <p class="mt-2 font-semibold text-gray-800">HW + SW System</p>
+        <p class="mt-2 font-semibold text-gray-800">Andon System</p>
       </div>
       <div onclick="showProductCategory('software')" class="cursor-pointer text-center">
         <img src="../img/Products_logo/product_2.jpg" alt="Software Dev" class="w-40 h-40 rounded-full object-cover border-4 border-blue-200 hover:border-blue-600 transition-all duration-300">
@@ -125,67 +125,16 @@
 
   <!-- Premium Package -->
   <div class="product-card text-center cursor-pointer hover:scale-105 transition"
-       data-title="Smart Andon System Premium Package"
+       data-title="Smart Andon System Pro Package"
        data-img="../img/Products_logo/product_1.jpg"
        data-desc="Type: Hardware + Software &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initial Cost: 655/line"
        data-link="https://example.com/andon-premium"
        onclick="openProductModal(this)">
     <img src="../img/Products_logo/product_1.jpg" alt="Andon Premium"
          class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
-    <h4 class="font-bold text-lg text-blue-900">Smart Andon System Premium Package</h4>
+    <h4 class="font-bold text-lg text-blue-900">Smart Andon System Pro Package</h4>
     <p class="text-sm text-gray-600">Type: Hardware + Software <br>Initial Cost: 655/line</p>
   </div>
-
-    <div class="product-card text-center cursor-pointer hover:scale-105 transition"
-       data-title="Power Monitoring System"
-       data-img="../img/Products_logo/product_1.jpg"
-       data-desc="Type: Hardware + Software &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Energy Meter: 20,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IoT Unit: 28,500"
-       data-link="https://example.com/andon-premium"
-       onclick="openProductModal(this)">
-    <img src="../img/Products_logo/product_1.jpg" alt="Power monitoring"
-         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
-    <h4 class="font-bold text-lg text-blue-900">Power Monitoring System</h4>
-    <p class="text-sm text-gray-600">Type: Hardware + Software <br> Energy Meter: 20,000 • IoT Unit: 28,500</p>
-  </div>
-
-  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
-       data-title="Production Monitoring System"
-       data-img="../img/Products_logo/product_1.jpg"
-       data-desc="Type: Hardware + Software &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 Months Payment"
-       data-link="https://example.com/andon-premium"
-       onclick="openProductModal(this)">
-    <img src="../img/Products_logo/product_1.jpg" alt="Production Monitoring"
-         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
-    <h4 class="font-bold text-lg text-blue-900">Production Monitoring System</h4>
-    <p class="text-sm text-gray-600">Type: Hardware + Software <br> 3 Months Payment</p>
-  </div> 
-
-
-  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
-       data-title="Fire Alaram System"
-       data-img="../img/Products_logo/product_1.jpg"
-       data-desc="Type: Hardware + Software &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3 Months Payment"
-       data-link="https://example.com/andon-premium"
-       onclick="openProductModal(this)">
-    <img src="../img/Products_logo/product_1.jpg" alt="Production Monitoring"
-         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
-    <h4 class="font-bold text-lg text-blue-900">Production Monitoring System</h4>
-    <p class="text-sm text-gray-600">Type: Hardware + Software <br> 3 Months Payment</p>
-  </div> 
-
-
-    <div class="product-card text-center cursor-pointer hover:scale-105 transition"
-       data-title="GSM Controlled Water Pump System"
-       data-img="../img/Products_logo/product_1.jpg"
-       data-desc="Type: Hardware + Software &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Energy Meter: 20,000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IoT Unit: 28,500"
-       data-link="https://example.com/andon-premium"
-       onclick="openProductModal(this)">
-    <img src="../img/Products_logo/product_1.jpg" alt="Power monitoring"
-         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
-    <h4 class="font-bold text-lg text-blue-900">Power Monitoring System</h4>
-    <p class="text-sm text-gray-600">Type: Hardware + Software <br> Energy Meter: 20,000 • IoT Unit: 28,500</p>
-  </div>
-  
 </div>
 
 <div id="software"
@@ -232,7 +181,56 @@
   </div>
 
   <!-- Product 4 -->
-  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+
+</div>
+
+<!-- SHARED MODAL WINDOW -->
+<div id="productModal"
+     class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/40 backdrop-blur-sm">
+
+  <div class="bg-white rounded-xl shadow-xl w-11/12 max-w-lg relative p-6">
+    <!-- close button -->
+    <button onclick="closeProductModal()"
+            class="absolute top-3 right-3 text-gray-500 hover:text-gray-900 text-2xl">
+      ✕
+    </button>
+
+    <!-- modal image -->
+    <img id="modalImg" src="" alt=""
+         class="w-full h-60 object-cover rounded-md mb-4">
+
+    <!-- modal title -->
+    <h3 id="modalTitle" class="text-2xl font-bold text-blue-900 mb-2"></h3>
+
+    <!-- modal description -->
+    <p id="modalDesc" class="text-gray-600 mb-6"></p>
+
+    <!-- demo link -->
+    <a id="modalLink"
+       href="#"
+       target="_blank"
+       class="inline-block bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition">
+       View Demo
+    </a>
+  </div>
+</div>
+
+    <!-- Innovation -->
+<div id="innovation" class="product-category hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" data-aos="fade-up">
+
+    <div class="product-card text-center cursor-pointer hover:scale-105 transition"
+       data-title="Finished Good Transfering System"
+       data-img="../img/Products_logo/product_2.jpg"
+       data-desc="IoT Unit • 28,500"
+       data-link="https://example.com/demo6"
+       onclick="openProductModal(this)">
+    <img src="../img/Products_logo/product_2.jpg" alt="Software Development 6"
+         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
+    <h4 class="font-bold text-lg text-blue-900">Finished Good Transfering System</h4>
+    <p class="text-sm text-gray-600">IoT Unit • 28,500</p>
+  </div>
+
+    <div class="product-card text-center cursor-pointer hover:scale-105 transition"
        data-title="Tea Factory Management System"
        data-img="../img/Products_logo/product_2.jpg"
        data-desc="IoT Unit • 28,500"
@@ -280,54 +278,6 @@
          class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
     <h4 class="font-bold text-lg text-blue-900">Finished Good Transfering System</h4>
     <p class="text-sm text-gray-600">IoT Unit • 28,500</p>
-  </div>
-</div>
-
-<!-- SHARED MODAL WINDOW -->
-<div id="productModal"
-     class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/40 backdrop-blur-sm">
-
-  <div class="bg-white rounded-xl shadow-xl w-11/12 max-w-lg relative p-6">
-    <!-- close button -->
-    <button onclick="closeProductModal()"
-            class="absolute top-3 right-3 text-gray-500 hover:text-gray-900 text-2xl">
-      ✕
-    </button>
-
-    <!-- modal image -->
-    <img id="modalImg" src="" alt=""
-         class="w-full h-60 object-cover rounded-md mb-4">
-
-    <!-- modal title -->
-    <h3 id="modalTitle" class="text-2xl font-bold text-blue-900 mb-2"></h3>
-
-    <!-- modal description -->
-    <p id="modalDesc" class="text-gray-600 mb-6"></p>
-
-    <!-- demo link -->
-    <a id="modalLink"
-       href="#"
-       target="_blank"
-       class="inline-block bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition">
-       View Demo
-    </a>
-  </div>
-</div>
-
-    <!-- Innovation -->
-<div id="innovation" class="product-category hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8" data-aos="fade-up">
-
-  <div class="product-card text-center cursor-pointer hover:scale-105 transition"
-       data-title="Automated Quality Inspection"
-       data-img="../img/Products_logo/product_3.jpg"
-       data-desc="A computer vision solution that detects product defects in real-time with high precision and minimal human intervention."
-       data-link="https://example.com/innovation-demo"
-       onclick="openProductModal(this)">
-       
-    <img src="../img/Products_logo/product_3.jpg" alt="Innovation"
-         class="w-full h-64 object-cover rounded-lg shadow-md mb-4">
-    <h4 class="font-bold text-lg text-blue-900">Innovation</h4>
-    <p class="text-sm text-gray-600">Automated quality inspection powered by computer vision.</p>
   </div>
 
 </div>

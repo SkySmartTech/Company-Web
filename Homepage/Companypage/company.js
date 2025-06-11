@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(updateCount, 10);
       } else {
         counter.innerText = target + "+";
-      }
+      } 
     };
     updateCount();
   };
@@ -42,47 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show IT department by default
   showTeam('IT_Department');
-
-  // Help button logic
-  const helpBtn = document.getElementById("helpButton");
-  const modal = document.getElementById("pdfModal");
-  const closeModal = document.getElementById("closeModal");
-  const docSelect = document.getElementById("docSelect");
-  const pdfViewer = document.getElementById("pdfViewer");
-  const videoViewer = document.getElementById("videoViewer");
-  const videoSource = videoViewer?.querySelector("source");
-  const downloadLink = document.getElementById("downloadLink");
-
-  helpBtn?.addEventListener("click", () => {
-    modal?.classList.remove("hidden");
-  });
-
-  closeModal?.addEventListener("click", () => {
-    modal?.classList.add("hidden");
-    videoViewer?.pause();
-  });
-
-  docSelect?.addEventListener("change", (e) => {
-    const value = e.target.value;
-
-    if (value.startsWith("http")) {
-      // Show video
-      pdfViewer.classList.add("hidden");
-      videoViewer.classList.remove("hidden");
-      if (videoSource) {
-        videoSource.src = value;
-        videoViewer.load();
-      }
-      downloadLink.style.display = "none";
-    } else {
-      // Show PDF
-      pdfViewer.classList.remove("hidden");
-      videoViewer.classList.add("hidden");
-      pdfViewer.src = value;
-      downloadLink.href = value;
-      downloadLink.style.display = "block";
-    }
-  });
 });
 
 // Function to switch team tabs

@@ -1,20 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  menuBtn.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('hidden')) {
-      mobileMenu.classList.remove('hidden');
-      mobileMenu.classList.add('show');
-    } else {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('show');
-    }
-  });
+    menuBtn?.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('show');
+    });
+
+    const gallery = new PhotoGallery();
+    window.photoGallery = gallery;
 });
 
+// Handle tab visibility for performance
+document.addEventListener('visibilitychange', () => {
+    const images = document.querySelectorAll('.photo-item img');
+    images.forEach(img => {
+        img.style.animationPlayState = document.hidden ? 'paused' : 'running';
+    });
+});
 
-// Gallery JavaScript
+// External utilities
+window.galleryUtils = {
+    addPhoto: (sectionId, imageUrl, altText) => window.photoGallery?.addPhoto(sectionId, imageUrl, altText),
+    updateCount: (albumName, count) => window.photoGallery?.updateAlbumCount(albumName, count),
+    getStats: () => window.photoGallery?.getAlbumStats() || {},
+    search: (term) => window.photoGallery?.searchPhotos(term) || []
+};
+
 class PhotoGallery {
     constructor() {
         this.init();
@@ -22,175 +34,115 @@ class PhotoGallery {
 
     init() {
         this.setupEventListeners();
-        this.showAlbumsOverview();
+        this.handleHashOnLoad();
     }
 
     setupEventListeners() {
-        // Album card clicks
-        const albumCards = document.querySelectorAll('.album-card');
-        albumCards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                const target = card.getAttribute('data-target');
-                this.showGallerySection(target);
-            });
-        });
+        document.querySelectorAll('.album-card').forEach(card =>
+            card.addEventListener('click', () => this.showGallerySection(card.dataset.target))
+        );
 
-        // Navigation links
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+        document.querySelectorAll('.nav-link').forEach(link =>
+            link.addEventListener('click', e => {
                 e.preventDefault();
                 const target = link.getAttribute('href').substring(1);
                 this.showGallerySection(target);
-            });
-        });
+            })
+        );
 
-        // Back buttons
-        const backBtns = document.querySelectorAll('.back-btn');
-        backBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                this.showAlbumsOverview();
-            });
-        });
+        document.querySelectorAll('.back-btn').forEach(btn =>
+            btn.addEventListener('click', () => this.showAlbumsOverview())
+        );
 
-        // Photo item clicks (for future modal functionality)
-        const photoItems = document.querySelectorAll('.photo-item');
-        photoItems.forEach(item => {
-            item.addEventListener('click', () => {
-                this.handlePhotoClick(item);
-            });
-        });
+        document.querySelectorAll('.photo-item').forEach(item =>
+            item.addEventListener('click', () => this.handlePhotoClick(item))
+        );
 
-        // Smooth scroll for navigation
-        this.setupSmoothScroll();
-    }
-
-    showAlbumsOverview() {
-        // Hide all gallery sections
-        const gallerySections = document.querySelectorAll('.gallery-section');
-        gallerySections.forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Show albums overview
-        const albumsOverview = document.querySelector('.albums-overview');
-        albumsOverview.style.display = 'block';
-
-        // Scroll to top
-        this.scrollToTop();
-
-        // Update URL hash
-        window.location.hash = '';
-    }
-
-    showGallerySection(sectionId) {
-        // Hide albums overview
-        const albumsOverview = document.querySelector('.albums-overview');
-        albumsOverview.style.display = 'none';
-
-        // Hide all gallery sections
-        const gallerySections = document.querySelectorAll('.gallery-section');
-        gallerySections.forEach(section => {
-            section.classList.remove('active');
-        });
-
-        // Show target section
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.classList.add('active');
-            
-            // Scroll to section
-            setTimeout(() => {
-                targetSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 100);
-
-            // Update URL hash
-            window.location.hash = sectionId;
-        }
-    }
-
-    handlePhotoClick(photoItem) {
-        // Add a subtle animation effect
-        photoItem.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            photoItem.style.transform = '';
-        }, 150);
-
-        // You can extend this to open a modal or lightbox
-        console.log('Photo clicked:', photoItem);
-    }
-
-    setupSmoothScroll() {
-        // Handle browser back/forward buttons
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.substring(1);
-            if (hash && ['Album1', 'Album2', 'Album3'].includes(hash)) {
+            if (this.isValidSection(hash)) {
                 this.showGallerySection(hash);
             } else {
                 this.showAlbumsOverview();
             }
         });
+    }
 
-        // Handle initial load with hash
-        const initialHash = window.location.hash.substring(1);
-        if (initialHash && ['Album1', 'Album2', 'Album3'].includes(initialHash)) {
-            setTimeout(() => {
-                this.showGallerySection(initialHash);
-            }, 100);
+    handleHashOnLoad() {
+        const hash = window.location.hash.substring(1);
+        if (this.isValidSection(hash)) {
+            setTimeout(() => this.showGallerySection(hash), 100);
+        } else {
+            this.showAlbumsOverview();
         }
+    }
+
+    isValidSection(id) {
+        return document.getElementById(id)?.classList.contains('gallery-section');
+    }
+
+    showAlbumsOverview() {
+        document.querySelectorAll('.gallery-section').forEach(s => s.classList.remove('active'));
+        document.querySelector('.albums-overview').style.display = 'block';
+        window.location.hash = '';
+        this.scrollToTop();
+    }
+
+    showGallerySection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+
+        document.querySelector('.albums-overview').style.display = 'none';
+        document.querySelectorAll('.gallery-section').forEach(s => s.classList.remove('active'));
+
+        section.classList.add('active');
+        setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        window.location.hash = sectionId;
+    }
+
+    handlePhotoClick(photoItem) {
+        photoItem.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            photoItem.style.transform = '';
+        }, 150);
+
+        console.log('Photo clicked:', photoItem);
+        // You can extend this to open a modal or lightbox.
     }
 
     scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Method to add new photos dynamically
     addPhoto(sectionId, imageUrl, altText) {
         const section = document.getElementById(sectionId);
-        if (section) {
-            const photoGrid = section.querySelector('.photo-grid');
-            const photoItem = document.createElement('div');
-            photoItem.className = 'photo-item';
-            photoItem.innerHTML = `<img src="${imageUrl}" alt="${altText}" />`;
-            
-            // Add click event listener
-            photoItem.addEventListener('click', () => {
-                this.handlePhotoClick(photoItem);
-            });
-            
-            photoGrid.appendChild(photoItem);
-        }
+        if (!section) return;
+
+        const photoGrid = section.querySelector('.photo-grid');
+        const photoItem = document.createElement('div');
+        photoItem.className = 'photo-item';
+        photoItem.innerHTML = `<img src="${imageUrl}" alt="${altText}" />`;
+
+        photoItem.addEventListener('click', () => this.handlePhotoClick(photoItem));
+        photoGrid.appendChild(photoItem);
     }
 
-    // Method to update album photo count
     updateAlbumCount(albumName, count) {
-        const albumCards = document.querySelectorAll('.album-card');
-        albumCards.forEach(card => {
+        document.querySelectorAll('.album-card').forEach(card => {
             const title = card.querySelector('.album-title');
-            if (title && title.textContent.toLowerCase() === albumName.toLowerCase()) {
+            if (title?.textContent.toLowerCase() === albumName.toLowerCase()) {
                 const countElement = card.querySelector('.album-count');
-                if (countElement) {
-                    countElement.textContent = `${count} Photos`;
-                }
+                if (countElement) countElement.textContent = `${count} Photos`;
             }
         });
     }
 
-    // Method to create a new album dynamically
-    createAlbum(albumData) {
-        const { name, target, imageUrl, photoCount } = albumData;
+    createAlbum({ name, target, imageUrl, photoCount }) {
         const albumsGrid = document.querySelector('.albums-grid');
-        
         const albumCard = document.createElement('div');
         albumCard.className = 'album-card';
         albumCard.setAttribute('data-target', target);
-        
+
         albumCard.innerHTML = `
             <div class="album-image">
                 <img src="${imageUrl}" alt="${name} Album" />
@@ -201,119 +153,48 @@ class PhotoGallery {
                 </div>
             </div>
         `;
-        
-        // Add click event listener
-        albumCard.addEventListener('click', () => {
-            this.showGallerySection(target);
-        });
-        
+
+        albumCard.addEventListener('click', () => this.showGallerySection(target));
         albumsGrid.appendChild(albumCard);
     }
 
-    // Method to remove an album
     removeAlbum(albumName) {
-        const albumCards = document.querySelectorAll('.album-card');
-        albumCards.forEach(card => {
+        document.querySelectorAll('.album-card').forEach(card => {
             const title = card.querySelector('.album-title');
-            if (title && title.textContent.toLowerCase() === albumName.toLowerCase()) {
+            if (title?.textContent.toLowerCase() === albumName.toLowerCase()) {
                 card.remove();
             }
         });
     }
 
-    // Method to get album statistics
     getAlbumStats() {
         const stats = {};
-        const gallerySections = document.querySelectorAll('.gallery-section');
-        
-        gallerySections.forEach(section => {
-            const sectionId = section.id;
+        document.querySelectorAll('.gallery-section').forEach(section => {
+            const id = section.id;
+            const title = section.querySelector('.section-title')?.textContent.replace(' Gallery', '') || id;
             const photoCount = section.querySelectorAll('.photo-item').length;
-            const albumTitle = section.querySelector('.section-title').textContent.replace(' Gallery', '');
-            
-            stats[sectionId] = {
-                name: albumTitle,
-                photoCount: photoCount
-            };
+
+            stats[id] = { name: title, photoCount };
         });
-        
         return stats;
     }
 
-    // Method to search photos by alt text
     searchPhotos(searchTerm) {
         const results = [];
-        const photoItems = document.querySelectorAll('.photo-item img');
-        
-        photoItems.forEach(img => {
-            const altText = img.alt.toLowerCase();
-            if (altText.includes(searchTerm.toLowerCase())) {
+        const term = searchTerm.toLowerCase();
+
+        document.querySelectorAll('.photo-item img').forEach(img => {
+            if (img.alt.toLowerCase().includes(term)) {
                 const section = img.closest('.gallery-section');
                 results.push({
-                    sectionId: section.id,
+                    sectionId: section?.id || '',
                     altText: img.alt,
                     imageUrl: img.src,
                     element: img.closest('.photo-item')
                 });
             }
         });
-        
+
         return results;
     }
 }
-
-// Initialize the gallery when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const gallery = new PhotoGallery();
-    
-    // Make gallery instance globally accessible for external usage
-    window.photoGallery = gallery;
-});
-
-// Handle page visibility change for performance
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        // Pause any running animations when tab is not visible
-        document.querySelectorAll('.photo-item img').forEach(img => {
-            img.style.animationPlayState = 'paused';
-        });
-    } else {
-        // Resume animations when tab becomes visible
-        document.querySelectorAll('.photo-item img').forEach(img => {
-            img.style.animationPlayState = 'running';
-        });
-    }
-});
-
-// Utility functions for external usage
-window.galleryUtils = {
-    // Add a new photo to any section
-    addPhoto: (sectionId, imageUrl, altText) => {
-        if (window.photoGallery) {
-            window.photoGallery.addPhoto(sectionId, imageUrl, altText);
-        }
-    },
-    
-    // Update album photo count
-    updateCount: (albumName, count) => {
-        if (window.photoGallery) {
-            window.photoGallery.updateAlbumCount(albumName, count);
-        }
-    },
-    
-    // Get all album statistics
-    getStats: () => {
-        if (window.photoGallery) {
-            return window.photoGallery.getAlbumStats();
-        }
-        return {};
-    },
-    
-    // Search for photos
-    search: (term) => {
-        if (window.photoGallery) {
-            return window.photoGallery.searchPhotos(term);
-        }
-        return [];
-    }
-};
