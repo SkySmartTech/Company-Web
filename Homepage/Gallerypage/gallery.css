@@ -9,7 +9,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background: white;
-    min-height: 100vh;
 }
 
 
@@ -36,7 +35,7 @@ body {
 /* Header Styles */
 /* Header */
 #site-header {
-  background-color: transparent;
+  background-color: white;
   transition: background-color 0.3s ease, box-shadow 0.3s ease  ,padding 0.3s ease;
 }
 
@@ -63,7 +62,7 @@ body {
 
 /* Main Container */
 .main-container {
-    margin-top: 150px;
+    margin-top: 50px;
     padding: 2rem;
     max-width: 1200px;
     margin-left: auto;

@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
- <header id="site-header" class="fixed w-full top-0 z-10 bg-white text-black shadow-md">
+<header id="site-header" class="fixed w-full top-0 z-10 bg-white text-black shadow-md">
   <div class="flex items-center justify-between md:px-12 p-4">
     <!-- Logo -->
     <div class="flex items-center space-x-3">
@@ -64,7 +64,7 @@
                         <img src="../img/hero1.png" />
                         <div class="album-overlay">
                             <h3 class="album-title">Album 1 </h3>
-                            <p class="album-count">24 Photos</p>
+                            <p class="album-count">6 Photos</p>
                             <button class="view-album-btn">View Album</button>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         <img src="../img/hero2.png" />
                         <div class="album-overlay">
                             <h3 class="album-title">Album 2</h3>
-                            <p class="album-count">18 Photos</p>
+                            <p class="album-count">6 Photos</p>
                             <button class="view-album-btn">View Album</button>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <img src="../img/hero3.png" />
                         <div class="album-overlay">
                             <h3 class="album-title">Album 3</h3>
-                            <p class="album-count">12 Photos</p>
+                            <p class="album-count">6 Photos</p>
                             <button class="view-album-btn">View Album</button>
                         </div>
                     </div>
@@ -181,6 +181,77 @@
         </section>
     </main>
 
-    <script src="gallery.js"></script>
+    <!-- Modal Viewer -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+  <div class="relative w-[600px] max-w-full max-h-[80vh] bg-black rounded-lg shadow-lg flex items-center justify-center">
+    <button id="closeModalBtn" class="absolute top-2 right-3 text-white text-3xl font-bold z-50">&times;</button>
+    <button id="modalPrevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold z-50 select-none">&#8592;</button>
+    <img id="modalImage" class="max-w-full max-h-[70vh] rounded-lg" alt="Modal View" />
+    <button id="modalNextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 text-white text-4xl font-bold z-50 select-none">&#8594;</button>
+  </div>
+</div>
+
+
+<!-- Footer section -->
+<footer class="bg-gradient-to-b from-[#000C2E] to-[#001437] text-white pt-10 px-10">
+<div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 text-sm pb-10">
+
+    <!-- Expanded Logo & Description -->
+    <div class="md:col-span-2">
+      <img src="../img/sky-smart-logo.png" alt="Logo" class="h-20">
+      <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+      </p>
+    </div>
+
+<!-- Company -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Company</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="../Companypage/company.html">About Us</a></li>
+        <li><a href="../Partnerspage/partnership.html">Partners</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+<!-- Contact -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Contact</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="../Careerspage/careers.html">Job Vacancy</a></li>
+        <li><a href="../Partnerspage/partnership.html">Become a Partner</a></li>
+      </ul>
+    </div>
+
+<!-- Location -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Location</h3>
+      <p class="text-gray-300 leading-relaxed">
+        A/59, Hungampola,<br>
+        Moronthota,<br>
+        Kegalle,<br>
+        Sri Lanka.
+      </p>
+    </div>
+  </div>
+
+<!-- Bottom Row -->
+  <div class="border-t border-gray-700 pt-5 pb-6 text-center text-sm text-gray-400">
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto">
+      <p>© Sky Smart Technology (Pvt) Ltd. All Rights Reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#"><img src="../img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
+        <a href="#"><img src="../img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
+        <a href="#"><img src="../img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
+        <a href="#"><img src="../img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
+        <a href="#"><img src="../img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="gallery.js"></script>
+
 </body>
 </html>

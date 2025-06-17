@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showTeam('IT_Department');
 });
 
+
 // Function to switch team tabs
 function showTeam(deptId) {
   ['IT_Department', 'HW_Electronic_Tech', 'Finance_HR_Department'].forEach(id => {
@@ -63,4 +64,9 @@ function showTeam(deptId) {
       btn.classList.remove('text-gray-700');
     }
   });
+
+
+  if (typeof AOS !== 'undefined') {
+    AOS.refreshHard();
+  }
 }
