@@ -22,12 +22,44 @@
 <body class="bg-white text-gray-800">
 
   <!-- Header -->
-<header id="site-header" class="fixed w-full top-0 z-20 transition-all duration-300 bg-transparent text-white h-28">
-<div class="flex items-center justify-between md:px-12 pt-6">
-  <!-- Logo -->
-  <div class="flex items-center space-x-3">
-    <img src="Homepage/img/sky_smart_logo2.png" alt="Company Logo" class="w-24 md:w-32">
-    <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
+<header id="site-header" class="fixed w-full top-0 z-20 transition-all duration-300 bg-white text-[#001437] md:bg-transparent md:text-white h-20">
+<div class="flex items-center justify-between md:px-12 pt-6 sm:px-10">
+<!-- Logo and Title -->
+<div class="flex items-center space-x-3">
+  <img src="Homepage/img/sky_smart_logo2.png" alt="Company Logo" class="w-20 md:w-32">
+  <span class="text-sm md:text-lg font-semibold">Sky Smart Technology</span>
+
+  <!-- Mobile menu button -->
+  <div class="flex justify-end items-center px-36">
+    <button id="menu-btn" class="md:hidden text-[#001437]">
+    <svg class="w-8 h-8 text-[#001437]" fill="none" stroke="currentColor" stroke-width="2"
+      viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <!-- Overlay -->
+<!-- Overlay -->
+<div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-10"></div>
+
+<!-- Mobile Menu Full Width from Top -->
+<div id="mobile-menu" class="hidden fixed top-0 left-0 w-full bg-white text-black shadow-md z-30">
+  <div class="flex justify-between items-center p-4 border-b">
+    <span class="text-lg font-bold">Sky Smart Technology</span>
+    <button id="close-menu" class="text-black">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  <div class="flex flex-col p-4 space-y-4">
+    <a href="#home" class="hover:text-blue-600">Home</a>
+    <a href="Homepage/Companypage/company.html" class="hover:text-blue-600">Company</a>
+    <a href="Homepage/Partnerspage/partnership.html" class="hover:text-blue-600">Partnerships</a>
+    <a href="Homepage/Productspage/products.html" class="hover:text-blue-600">Products</a>
+    <a href="Homepage/Gallerypage/gallery.html" class="hover:text-blue-600">Gallery</a>
+    <a href="Homepage/Careerspage/careers.html" class="hover:text-blue-600">Careers & Team</a>
+    <a href="#cart" class="hover:text-blue-600">Cart</a>
   </div>
 
       <!-- Nav Menu -->
@@ -42,26 +74,8 @@
   <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
 </nav>
 </div>
+</header>
 
-      <!-- Mobile menu button -->
-      <button id="menu-btn" class="md:hidden focus:outline-none text-white">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-             viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 bg-white text-black py-4">
-      <a href="#home" class="hover:text-blue-600">Home</a>
-      <a href="#company" class="hover:text-blue-600">Company</a>
-      <a href="#partnerships" class="hover:text-blue-600">Partnerships</a>
-      <a href="#products" class="hover:text-blue-600">Products</a>
-      <a href="#careers" class="hover:text-blue-600">Careers & Team</a>
-      <a href="#cart" class="hover:text-blue-600">Cart</a>
-    </div>
-  </header>
 
   <!-- Hero Section -->
   <section id="home" class="relative w-full h-screen overflow-hidden text-white pt-20">
@@ -454,7 +468,7 @@
 
     <!-- Expanded Logo & Description -->
     <div class="md:col-span-2">
-      <img src="../img/sky-smart-logo.png" alt="Logo" class="h-20">
+      <img src="Homepage/img/sky_smart_logo2.png" alt="Logo" class="h-20">
       <p class="text-gray-300 text-sm leading-relaxed max-w-md">
         Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
       </p>

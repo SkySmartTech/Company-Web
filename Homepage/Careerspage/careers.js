@@ -186,11 +186,11 @@ function showResumeModal() {
                 <div>
                     <label class="block text-sm font-medium mb-2">Area of Interest</label>
                     <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option>Accounts</option>
                         <option>Engineering</option>
-                        <option>Design</option>
+                        <option>Management</option>
                         <option>Marketing</option>
-                        <option>Sales</option>
-                        <option>Other</option>
+                        <option>Software</option>
                     </select>
                 </div>
                 <div>
