@@ -21,61 +21,83 @@
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Header -->
-<header id="site-header" class="fixed w-full top-0 z-20 transition-all duration-300 bg-white text-[#001437] md:bg-transparent md:text-white h-20">
-<div class="flex items-center justify-between md:px-12 pt-6 sm:px-10">
-<!-- Logo and Title -->
-<div class="flex items-center space-x-3">
-  <img src="Homepage/img/sky_smart_logo2.png" alt="Company Logo" class="w-20 md:w-32">
-  <span class="text-sm md:text-lg font-semibold">Sky Smart Technology</span>
+<!-- Header -->
+<header id="site-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent text-white h-28 backdrop-blur-md shadow-md">
+  <div class="flex items-center justify-between md:px-12 px-4 pt-6 relative">
+    <!-- Logo and Name -->
+    <div class="flex items-center space-x-3">
+      <img src="Homepage/img/sky_smart_logo2.png" alt="Company Logo" class="w-24 md:w-32">
+      <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
+    </div>
 
-  <!-- Mobile menu button -->
-  <div class="flex justify-end items-center px-36">
-    <button id="menu-btn" class="md:hidden text-[#001437]">
-    <svg class="w-8 h-8 text-[#001437]" fill="none" stroke="currentColor" stroke-width="2"
-      viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 6h16M4 12h16M4 18h16" />
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-6 font-medium nav-links">
+      <a href="#home" class="hover:text-blue-500 transition">Home</a>
+      <a href="Homepage/Companypage/company.html" class="hover:text-blue-500 transition">Company</a>
+      <a href="Homepage/Partnerspage/partnership.html" class="hover:text-blue-500 transition">Partnerships</a>
+      <a href="Homepage/Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
+      <a href="Homepage/Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
+      <a href="Homepage/Careerspage/careers.html" class="hover:text-blue-500 transition">Careers</a>
+      <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
+    </nav>
+
+   <!-- Mobile Menu Button -->
+<div class="absolute top-6 right-4 md:hidden z-30">
+  <button id="menu-btn" class="text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+</div>
+
+<!-- Codimite-Style Mobile Menu -->
+<div id="mobile-menu" class="hidden fixed inset-0 top-24 bg-white z-20 md:hidden px-6 py-4 overflow-y-auto text-black">
+  <!-- Top link -->
+  <a href="/ai-augmented-software-development-at-codimite/" class="flex items-center justify-between py-2 border-b">
+    <span>AI - ASD</span>
+    <img src="/wp-content/uploads/ai.webp" alt="ai logo" class="h-5 ml-2" />
+  </a>
+
+  <!-- Services Dropdown -->
+  <div class="py-2 border-b">
+    <div class="flex items-center justify-between cursor-pointer" onclick="toggleSubmenu('services-menu')">
+      <span>Services</span>
+      <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659L8.753 11.14a1 1 0 0 1-1.506 0z"/>
       </svg>
-    </button>
-    <!-- Overlay -->
-<!-- Overlay -->
-<div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-10"></div>
+    </div>
+    <div id="services-menu" class="hidden pl-4 mt-2 space-y-2 text-sm">
+      <a href="https://codimite.ai/zoom-services/">Zoom Services</a>
+      <a href="https://codimite.ai/zoom-migration-services/">Zoom Migration Services</a>
+      <a href="https://codimite.ai/build-with-web3/">Build with Web3</a>
+    </div>
+  </div>
 
-<!-- Mobile Menu Full Width from Top -->
-<div id="mobile-menu" class="hidden fixed top-0 left-0 w-full bg-white text-black shadow-md z-30">
-  <div class="flex justify-between items-center p-4 border-b">
-    <span class="text-lg font-bold">Sky Smart Technology</span>
-    <button id="close-menu" class="text-black">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M6 18L18 6M6 6l12 12" />
+  <!-- Simple links -->
+  <a href="Homepage/Companypage/company.html" class="block py-2 border-b">Company</a>
+  <a href="Homepage/Partnerspage/partnership.html" class="block py-2 border-b">Partners</a>
+  <a href="Homepage/Careerspage/careers.html" class="block py-2 border-b">Careers</a>
+  <a href="Homepage/blog.html" class="block py-2 border-b">Blog</a>
+
+  <!-- Automations Dropdown -->
+  <div class="py-2 border-b">
+    <div class="flex items-center justify-between cursor-pointer" onclick="toggleSubmenu('automations-menu')">
+      <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(91deg, #00AC5C 0.55%, #3CA1FF 99.85%);">
+        Automations
+      </span>
+      <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659L8.753 11.14a1 1 0 0 1-1.506 0z"/>
       </svg>
-    </button>
+    </div>
+    <div id="automations-menu" class="hidden pl-4 mt-2 space-y-2 text-sm">
+      <a href="https://codimite.ai/automations/selfhosted-workflow-automation/">Workflow Automation</a>
+      <a href="https://www.jumora.ai/">Jumora AI</a>
+    </div>
   </div>
-  <div class="flex flex-col p-4 space-y-4">
-    <a href="#home" class="hover:text-blue-600">Home</a>
-    <a href="Homepage/Companypage/company.html" class="hover:text-blue-600">Company</a>
-    <a href="Homepage/Partnerspage/partnership.html" class="hover:text-blue-600">Partnerships</a>
-    <a href="Homepage/Productspage/products.html" class="hover:text-blue-600">Products</a>
-    <a href="Homepage/Gallerypage/gallery.html" class="hover:text-blue-600">Gallery</a>
-    <a href="Homepage/Careerspage/careers.html" class="hover:text-blue-600">Careers & Team</a>
-    <a href="#cart" class="hover:text-blue-600">Cart</a>
-  </div>
-
-      <!-- Nav Menu -->
-<nav class="hidden md:flex space-x-6 font-medium nav-links">
-  <a href="#home" class="hover:text-blue-500 transition">Home</a>
-  <a href="Homepage/Companypage/company.html" class="hover:text-blue-500 transition">Company</a>
-  <a href="Homepage/Partnerspage/partnership.html" class="hover:text-blue-500 transition">Partnerships</a>
-  <!--<a href="#successtories" class="hover:text-blue-500 transition">Success-Story</a> -->
-  <a href="Homepage/Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
-  <a href="Homepage/Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
-  <a href="Homepage/Careerspage/careers.html" class="hover:text-blue-500 transition">Careers</a>
-  <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
-</nav>
+</div>
 </div>
 </header>
-
 
   <!-- Hero Section -->
   <section id="home" class="relative w-full h-screen overflow-hidden text-white pt-20">
@@ -468,7 +490,7 @@
 
     <!-- Expanded Logo & Description -->
     <div class="md:col-span-2">
-      <img src="Homepage/img/sky_smart_logo2.png" alt="Logo" class="h-20">
+      <img src="../img/sky-smart-logo.png" alt="Logo" class="h-20">
       <p class="text-gray-300 text-sm leading-relaxed max-w-md">
         Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
       </p>

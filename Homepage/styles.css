@@ -1,20 +1,7 @@
 /* Header */
-@media (max-width: 768px) {
-  #site-header {
-    background-color: white !important;
-  }
-
-  .nav-link {
-    color: #001437 !important; /* Dark blue text for mobile */
-  }
-}
-
-#mobile-menu {
-  transition: transform 0.3s ease;
-}
-
-.translate-x-full {
-  transform: translateX(100%);
+#site-header {
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease  ,padding 0.3s ease;
 }
 
 #site-header.scrolled {
@@ -35,7 +22,7 @@
 
 .nav-link:hover {
   color: #00aaff;
-}
+}z
 
 /* Hero Section */
 .hero-section {
