@@ -22,12 +22,24 @@
 <body class="bg-white text-gray-800">
 
 <!-- Header -->
-<header id="site-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent text-white h-28 backdrop-blur-md shadow-md">
+<header id="site-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent text-white h-24 backdrop-blur-md shadow-md">
   <div class="flex items-center justify-between md:px-12 px-4 pt-6 relative">
-    <!-- Logo and Name -->
-    <div class="flex items-center space-x-3">
+    
+    <!-- Logo, Name & Mobile Menu Button (Grouped) -->
+    <div class="flex items-center space-x-12">
+      <!-- Logo -->
       <img src="Homepage/img/sky_smart_logo2.png" alt="Company Logo" class="w-24 md:w-32">
-      <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
+      
+      <!-- Company Name -->
+      <span class="text-sm md:text-lg font-semibold company-name">Sky Smart Technology</span>
+      
+      <!-- Mobile Menu Button (inside same flex row) -->
+      <button id="menu-btn" class="ml-6 block md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
 
     <!-- Desktop Nav -->
@@ -40,169 +52,93 @@
       <a href="Homepage/Careerspage/careers.html" class="hover:text-blue-500 transition">Careers</a>
       <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
     </nav>
-
-   <!-- Mobile Menu Button -->
-<div class="absolute top-6 right-4 md:hidden z-30">
-  <button id="menu-btn" class="text-white focus:outline-none">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
-</div>
-
-<!-- Codimite-Style Mobile Menu -->
-<div id="mobile-menu" class="hidden fixed inset-0 top-24 bg-white z-20 md:hidden px-6 py-4 overflow-y-auto text-black">
-  <!-- Top link -->
-  <a href="/ai-augmented-software-development-at-codimite/" class="flex items-center justify-between py-2 border-b">
-    <span>AI - ASD</span>
-    <img src="/wp-content/uploads/ai.webp" alt="ai logo" class="h-5 ml-2" />
-  </a>
-
-  <!-- Services Dropdown -->
-  <div class="py-2 border-b">
-    <div class="flex items-center justify-between cursor-pointer" onclick="toggleSubmenu('services-menu')">
-      <span>Services</span>
-      <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659L8.753 11.14a1 1 0 0 1-1.506 0z"/>
-      </svg>
-    </div>
-    <div id="services-menu" class="hidden pl-4 mt-2 space-y-2 text-sm">
-      <a href="https://codimite.ai/zoom-services/">Zoom Services</a>
-      <a href="https://codimite.ai/zoom-migration-services/">Zoom Migration Services</a>
-      <a href="https://codimite.ai/build-with-web3/">Build with Web3</a>
-    </div>
   </div>
 
-  <!-- Simple links -->
-  <a href="Homepage/Companypage/company.html" class="block py-2 border-b">Company</a>
-  <a href="Homepage/Partnerspage/partnership.html" class="block py-2 border-b">Partners</a>
-  <a href="Homepage/Careerspage/careers.html" class="block py-2 border-b">Careers</a>
-  <a href="Homepage/blog.html" class="block py-2 border-b">Blog</a>
-
-  <!-- Automations Dropdown -->
-  <div class="py-2 border-b">
-    <div class="flex items-center justify-between cursor-pointer" onclick="toggleSubmenu('automations-menu')">
-      <span class="bg-clip-text text-transparent" style="background-image: linear-gradient(91deg, #00AC5C 0.55%, #3CA1FF 99.85%);">
-        Automations
-      </span>
-      <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659L8.753 11.14a1 1 0 0 1-1.506 0z"/>
-      </svg>
-    </div>
-    <div id="automations-menu" class="hidden pl-4 mt-2 space-y-2 text-sm">
-      <a href="https://codimite.ai/automations/selfhosted-workflow-automation/">Workflow Automation</a>
-      <a href="https://www.jumora.ai/">Jumora AI</a>
-    </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed top-28 left-0 w-full bg-white z-40 md:hidden px-6 py-4 text-black shadow-md">
+    <a href="../index.html" class="block py-2 border-b">Home</a>
+    <a href="Homepage/Companypage/company.html" class="block py-2 border-b">Company</a>
+    <a href="Homepage/Partnerspage/partnership.html" class="block py-2 border-b">Partnerships</a>
+    <a href="Homepage/Productspage/products.html" class="block py-2 border-b">Products</a>
+    <a href="Homepage/Gallerypage/gallery.html" class="block py-2 border-b">Gallery</a>
+    <a href="Homepage/Careerspage/careers.html" class="block py-2 border-b">Careers</a>
+    <a href="#cart" class="block py-2 border-b">Cart</a>
   </div>
-</div>
-</div>
 </header>
 
+
+
   <!-- Hero Section -->
-  <section id="home" class="relative w-full h-screen overflow-hidden text-white pt-20">
-    <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('Homepage/img/hero2.png');">
-      <div class="relative w-full h-full flex items-end justify-start p-6 z-10">
-        <div class="slider-wrapper transition-transform duration-500 ease-in-out space-y-12 max-w-5xl">
+  <section id="home" class="relative w-full h-screen overflow-hidden text-white pt-16 sm:pt-20">
+<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('Homepage/img/hero2.png');">
+  <!-- Mobile-only black overlay -->
+  <div class="absolute inset-0 bg-black opacity-40 block md:hidden z-10"></div>
+    <div class="relative w-full h-full flex items-end justify-start p-4 sm:p-6 z-10">
+      <div class="slider-wrapper transition-transform duration-500 ease-in-out space-y-6 sm:space-y-8 md:space-y-12 max-w-5xl">
 
-          <!-- Slide 1 -->
-          <div class="slide space-y-4">
-            <div class="flex items-center space-x-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
-                <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
-              </svg>
-              <p class="font-medium text-lg">Your Next Level Partner in</p>
-            </div>
-            <div class="flex items-center space-x-4 mt-2">
-              <div class="px-4 py-1 rounded-md text-white text-sm font-bold" style="background: linear-gradient(91deg, #0028ac 0.55%, #3cc8ff 99.85%)">New Features</div>
-              <h1 class="text-5xl font-bold">Empowering Innovation</h1>
-            </div>
-            <h1 class="text-5xl font-bold leading-tight">
-              Through <br class="block md:hidden" /> Technology.
-            </h1>
-            <div class="flex space-x-4 mt-4">
-              <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">Contact Us</a>
-              <a href="/automations/selfhosted-workflow-automation" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition">Explore More</a>
-            </div>
+        <!-- Slide 1 -->
+        <div class="slide space-y-4">
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
+              <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
+            </svg>
+            <p class="font-medium text-base sm:text-lg">Your Next Level Partner in</p>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="slide space-y-4 hidden">
-            <div class="flex items-center space-x-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
-                <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
-              </svg>
-              <p class="font-medium text-lg">Let's build future together</p>
-            </div>
-            <div class="flex items-center space-x-4 mt-2">
-              <div class="px-4 py-1 rounded-md text-white text-sm font-bold bg-blue-600">New Solutions</div>
-              <h1 class="text-5xl font-bold">Transforming Ideas into</h1>
-            </div>
-            <h1 class="text-5xl font-bold leading-tight">
-              Intelligent <br class="block md:hidden" /> Solutions.
-            </h1>
-            <div class="flex space-x-4 mt-4">
-              <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">Contact Us</a>
-              <a href="/ai-assisted-software-development-at-codimite/" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition">Explore More</a>
-            </div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mt-2">
+            <div class="px-4 py-1 rounded-md text-white text-sm font-bold mb-2 sm:mb-0" style="background: linear-gradient(91deg, #0028ac 0.55%, #3cc8ff 99.85%)">New Features</div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">Empowering Innovation</h1>
           </div>
-
-          <!-- Slide 3 -->
-          <div class="slide space-y-4 hidden">
-            <div class="flex items-center space-x-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
-                <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
-              </svg>
-              <p class="font-medium text-lg">Your Vision Our Code</p>
-            </div>
-            <div class="flex items-center space-x-4 mt-2">
-              <div class="px-4 py-1 rounded-md text-white text-sm font-bold bg-green-600">New strategy</div>
-              <h1 class="text-5xl font-bold">Smart Software</h1>
-            </div>
-            <h1 class="text-5xl font-bold leading-tight">
-              Seamless <br class="block md:hidden" /> Grow.
-            </h1>
-            <div class="flex space-x-4 mt-4">
-              <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition">Contact Us</a>
-              <a href="/smart-solutions" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition">Explore More</a>
-            </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            Through <br class="block md:hidden" /> Technology.
+          </h1>
+          <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 space-y-2 sm:space-y-0">
+            <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition text-center">Contact Us</a>
+            <a href="/automations/selfhosted-workflow-automation" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition text-center">Explore More</a>
           </div>
-
         </div>
-      </div>
-    </div>
-  </section>
 
+        <!-- Slide 2 -->
+        <div class="slide space-y-4 hidden">
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
+              <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
+            </svg>
+            <p class="font-medium text-base sm:text-lg">Let's build future together</p>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mt-2">
+            <div class="px-4 py-1 rounded-md text-white text-sm font-bold mb-2 sm:mb-0 bg-blue-600">New Solutions</div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">Transforming Ideas into</h1>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            Intelligent <br class="block md:hidden" /> Solutions.
+          </h1>
+          <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 space-y-2 sm:space-y-0">
+            <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition text-center">Contact Us</a>
+            <a href="/ai-assisted-software-development-at-codimite/" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition text-center">Explore More</a>
+          </div>
+        </div>
 
-<!-- Partnership Section -->
-<section id="partnerships-clients" style="background: radial-gradient(circle, #0075FF 0%, #001C78 100%); padding: 60px 0;">
-  <div class="flex items-start">
-    <div class="ml-[350px] text-left">
-      <h2 class="text-white text-5xl font-semibold leading-snug" data-aos="fade-right">
-        A technology <a href="/partnership" class="text-[#80E1FF] hover:text-[#000247] transition">Partner</a> that<br />
-        Clears the Way.
-      </h2>
-    </div>
-    <div class="flex gap-6 ml-[250px]" data-aos="fade-left">
-      <div
-        class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]"
-      >
-        <img src="Homepage/img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
-      </div>
-    </div>
-  </div>
+        <!-- Slide 3 -->
+        <div class="slide space-y-4 hidden">
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="93" height="7" viewBox="0 0 93 7" fill="none" class="hidden xl:block">
+              <path d="M0.333333 3.5C0.333333 4.97276 1.52724 6.16667 3 6.16667C4.47276 6.16667 5.66667 4.97276 5.66667 3.5C5.66667 2.02724 4.47276 0.833333 3 0.833333C1.52724 0.833333 0.333333 2.02724 0.333333 3.5ZM3 4H93V3H3V4Z" fill="white"/>
+            </svg>
+            <p class="font-medium text-base sm:text-lg">Your Vision Our Code</p>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mt-2">
+            <div class="px-4 py-1 rounded-md text-white text-sm font-bold mb-2 sm:mb-0 bg-green-600">New strategy</div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">Smart Software</h1>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            Seamless <br class="block md:hidden" /> Grow.
+          </h1>
+          <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 space-y-2 sm:space-y-0">
+            <a href="/contact-us/?trigger=startup-collaboration-form" class="px-6 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition text-center">Contact Us</a>
+            <a href="/smart-solutions" class="px-6 py-3 border-2 border-white text-white rounded-md font-semibold hover:bg-white hover:text-blue-700 transition text-center">Explore More</a>
+          </div>
+        </div>
 
-  <!-- Clients Section -->
-  <div class="flex items-start mt-[100px]">
-    <div class="ml-[350px] text-left">
-      <h2 class="text-white text-5xl font-semibold leading-snug" data-aos="fade-right">
-        Our <a href="/clients" class="text-[#80E1FF] hover:text-[#000247] transition">Clients</a> that<br />
-        Trust in Us.
-      </h2>
-    </div>
-    <div class="flex gap-6 ml-[470px]" data-aos="fade-left">
-      <div class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]">
-          <img id="client-logo" src="Homepage/img/clients_logo/client_logo1.png" alt="Client Logo" class="h-36 object-contain transition-opacity duration-1000 opacity-100" />
       </div>
     </div>
   </div>
@@ -210,20 +146,68 @@
 
 
 
- <section class="gallery-section">
-  <!-- Gallery Heading and Quote -->
-  <div class="mb-12">
-    <div class="text-left ml-[250px]">
-      <h2 class="text-5xl font-bold text-[#0A2472]">
-        <span class="text-5xl text-[#0A2472] font-semibold">The </span>
-        <a href="Homepage/Gallerypage/gallery.html">
-        <span class="bg-gradient-to-b from-blue-300 to-blue-700 text-transparent bg-clip-text text-8xl font-extrabold">Gallery</span></a>
+<!-- Partnership Section -->
+<section id="partnerships-clients" class="py-12 px-4 sm:px-6 md:px-10" style="background: radial-gradient(circle, #0075FF 0%, #001C78 100%);">
+  <div class="flex flex-col md:flex-row md:items-start md:justify-start gap-8">
+    
+    <!-- Left: Heading -->
+    <div class="text-left md:ml-[350px]">
+      <h2 class="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug" data-aos="fade-right">
+        A technology <a href="/partnership" class="text-[#80E1FF] hover:text-[#000247] transition">Partner</a> that<br />
+        Clears the Way.
       </h2>
     </div>
-    <div class="text-center mt-2 ml-[450px]">
-      <p class="text-5xl text-[#0A2472] font-semibold">That Builds Tomorrow.</p>
+    
+    <!-- Right: Logo Box -->
+    <div class="flex gap-6 justify-center md:ml-[250px]" data-aos="fade-left">
+      <div class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-[420px] h-[150px] border-2 border-[#80E1FF]">
+        <img src="Homepage/img/partnership_logo1.png" alt="Partner 1" class="h-36 object-contain" />
+      </div>
     </div>
   </div>
+
+<!-- Clients Section -->
+<div class="flex flex-col md:flex-row md:items-start md:justify-start gap-8 mt-10">
+  
+  <!-- Left: Heading -->
+  <div class="text-left md:ml-[350px]">
+      <h2 class="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug" data-aos="fade-right">
+        Our <a href="/partnership" class="text-[#80E1FF] hover:text-[#000247] transition">Clients</a> that always<br />
+        Trust in Us.
+      </h2>
+  </div>
+ 
+  <!-- Right: Logo Card -->
+  <div class="flex justify-center md:ml-[470px]" data-aos="fade-left">
+    <div class="rounded-[30px] bg-white/10 backdrop-blur-md p-4 flex items-center justify-center w-full max-w-[420px] h-[150px] border-2 border-[#80E1FF]">
+      <img id="client-logo" src="Homepage/img/clients_logo/client_logo1.png" alt="Client Logo" class="h-24 sm:h-32 md:h-36 object-contain transition-opacity duration-1000 opacity-100" />
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+ <section class="gallery-section">
+  <!-- Gallery Heading and Quote -->
+<div class="mb-12">
+  <!-- Heading -->
+  <div class="text-center md:text-left mx-auto md:ml-[250px]">
+    <h2 class="text-4xl md:text-5xl font-bold text-[#0A2472]">
+      <span class="text-4xl md:text-5xl text-[#0A2472] font-semibold">The </span>
+      <a href="Homepage/Gallerypage/gallery.html">
+        <span class="bg-gradient-to-b from-blue-300 to-blue-700 text-transparent bg-clip-text text-5xl md:text-8xl font-extrabold block md:inline">Gallery</span>
+      </a>
+    </h2>
+  </div>
+
+  <!-- Quote -->
+  <div class="text-center mt-2 mx-auto md:ml-[450px]">
+    <p class="text-2xl sm:text-3xl md:text-5xl text-[#0A2472] font-semibold">That Builds Tomorrow.</p>
+  </div>
+</div>
+
 
 <div class="gallery-container relative">
   <!-- Left arrow -->
@@ -431,9 +415,9 @@
 
 <!-- Help Button -->
 <button id="helpButton"
-  class="fixed bottom-5 right-5 z-50 bg-white py-4 px-8 rounded-full shadow-lg flex items-center gap-3 hover:brightness-110">
-  <img src="Homepage/img/support.png" alt="Help Icon" class="w-6 h-6">
-  <span class="text-base font-semibold text-blue-900">Need Help?</span>
+  class="fixed bottom-5 right-5 z-50 bg-white py-3 px-5 sm:py-4 sm:px-8 rounded-full shadow-lg flex items-center gap-2 sm:gap-3 hover:brightness-110">
+  <img src="Homepage/img/support.png" alt="Help Icon" class="w-5 h-5 sm:w-6 sm:h-6">
+  <span class="text-sm sm:text-base font-semibold text-blue-900">Need Help?</span>
 </button>
 
 
