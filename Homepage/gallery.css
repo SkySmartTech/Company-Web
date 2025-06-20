@@ -115,35 +115,80 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .gallery-item {
-        width: 300px;
-        height: 200px;
-    }
-    
-    .gallery-item.prev {
-        transform: translateX(-120px) translateZ(0) scale(0.8) rotateY(25deg);
-    }
-    
-    .gallery-item.next {
-        transform: translateX(120px) translateZ(0) scale(0.8) rotateY(-25deg);
-    }
+  .gallery-container {
+    height: auto;
+    overflow-x: auto;
+    padding: 20px 0;
+  }
+
+  .gallery-track {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 0 16px;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .gallery-item {
+    position: relative;
+    flex: 0 0 auto;
+    width: 85%;
+    max-width: 300px;
+    height: 200px;
+    scroll-snap-align: start;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+  }
+
+  .gallery-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-item.active,
+  .gallery-item.prev,
+  .gallery-item.next,
+  .gallery-item.hidden-left,
+  .gallery-item.hidden-right,
+  .gallery-item.far-hidden {
+    all: unset;
+    flex: 0 0 auto;
+    width: 85%;
+    max-width: 300px;
+    height: 200px;
+    scroll-snap-align: start;
+    position: relative;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
 }
 
 @media (max-width: 480px) {
-    .gallery-item {
-        width: 250px;
-        height: 160px;
-    }
-    
-    .gallery-container {
-        height: 300px;
-    }
-    
-    .gallery-item.prev {
-        transform: translateX(-80px) translateZ(0) scale(0.7) rotateY(25deg);
-    }
-    
-    .gallery-item.next {
-        transform: translateX(80px) translateZ(0) scale(0.7) rotateY(-25deg);
-    }
+  .gallery-item {
+    width: 90%;
+    height: 160px;
+  }
+
+  .gallery-item.active,
+  .gallery-item.prev,
+  .gallery-item.next,
+  .gallery-item.hidden-left,
+  .gallery-item.hidden-right,
+  .gallery-item.far-hidden {
+    width: 90%;
+    height: 160px;
+  }
+
+  .gallery-container {
+    height: auto;
+  }
 }
