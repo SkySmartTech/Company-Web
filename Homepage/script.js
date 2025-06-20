@@ -18,29 +18,42 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Keep scroll effect intact...
-  const header = document.getElementById("site-header");
-  const navLinks = document.querySelectorAll(".nav-links a");
-  const companyName = document.querySelector(".company-name");
+const header = document.getElementById("site-header");
+const navLinks = document.querySelectorAll(".nav-links a");
+const companyName = document.querySelector(".company-name");
 
-  if (header) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        header.classList.add("scroll-bg");
-        header.classList.remove("text-white");
-        navLinks.forEach(link => {
-          link.classList.remove("text-white");
-          link.classList.add("text-black");
-        });
-        if (companyName) companyName.classList.add("text-black");
-      } else {
-        header.classList.remove("scroll-bg");
-        header.classList.add("text-white");
-        navLinks.forEach(link => {
-          link.classList.add("text-white");
-          link.classList.remove("text-black");
-        });
-        if (companyName) companyName.classList.remove("text-black");
-      }
-    });
-  }
+if (header) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.add("bg-white", "shadow-md"); // Optional scroll effect
+      header.classList.remove("text-white");
+
+      navLinks.forEach(link => {
+        link.classList.remove("text-white");
+        link.classList.add("text-black");
+      });
+
+      menuBtn?.classList.remove("text-white");
+      menuBtn?.classList.add("text-black");
+
+      companyName?.classList.remove("text-white");
+      companyName?.classList.add("text-black");
+
+    } else {
+      header.classList.remove("bg-white", "shadow-md");
+      header.classList.add("text-white");
+
+      navLinks.forEach(link => {
+        link.classList.add("text-white");
+        link.classList.remove("text-black");
+      });
+
+      menuBtn?.classList.add("text-white");
+      menuBtn?.classList.remove("text-black");
+
+      companyName?.classList.add("text-white");
+      companyName?.classList.remove("text-black");
+    }
+  });
+}
 });
