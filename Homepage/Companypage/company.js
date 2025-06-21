@@ -70,3 +70,15 @@ function showTeam(deptId) {
     AOS.refreshHard();
   }
 }
+
+ document.addEventListener("DOMContentLoaded", function () {
+    const aosImage = document.getElementById("aos-image");
+
+    if (window.innerWidth < 1024) {
+      aosImage.setAttribute("data-aos", "fade-up"); // Mobile (below 1024px)
+    } else {
+      aosImage.setAttribute("data-aos", "fade-left"); // Desktop and above
+    }
+
+    AOS.init(); // Re-initialize AOS to register changes
+  });

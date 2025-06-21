@@ -9,15 +9,26 @@
     <link rel="stylesheet" href="../helpbutton.css">
 </head>
 <body class="bg-gray-50">
-      <!-- Header -->
-<header id="site-header" class="fixed w-full top-0 z-10 bg-white text-black shadow-md">
-  <div class="flex items-center justify-between md:px-12 p-4">
-    <!-- Logo -->
-    <div class="flex items-center space-x-3">
-      <a href="../../index.html">
-        <img src="../img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32">
-      </a>
-      <span class="text-lg font-semibold company-name">Sky Smart Technology</span>
+  <!-- Header -->
+<header id="site-header" class="fixed top-0 w-full z-50 bg-white text-black transition-all duration-300">
+  <div class="flex justify-between items-center px-4 py-3">
+    
+    <!-- Logo, Name & Mobile Menu Button (Grouped) -->
+    <div class="flex items-center space-x-12">
+      <!-- Logo -->
+      <img src="../img/sky-smart-logo.png" alt="Company Logo" class="w-24 md:w-32">
+      
+      <!-- Company Name -->
+      <span class="text-sm text-black md:text-lg font-semibold company-name">Sky Smart Technology</span>
+      
+      <!-- Mobile Menu Button (inside same flex row) -->
+      <button id="menu-btn" class="ml-6 block md:hidden text-black focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
     </div>
 
     <!-- Nav Menu -->
@@ -28,28 +39,24 @@
       <a href="../Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
       <a href="../Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
       <a href="../Careerspage/careers.html" class="hover:text-blue-500 transition">Careers</a>
-      <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
+      <a href="http://shop.skytechsl.com/ " class="hover:text-blue-500 transition">Cart</a>
     </nav>
 
-    <!-- Mobile menu button -->
-    <button id="menu-btn" class="md:hidden focus:outline-none text-black">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden flex-col items-center space-y-4 bg-white text-black py-4">
-    <a href="#home" class="hover:text-blue-600">Home</a>
-    <a href="#company" class="hover:text-blue-600">Company</a>
-    <a href="#partnerships" class="hover:text-blue-600">Partnerships</a>
-    <a href="#products" class="hover:text-blue-600">Products</a>
-    <a href="#careers" class="hover:text-blue-600">Careers & Team</a>
-    <a href="#cart" class="hover:text-blue-600">Cart</a>
+  <div id="mobile-menu" class="hidden fixed top-15 left-0 w-full bg-white z-40 md:hidden px-6 py-4 text-black shadow-md">
+    <a href="../../index.html" class="block py-2 border-b">Home</a>
+    <a href="../Companypage/company.html" class="block py-2 border-b">Company</a>
+    <a href="../Partnerspage/partnership.html" class="block py-2 border-b">Partnerships</a>
+    <a href="../Productspage/products.html" class="block py-2 border-b">Products</a>
+    <a href="../Gallerypage/gallery.html" class="block py-2 border-b">Gallery</a>
+    <a href="../Careerspage/careers.html" class="block py-2 border-b">Careers</a>
+    <a href="http://shop.skytechsl.com/ " class="block py-2 border-b">Cart</a>
   </div>
 </header>
+
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -423,26 +430,25 @@
     </section>
 
 <!-- Help Button -->
-<button id="helpButton"
-  class="fixed bottom-5 right-5 z-50 bg-white py-4 px-8 rounded-full shadow-lg flex items-center gap-3 hover:brightness-110">
-  <img src="../img/support.png" alt="Help Icon" class="w-6 h-6">
-  <span class="text-base font-semibold text-blue-900">Need Help?</span>
+<button id="helpButton" class="fixed bottom-5 right-2 sm:right-24 z-50 bg-white py-2.5 px-4 sm:py-2 sm:px-8 rounded-full shadow-lg flex items-center gap-2 sm:gap-3 hover:brightness-110">
+  <img src="../img/support.png" alt="Help Icon" class="w-4 h-4 sm:w-6 sm:h-6">
+  <span class="text-xs sm:text-base font-semibold text-blue-900">Need Help?</span>
 </button>
 
+<!-- Modal -->
+<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center px-2 sm:px-0">
+  <div class="bg-white w-full max-w-5xl rounded-xl shadow-lg p-4 sm:p-6 relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-900 hover:text-red-600 text-2xl">&times;</button>
+    <h2 class="text-lg sm:text-3xl font-bold text-blue-900 mb-4">Help Center</h2>
 
-<!-- Help Modal -->
-<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
-  <div class="bg-white w-[95%] max-w-5xl rounded-xl shadow-lg p-6 relative">
-    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
-    <h2 class="text-xl font-bold text-blue-900 mb-4">Help Center</h2>
-
-    <!-- Dropdown -->
+    <!-- Category Selector -->
     <div class="mb-4">
-      <label for="docSelect" class="text-sm font-medium text-gray-700">Select a document or video:</label>
-      <select id="docSelect" class="ml-2 border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
+      <label for="docSelect" class="text-sm font-medium text-gray-700 block mb-1">Select a document or video:</label>
+      <select id="docSelect"
+        class="border border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
         <optgroup label="01. User Manuals">
           <option value="../Resources/Andon Operation Manual.pdf">Andon Operation Manual</option>
-          <option value="../Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start_Guide</option>
+          <option value="../Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start Guide</option>
           <option value="../Resources/Andon System premio (Tab System).pdf">Andon System Premio Tab</option>
           <option value="../Resources/Andon Wiring Diagram.pdf">Andon Wiring Diagram</option>
           <option value="../Resources/Centralized DT Monitoring System - Operation.pdf">Centralized DT Monitoring System</option>
@@ -462,20 +468,21 @@
       </select>
     </div>
 
-    <!-- Viewers -->
-    <div class="w-full h-[500px] border rounded-lg shadow">
-      <embed id="pdfViewer" type="application/pdf" class="w-full h-full hidden" />
+    <!-- Viewer Area -->
+    <div class="w-full h-[300px] sm:h-[500px] border rounded-lg shadow overflow-hidden">
+      <embed id="pdfViewer" src="" type="application/pdf" class="w-full h-full hidden" />
       <video id="videoViewer" controls class="w-full h-full hidden rounded-lg">
         <source src="" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
 
-    <!-- Download -->
-    <a id="downloadLink" href="" download class="block text-blue-600 text-sm mt-3 hover:underline hidden">Download this file</a>
+    <!-- Download Link -->
+    <a id="downloadLink" href="" download class="block text-blue-600 text-sm mt-3 hover:underline hidden">
+      Download this file
+    </a>
   </div>
 </div>
-
 
    <!-- Footer section -->
 <footer class="bg-gradient-to-b from-[#000C2E] to-[#001437] text-white pt-10 px-10">

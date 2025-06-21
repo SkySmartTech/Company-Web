@@ -50,7 +50,7 @@
       <a href="Homepage/Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
       <a href="Homepage/Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
       <a href="Homepage/Careerspage/careers.html" class="hover:text-blue-500 transition">Careers</a>
-      <a href="#cart" class="hover:text-blue-500 transition">Cart</a>
+      <a href="http://shop.skytechsl.com/ " class="hover:text-blue-500 transition">Cart</a>
     </nav>
   </div>
 
@@ -62,7 +62,7 @@
     <a href="Homepage/Productspage/products.html" class="block py-2 border-b">Products</a>
     <a href="Homepage/Gallerypage/gallery.html" class="block py-2 border-b">Gallery</a>
     <a href="Homepage/Careerspage/careers.html" class="block py-2 border-b">Careers</a>
-    <a href="#cart" class="block py-2 border-b">Cart</a>
+    <a href="http://shop.skytechsl.com/ " class="block py-2 border-b">Cart</a>
   </div>
 </header>
 
@@ -411,28 +411,30 @@
   </div>
 </section>
 
-
 <!-- Help Button -->
 <button id="helpButton"
-  class="fixed bottom-5 right-5 z-50 bg-white py-3 px-5 sm:py-4 sm:px-8 rounded-full shadow-lg flex items-center gap-2 sm:gap-3 hover:brightness-110">
-  <img src="Homepage/img/support.png" alt="Help Icon" class="w-5 h-5 sm:w-6 sm:h-6">
-  <span class="text-sm sm:text-base font-semibold text-blue-900">Need Help?</span>
+  class="fixed bottom-5 right-5 z-50 bg-white py-2.5 px-4 sm:py-4 sm:px-8 rounded-full shadow-lg flex items-center gap-2 sm:gap-3 hover:brightness-110">
+  <img src="Homepage/img/support.png" alt="Help Icon" class="w-4 h-4 sm:w-6 sm:h-6">
+  <span class="text-xs sm:text-base font-semibold text-blue-900">Need Help?</span>
 </button>
 
-
 <!-- Help Modal -->
-<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
-  <div class="bg-white w-[95%] max-w-5xl rounded-xl shadow-lg p-6 relative">
+<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center px-4 sm:px-0">
+  <div class="bg-white w-full max-w-5xl rounded-xl shadow-lg p-4 sm:p-6 relative">
+    <!-- Close button -->
     <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
-    <h2 class="text-xl font-bold text-blue-900 mb-4">Help Center</h2>
+
+    <!-- Title -->
+    <h2 class="text-lg sm:text-xl font-bold text-blue-900 mb-4">Help Center</h2>
 
     <!-- Dropdown -->
     <div class="mb-4">
       <label for="docSelect" class="text-sm font-medium text-gray-700">Select a document or video:</label>
-      <select id="docSelect" class="ml-2 border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
+      <select id="docSelect"
+        class="mt-2 sm:mt-0 sm:ml-2 border border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
         <optgroup label="01. User Manuals">
           <option value="Homepage/Resources/Andon Operation Manual.pdf">Andon Operation Manual</option>
-          <option value="Homepage/Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start_Guide</option>
+          <option value="Homepage/Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start Guide</option>
           <option value="Homepage/Resources/Andon System premio (Tab System).pdf">Andon System Premio Tab</option>
           <option value="Homepage/Resources/Andon Wiring Diagram.pdf">Andon Wiring Diagram</option>
           <option value="Homepage/Resources/Centralized DT Monitoring System - Operation.pdf">Centralized DT Monitoring System</option>
@@ -452,8 +454,8 @@
       </select>
     </div>
 
-    <!-- Viewers -->
-    <div class="w-full h-[500px] border rounded-lg shadow">
+    <!-- Viewer area -->
+    <div class="w-full h-[300px] sm:h-[500px] border rounded-lg shadow overflow-hidden">
       <embed id="pdfViewer" type="application/pdf" class="w-full h-full hidden" />
       <video id="videoViewer" controls class="w-full h-full hidden rounded-lg">
         <source src="" type="video/mp4">
@@ -461,10 +463,11 @@
       </video>
     </div>
 
-    <!-- Download -->
+    <!-- Download link -->
     <a id="downloadLink" href="" download class="block text-blue-600 text-sm mt-3 hover:underline hidden">Download this file</a>
   </div>
 </div>
+
 
 
 <!-- Footer section -->
@@ -473,7 +476,7 @@
 
     <!-- Expanded Logo & Description -->
     <div class="md:col-span-2">
-      <img src="../img/sky-smart-logo.png" alt="Logo" class="h-20">
+      <img src="Homepage/img/sky_smart_logo2.png" alt="Logo" class="h-20">
       <p class="text-gray-300 text-sm leading-relaxed max-w-md">
         Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
       </p>
