@@ -13,3 +13,9 @@
   opacity: 0;
   animation: fadeUp 0.8s ease-out forwards;
 }
+
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }

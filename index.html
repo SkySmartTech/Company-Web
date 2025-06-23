@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,7 +19,7 @@
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 overflow-x-hidden">
 
 <!-- Header -->
 <header id="site-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent text-white h-24 backdrop-blur-md shadow-md">
@@ -71,12 +71,14 @@
 
 
 
-  <!-- Hero Section -->
-  <section id="home" class="relative w-full h-screen overflow-hidden text-white pt-16 sm:pt-20">
-<div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('Homepage/img/hero2.png');">
-  <!-- Mobile-only black overlay -->
-  <div class="absolute inset-0 bg-black opacity-40 block md:hidden z-10"></div>
-    <div class="relative w-full h-full flex items-end justify-start p-4 sm:p-6 z-10">
+ <!-- Hero Section -->
+<section id="home" class="relative w-full h-screen overflow-hidden overflow-x-hidden max-w-full text-white pt-16 sm:pt-20">
+  <div class="absolute inset-0 bg-cover bg-center z-0 overflow-x-hidden max-w-full" style="background-image: url('Homepage/img/hero2.png');">
+    
+    <!-- Mobile-only black overlay -->
+    <div class="absolute inset-0 bg-black opacity-40 block md:hidden z-10"></div>
+    
+    <div class="relative w-full h-full flex items-end justify-start p-4 sm:p-6 z-10 overflow-x-hidden max-w-full">
       <div class="slider-wrapper transition-transform duration-500 ease-in-out space-y-6 sm:space-y-8 md:space-y-12 max-w-5xl">
 
         <!-- Slide 1 -->
@@ -225,87 +227,87 @@
   <!-- Gallery Track (scrollable on mobile) -->
   <div class="gallery-track flex overflow-x-auto md:overflow-hidden gap-4 px-2 scroll-smooth" id="galleryTrack">
     <!-- Gallery Items -->
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto active">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto active">
       <a href="Homepage/Gallerypage/gallery.html#Album1">
         <img src="Homepage/img/company_gallery/ind_01.jpg" alt="Image 1" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto next">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto next">
       <a href="Homepage/Gallerypage/gallery.html#Album1">
         <img src="Homepage/img/company_gallery/ind_02.jpg" alt="Image 2" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto hidden-right">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto hidden-right">
       <a href="Homepage/Gallerypage/gallery.html#Album1">
         <img src="Homepage/img/company_gallery/ind_03.jpg" alt="Image 3" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album1">
         <img src="Homepage/img/company_gallery/ind_04.jpg" alt="Image 4" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album1">
         <img src="Homepage/img/company_gallery/ind_05.jpg" alt="Image 5" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto hidden-right">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto hidden-right">
       <a href="Homepage/Gallerypage/gallery.html#Album1">
         <img src="Homepage/img/company_gallery/ind_06.jpg" alt="Image 6" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album2">
         <img src="Homepage/img/company_gallery/ind_07.jpg" alt="Image 7" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album2">
         <img src="Homepage/img/company_gallery/ind_08.jpg" alt="Image 8" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto hidden-right">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto hidden-right">
       <a href="Homepage/Gallerypage/gallery.html#Album2">
         <img src="Homepage/img/company_gallery/ind_09.jpg" alt="Image 9" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album2">
         <img src="Homepage/img/company_gallery/ind_10.jpg" alt="Image 10" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album2">
         <img src="Homepage/img/company_gallery/ind_11.jpg" alt="Image 11" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto hidden-right">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto hidden-right">
       <a href="Homepage/Gallerypage/gallery.html#Album3">
         <img src="Homepage/img/company_gallery/ind_12.jpg" alt="Image 12" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album3">
         <img src="Homepage/img/company_gallery/ind_13.jpg" alt="Image 13" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album3">
         <img src="Homepage/img/company_gallery/ind_14.jpg" alt="Image 14" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album3">
         <img src="Homepage/img/company_gallery/ind_15.jpg" alt="Image 15" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto hidden-right">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto hidden-right">
       <a href="Homepage/Gallerypage/gallery.html#Album3">
         <img src="Homepage/img/company_gallery/ind_16.jpg" alt="Image 16" class="w-full h-auto object-cover rounded-md" />
       </a>
     </div>
-    <div class="gallery-item shrink-0 w-[80%] sm:w-[60%] md:w-auto far-hidden">
+    <div class="gallery-item shrink-0  w-full sm:w-[60%] md:w-auto far-hidden">
       <a href="Homepage/Gallerypage/gallery.html#Album3">
         <img src="Homepage/img/company_gallery/ind_19.jpg" alt="Image 19" class="w-full h-auto object-cover rounded-md" />
       </a>
@@ -345,47 +347,49 @@
 </section>
 
 <!-- Shop Our Products Section-->
-<section id="products" style="background: linear-gradient(to bottom, #01103F, #000B2C); padding: 60px 0;" class="min-h-[500px] px-6 py-10">
-  <h2 class="text-5xl font-black leading-tight mb-10 text-center text-blue-600" data-aos="fade-up">
+<section id="products" style="background: linear-gradient(to bottom, #01103F, #000B2C); padding: 60px 0;" class="min-h-[500px] px-4 sm:px-6 py-10">
+  <h2 class="text-3xl sm:text-5xl font-black leading-tight mb-10 text-center text-blue-600" data-aos="fade-up">
     SHOP<br>OUR PRODUCTS
   </h2>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+
     <!-- Smart Andon System -->
-    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_1.jpg');">
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
-        <h3 class="text-2xl font-bold mb-2">Smart Andon System</h3>
-       <a href="Homepage/Productspage/products.html#andon"
-   class="inline-block bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
-  See all →
-</a>
+    <div class="relative h-[300px] sm:h-[400px] md:h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_1.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4 sm:p-6 text-white">
+        <h3 class="text-lg sm:text-2xl font-bold mb-2">Smart Andon System</h3>
+        <a href="Homepage/Productspage/products.html#andon"
+          class="inline-block bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
+          See all →
+        </a>
       </div>
     </div>
 
     <!-- Software Development -->
-    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_2.jpg');">
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
-        <h3 class="text-2xl font-bold mb-2">Software Development</h3>
+    <div class="relative h-[300px] sm:h-[400px] md:h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_2.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4 sm:p-6 text-white">
+        <h3 class="text-lg sm:text-2xl font-bold mb-2">Software Development</h3>
         <a href="Homepage/Productspage/products.html#software"
-   class="inline-block bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
-  See all →
-</a>
-        </button>
+          class="inline-block bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
+          See all →
+        </a>
       </div>
     </div>
 
     <!-- Innovation -->
-    <div class="relative h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_3.jpg');">
-      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6 text-white">
-        <h3 class="text-2xl font-bold mb-2">Innovations</h3>
+    <div class="relative h-[300px] sm:h-[400px] md:h-[450px] rounded-xl overflow-hidden shadow-lg bg-cover bg-center" style="background-image: url('Homepage/img/Products_logo/product_3.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-4 sm:p-6 text-white">
+        <h3 class="text-lg sm:text-2xl font-bold mb-2">Innovations</h3>
         <a href="Homepage/Productspage/products.html#innovation"
-   class="inline-block bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
-  See all →
-</a>
+          class="inline-block bg-white text-black font-semibold px-4 py-2 rounded hover:bg-gray-100 w-max">
+          See all →
+        </a>
       </div>
     </div>
+
   </div>
 </section>
+
 
 
 <section id="company" class="bg-gray-100 py-16 px-10">
@@ -419,7 +423,7 @@
 
 <!-- Help Button -->
 <button id="helpButton"
-  class="fixed bottom-5 right-5 z-50 bg-white py-2.5 px-4 sm:py-4 sm:px-8 rounded-full shadow-lg flex items-center gap-2 sm:gap-3 hover:brightness-110">
+  class="fixed bottom-5 right-5 z-[9999] bg-white py-2.5 px-4 sm:py-4 sm:px-8 max-w-[90vw] overflow-hidden rounded-full shadow-lg flex items-center gap-2 sm:gap-3 hover:brightness-110">
   <img src="Homepage/img/support.png" alt="Help Icon" class="w-4 h-4 sm:w-6 sm:h-6">
   <span class="text-xs sm:text-base font-semibold text-blue-900">Need Help?</span>
 </button>

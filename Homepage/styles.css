@@ -2,7 +2,13 @@
 #site-header {
   background-color: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease  ,padding 0.3s ease;
+  max-width: 100vw;
 }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
 #site-header.scrolled {
   background-color: white;
@@ -121,3 +127,4 @@
 .carousel-buttons button:hover {
   background: #eee;
 }
+
