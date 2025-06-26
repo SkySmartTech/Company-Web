@@ -221,17 +221,15 @@ function showResumeModal(jobTitle = "General Application") {
         submitBtn.disabled = true;
         
         try {
-            // Create FormData object to handle file upload
             const formData = new FormData(form);
             
-            // Send data to PHP backend
-            const response = await fetch('../submit_resume.php', {
+            const response = await fetch('../../submit_resume.php', {
                 method: 'POST',
                 body: formData
             });
-            
+
             const result = await response.json();
-            
+
             if (result.success) {
                 alert('Application submitted successfully!');
                 modal.remove(); // Close modal
@@ -239,7 +237,7 @@ function showResumeModal(jobTitle = "General Application") {
                 alert('Error: ' + result.message);
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Fetch error:', error);
             alert('An error occurred while submitting your application. Please try again.');
         } finally {
             // Reset button state
