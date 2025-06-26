@@ -225,7 +225,7 @@ function showResumeModal(jobTitle = "General Application") {
             const formData = new FormData(form);
             
             // Send data to PHP backend
-            const response = await fetch('submit_resume.php', {
+            const response = await fetch('../submit_resume.php', {
                 method: 'POST',
                 body: formData
             });

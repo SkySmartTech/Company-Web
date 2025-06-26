@@ -47,7 +47,7 @@ try {
     // Handle file upload
     $resume_path = null;
     if (isset($_FILES['resume']) && $_FILES['resume']['error'] === UPLOAD_ERR_OK) {
-        $upload_dir = 'uploads/resumes/';
+        $upload_dir = 'Homepage/uploads/resumes/';
         
         // Create directory if it doesn't exist
         if (!file_exists($upload_dir)) {
@@ -94,6 +94,18 @@ try {
     $stmt->bind_param("sssss", $job_title, $full_name, $phone, $email, $resume_path);
     
     if ($stmt->execute()) {
+        $to = "sewminihewage1999@gmail.com"; 
+        $subject = "Job Application: " . $job_title;
+        $message = "New application received:\n\n"
+                 . "Name: $full_name\n"
+                 . "Email: $email\n"
+                 . "Phone: $phone\n"
+                 . "Job Title: $job_title\n"
+                 . "Resume File: $resume_path";
+        $headers = "From: tsewmini.hewage@gmail.com";
+
+        mail($to, $subject, $message, $headers);
+
         echo json_encode([
             'success' => true, 
             'message' => 'Application submitted successfully',
