@@ -220,26 +220,31 @@ function showResumeModal(jobTitle = "General Application") {
         submitBtn.innerHTML = 'Submitting...';
         submitBtn.disabled = true;
         
-        try {
-            const formData = new FormData(form);
-            
-            const response = await fetch('../../submit_resume.php', {
-                method: 'POST',
-                body: formData
-            });
+            try {
+                const response = await fetch('../../submit_resume.php', {
+                    method: 'POST',
+                    body: formData
+                });
 
-            const result = await response.json();
+                // Safely try to read JSON
+                let result = {};
+                try {
+                    result = await response.json();
+                } catch (parseError) {
+                    throw new Error("Invalid JSON response");
+                }
 
-            if (result.success) {
-                alert('Application submitted successfully!');
-                modal.remove(); // Close modal
-            } else {
-                alert('Error: ' + result.message);
-            }
-        } catch (error) {
-            console.error('Fetch error:', error);
-            alert('An error occurred while submitting your application. Please try again.');
-        } finally {
+                if (result.success) {
+                    alert('Application submitted successfully!');
+                    modal.remove();
+                } else {
+                    alert('Error: ' + (result.message || 'Something went wrong.'));
+                }
+
+            } catch (error) {
+                console.error('Fetch error:', error);
+                alert('An error occurred while submitting your application. Please try again.');
+            } finally {
             // Reset button state
             submitBtn.innerHTML = 'Submit Application';
             submitBtn.disabled = false;
