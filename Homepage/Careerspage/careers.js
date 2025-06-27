@@ -176,7 +176,6 @@ function showJobModal() {
         </div>
     `);
 }
-
 function showResumeModal(jobTitle = "General Application") {
     const modal = createModal('Submit Your Resume', `
         <div class="space-y-4">
@@ -206,45 +205,137 @@ function showResumeModal(jobTitle = "General Application") {
                     Submit Application
                 </button>
             </form>
+            <div id="debugInfo" class="mt-4 p-3 bg-gray-100 rounded-lg text-sm text-gray-600" style="display: none;">
+                <strong>Debug Information:</strong>
+                <div id="debugContent"></div>
+            </div>
         </div>
     `);
 
     // Add event listener for form submission
     const form = document.getElementById('resumeForm');
     const submitBtn = document.getElementById('submitBtn');
+    const debugInfo = document.getElementById('debugInfo');
+    const debugContent = document.getElementById('debugContent');
+    
+    // Function to show debug information
+    function showDebug(message) {
+        debugContent.innerHTML = message;
+        debugInfo.style.display = 'block';
+        console.log('Debug:', message);
+    }
     
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
+        // Hide previous debug info
+        debugInfo.style.display = 'none';
+        
         // Change button state to loading
-        submitBtn.innerHTML = 'Submitting...';
+        submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⚪</span>Submitting...';
         submitBtn.disabled = true;
         
+        try {
+            // Validate form data before sending
+            const formData = new FormData(form);
+            
+            // Check if all required fields are filled
+            const requiredFields = ['full_name', 'phone', 'email'];
+            const missingFields = [];
+            
+            for (const field of requiredFields) {
+                if (!formData.get(field) || formData.get(field).trim() === '') {
+                    missingFields.push(field);
+                }
+            }
+            
+            if (missingFields.length > 0) {
+                throw new Error(`Missing required fields: ${missingFields.join(', ')}`);
+            }
+            
+            // Check if file is selected
+            const fileInput = form.querySelector('input[type="file"]');
+            if (!fileInput.files || fileInput.files.length === 0) {
+                throw new Error('Please select a resume file');
+            }
+            
+            // Validate file type
+            const file = fileInput.files[0];
+            const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+            const allowedExtensions = ['.pdf', '.doc', '.docx'];
+            const fileExtension = file.name.toLowerCase().substring(file.name.lastIndexOf('.'));
+            
+            if (!allowedExtensions.includes(fileExtension)) {
+                throw new Error('Invalid file type. Please upload a PDF, DOC, or DOCX file');
+            }
+            
+            // Validate file size (5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                throw new Error('File too large. Please upload a file smaller than 5MB');
+            }
+            
+            showDebug(`Sending form data:<br>
+                - Name: ${formData.get('full_name')}<br>
+                - Email: ${formData.get('email')}<br>
+                - Phone: ${formData.get('phone')}<br>
+                - Job: ${formData.get('job_title')}<br>
+                - File: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)}MB)`);
+            
+            // Send data to PHP backend
+            console.log('Sending request to submit_resume.php...');
+            
+            const response = await fetch('submit_resume.php', {
+                method: 'POST',
+                body: formData
+            });
+            
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+            
+            // Get response text first to check what we're receiving
+            const responseText = await response.text();
+            console.log('Raw response:', responseText);
+            
+            // Try to parse as JSON
+            let result;
             try {
-                const response = await fetch('../../submit_resume.php', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                // Safely try to read JSON
-                let result = {};
-                try {
-                    result = await response.json();
-                } catch (parseError) {
-                    throw new Error("Invalid JSON response");
-                }
-
-                if (result.success) {
-                    alert('Application submitted successfully!');
-                    modal.remove();
-                } else {
-                    alert('Error: ' + (result.message || 'Something went wrong.'));
-                }
-
-            } catch (error) {
-                console.error('Fetch error:', error);
-                alert('An error occurred while submitting your application. Please try again.');
-            } finally {
+                result = JSON.parse(responseText);
+            } catch (jsonError) {
+                console.error('JSON parse error:', jsonError);
+                showDebug(`Server returned invalid JSON:<br><pre>${responseText.substring(0, 500)}${responseText.length > 500 ? '...' : ''}</pre>`);
+                throw new Error('Server returned invalid response. Please check the console for details.');
+            }
+            
+            console.log('Parsed result:', result);
+            
+            if (result.success) {
+                alert('✅ Application submitted successfully!');
+                showDebug(`Success! Application ID: ${result.application_id || 'N/A'}`);
+                modal.remove(); // Close modal
+            } else {
+                const errorMessage = result.message || 'Unknown error occurred';
+                const debugMessage = result.debug ? `<br><br><strong>Debug:</strong> ${result.debug}` : '';
+                showDebug(`Error: ${errorMessage}${debugMessage}`);
+                throw new Error(errorMessage);
+            }
+            
+        } catch (error) {
+            console.error('Submit error:', error);
+            
+            // Show user-friendly error message
+            let errorMessage = error.message || 'An unknown error occurred';
+            
+            // Handle specific error types
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                errorMessage = 'Cannot connect to server. Please check if submit_resume.php exists and is accessible.';
+                showDebug('Network error - check if submit_resume.php file exists and server is running');
+            } else if (error.message.includes('JSON')) {
+                errorMessage = 'Server response error. Please check the console for details.';
+            }
+            
+            alert('❌ Error: ' + errorMessage);
+            
+        } finally {
             // Reset button state
             submitBtn.innerHTML = 'Submit Application';
             submitBtn.disabled = false;
@@ -257,12 +348,16 @@ function showResumeModal(jobTitle = "General Application") {
     
     fileInput.addEventListener('change', function(e) {
         if (e.target.files.length > 0) {
-            fileLabel.textContent = `Selected: ${e.target.files[0].name}`;
+            const file = e.target.files[0];
+            const fileSize = (file.size / 1024 / 1024).toFixed(2);
+            fileLabel.innerHTML = `Selected: ${file.name}<br><small>(${fileSize}MB)</small>`;
             fileLabel.parentElement.classList.add('border-green-400', 'bg-green-50');
+        } else {
+            fileLabel.textContent = 'Drop your resume here or click to browse';
+            fileLabel.parentElement.classList.remove('border-green-400', 'bg-green-50');
         }
     });
 }
-
 
 function createModal(title, content) {
     const modalOverlay = document.createElement('div');
