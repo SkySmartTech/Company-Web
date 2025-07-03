@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="helpbutton.css">
+    <title>Privacy Policy & Terms - Sky Smart Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 1s ease forwards;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+        }
+
+        .effective-date {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 15px 25px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 500;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 1s ease forwards;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.5s; }
+        .section:nth-child(2) { animation-delay: 0.7s; }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .section:hover::before {
+            opacity: 1;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section h3::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .section p, .section li {
+            margin-bottom: 12px;
+            color: #000000;
+            font-size: 1rem;
+        }
+
+        .section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section li::before {
+            content: '•';
+            color: #667eea;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-info h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .circle-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .circle-3 {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; 
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #cbd5ff, #f0e1ff);
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .email-link {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .email-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+    <header id="site-header" class="fixed top-0 w-full z-50 bg-white text-black transition-all duration-300">
+    <div class="flex justify-between items-center px-4 py-3">
+        
+        <!-- Logo, Name & Mobile Menu Button (Grouped) -->
+        <div class="flex items-center space-x-12">
+        <!-- Logo -->
+        <a href="../index.html">
+            <img src="img/sky_smart_logo2.png" alt="Company Logo" class="w-24 md:w-32">
+        </a>
+        
+        <!-- Company Name -->
+        <span class="text-sm text-black md:text-lg font-semibold company-name">Sky Smart Technology</span>
+        
+        <!-- Mobile Menu Button (inside same flex row) -->
+        <button id="menu-btn" class="ml-6 block md:hidden text-black focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        </div>
+
+        <!-- Nav Menu -->
+        <nav class="hidden md:flex space-x-6 font-medium nav-links">
+        <a href="../index.html" class="hover:text-blue-500 transition">Home</a>
+        <a href="Companypage/company.html" class="hover:text-blue-600">Company</a>
+        <a href="Partnerspage/partnership.html" class="hover:text-blue-500 transition">Partnerships</a>
+        <a href="Productspage/products.html" class="hover:text-blue-500 transition">Products</a>
+        <a href="Gallerypage/gallery.html" class="hover:text-blue-500 transition">Gallery</a>
+        <a href="Careerspage/careers.html" class="hover:text-blue-500 transition">Careers</a>
+        <a href="http://shop.skytechsl.com/ " class="hover:text-blue-500 transition">Cart</a>
+        </nav>
+
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed top-15 left-0 w-full bg-white z-40 md:hidden px-6 py-4 text-black shadow-md">
+        <a href="../index.html" class="block py-2 border-b">Home</a>
+        <a href="Companypage/company.html" class="block py-2 border-b">Company</a>
+        <a href="Partnerspage/partnership.html" class="block py-2 border-b">Partnerships</a>
+        <a href="Productspage/products.html" class="block py-2 border-b">Products</a>
+        <a href="Gallerypage/gallery.html" class="block py-2 border-b">Gallery</a>
+        <a href="Careerspage/careers.html" class="block py-2 border-b">Careers</a>
+        <a href="http://shop.skytechsl.com/ " class="block py-2 border-b">Cart</a>
+    </div>
+    </header>
+
+    <div class="floating-elements">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+    </div>
+
+        <div class="container">
+        <div class="effective-date">
+            <strong>Effective Date: June 30, 2025</strong>
+        </div>
+
+        <div class="content-wrapper">
+            <section class="section">
+                <h2>Privacy Policy</h2>
+                <p>Sky Smart Technology (Pvt) Ltd respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <strong>www.skytechsl.com</strong>.</p>
+
+                <h3>1. Information We Collect</h3>
+                <p>We may collect the following personal information:</p>
+                <ul>
+                    <li>Name</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Company name</li>
+                    <li>Message or inquiry content</li>
+                </ul>
+                <p>We collect this information when you:</p>
+                <ul>
+                    <li>Contact us via forms</li>
+                    <li>Subscribe to newsletters</li>
+                    <li>Interact with our services</li>
+                </ul>
+
+                <h3>2. How We Use Your Information</h3>
+                <p>We use your information to:</p>
+                <ul>
+                    <li>Respond to inquiries</li>
+                    <li>Improve our website and services</li>
+                    <li>Send updates or promotions (only with your consent)</li>
+                </ul>
+
+                <h3>3. Sharing Your Information</h3>
+                <p>We do not sell, rent, or trade your information. We may share it with trusted third parties only when necessary to provide services or comply with the law.</p>
+
+                <h3>4. Cookies & Tracking</h3>
+                <p>Our website may use cookies to enhance your experience. You can choose to disable cookies in your browser settings.</p>
+
+                <h3>5. Data Security</h3>
+                <p>We implement security measures to protect your data. However, no electronic transmission is 100% secure.</p>
+
+                <h3>6. Your Rights</h3>
+                <p>You can:</p>
+                <ul>
+                    <li>Request access to your data</li>
+                    <li>Request correction or deletion</li>
+                    <li>Opt out of communications</li>
+                </ul>
+
+                <div class="contact-info">
+                    <h4>Contact Us to Exercise Your Rights:</h4>
+                    <p>Email: <a href="mailto:info@skysmart.lk" class="email-link">info@skysmart.lk</a></p>
+                    <p>Phone: <span class="highlight">0352278457</span></p>
+                </div>
+
+                <h3>7. Changes to This Policy</h3>
+                <p>We may update this policy. Changes will be posted on this page with the new effective date.</p>
+            </section>
+
+            <section class="section">
+                <h2>Terms & Conditions</h2>
+                <p>By using our website, you agree to the following terms:</p>
+
+                <h3>1. Website Use</h3>
+                <p>You agree to use this website only for <span class="highlight">lawful purposes</span>. You must not misuse the site or try to access restricted areas.</p>
+
+                <h3>2. Intellectual Property</h3>
+                <p>All content (text, images, logos) is the property of <strong>Sky Smart Technology (Pvt) Ltd</strong> unless otherwise stated. Do not copy or reuse without permission.</p>
+
+                <h3>3. External Links</h3>
+                <p>Our website may link to other websites. We are not responsible for their content or privacy practices.</p>
+
+                <h3>4. Limitation of Liability</h3>
+                <p>Sky Smart Technology (Pvt) Ltd shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of our website or services.</p>
+
+                <h3>5. Modifications</h3>
+                <p>We reserve the right to modify these terms at any time. Continued use of our website constitutes acceptance of any changes.</p>
+
+                <h3>6. Governing Law</h3>
+                <p>These terms shall be governed by and construed in accordance with the laws of Sri Lanka.</p>
+
+                <div class="contact-info">
+                    <h4>Questions About These Terms?</h4>
+                    <p>Email: <a href="mailto:info@skysmart.lk" class="email-link">info@skysmart.lk</a></p>
+                    <p>Visit: <span class="highlight">www.skytechsl.com</span></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Help Button -->
+<button id="helpButton"  class="fixed bottom-5 right-5 z-50 bg-white py-2.5 px-4 sm:py-4 sm:px-8 rounded-full shadow-lg flex items-center gap-2 sm:gap-3 hover:brightness-110">
+  <img src="img/support.png" alt="Help Icon" class="w-4 h-4 sm:w-6 sm:h-6">
+  <span class="text-xs sm:text-base font-semibold text-blue-900">Need Help?</span>
+</button>
+
+<!-- Modal -->
+<div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center px-2 sm:px-0">
+  <div class="bg-white w-full max-w-5xl rounded-xl shadow-lg p-4 sm:p-6 relative">
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-900 hover:text-red-600 text-2xl">&times;</button>
+    <h2 class="text-lg sm:text-3xl font-bold text-blue-900 mb-4">Help Center</h2>
+
+    <!-- Category Selector -->
+    <div class="mb-4">
+      <label for="docSelect" class="text-sm font-medium text-gray-700 block mb-1">Select a document or video:</label>
+      <select id="docSelect"
+        class="border border-gray-300 rounded px-3 py-1 text-sm w-full max-w-md">
+        <optgroup label="01. User Manuals">
+          <option value="Resources/Andon Operation Manual.pdf">Andon Operation Manual</option>
+          <option value="Resources/Andon Software Quick Start Guide.pdf">Andon Software Quick Start Guide</option>
+          <option value="Resources/Andon System premio (Tab System).pdf">Andon System Premio Tab</option>
+          <option value="Resources/Andon Wiring Diagram.pdf">Andon Wiring Diagram</option>
+          <option value="Resources/Centralized DT Monitoring System - Operation.pdf">Centralized DT Monitoring System</option>
+          <option value="Resources/DCS1447A_320 Error Code Keypad User Manual.pdf">DCS1447A 320 Error Code</option>
+          <option value="Resources/DCS1447A_330 Department Display User Manual.pdf">DCS1447A 330 Department Display</option>
+          <option value="Resources/Electronic Andon User Guid-96res.pdf">Electronic Andon User Guide</option>
+          <option value="Resources/How to Configure Tab Wi-Fi Setting.pdf">Tab WiFi Setting Guide</option>
+          <option value="Resources/Smart Andon System-Overview.pdf">Smart Andon Overview</option>
+          <option value="Resources/WIFI_Module_User_Manual.pdf">WIFI Module User Manual</option>
+        </optgroup>
+        <optgroup label="02. Setup Guides">
+          <option value="Resources/Team Viewer Start Guide.pdf">Team Viewer Start Guide</option>
+        </optgroup>
+        <optgroup label="03. Setup Guide Videos">
+          <option value="https://www.youtube.com/watch?v=7zjlF_WhlJg&t=4s">Counters_QCO_CDD-2002A</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Viewer Area -->
+    <div class="w-full h-[300px] sm:h-[500px] border rounded-lg shadow overflow-hidden">
+      <embed id="pdfViewer" src="" type="application/pdf" class="w-full h-full hidden" />
+      <video id="videoViewer" controls class="w-full h-full hidden rounded-lg">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Download Link -->
+    <a id="downloadLink" href="" download class="block text-blue-600 text-sm mt-3 hover:underline hidden">
+      Download this file
+    </a>
+  </div>
+</div>
+
+   <!-- Footer section -->
+<footer class="bg-gradient-to-b from-[#000C2E] to-[#001437] text-white pt-10 px-10">
+<div class="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 text-sm pb-10">
+
+    <!-- Expanded Logo & Description -->
+    <div class="md:col-span-2">
+      <img src="img/sky_smart_logo2.png" alt="Logo" class="h-20">
+      <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+        Our dedicated teams of engineers, architects, and tech consultants are here to support your bold ideas, guide you through our cutting-edge solutions, and provide answers to your technical and business questions. Let’s build smarter, together.
+      </p>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Company</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="Companypage/company.html">About Us</a></li>
+        <li><a href="Partnerspage/partnership.html">Partners</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Contact</h3>
+      <ul class="space-y-1 text-gray-300">
+        <li><a href="Careerspage/careers.html">Job Vacancy</a></li>
+        <li><a href="Partnerspage/partnership.html">Become a Partner</a></li>
+      </ul>
+    </div>
+
+    <!-- Location -->
+    <div>
+      <h3 class="text-[#80E1FF] font-bold text-lg mb-3">Location</h3>
+      <p class="text-gray-300 leading-relaxed">
+        A/59, Hungampola,<br>
+        Moronthota,<br>
+        Kegalle,<br>
+        Sri Lanka.
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="border-t border-gray-700 pt-5 pb-6 text-center text-sm text-gray-400">
+    <div class="flex flex-col md:flex-row justify-between items-center max-w-screen-xl mx-auto">
+      <p>© Sky Smart Technology (Pvt) Ltd. All Rights Reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#"><img src="img/social_media_logo/facebook.png" class="h-5" alt="Facebook" /></a>
+        <a href="#"><img src="img/social_media_logo/instagram.png" class="h-5" alt="Instagram" /></a>
+        <a href="#"><img src="img/social_media_logo/twitter.png" class="h-5" alt="X" /></a>
+        <a href="#"><img src="img/social_media_logo/youtube.png" class="h-5" alt="YouTube" /></a>
+        <a href="#"><img src="img/social_media_logo/linkedin.png" class="h-5" alt="LinkedIn" /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script src="helpbutton.js"></script>
+
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Smooth scrolling for back to top button
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Add interactive hover effects for sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add subtle parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-circle');
+            const speed = 0.5;
+
+            parallax.forEach(circle => {
+                const yPos = -(scrolled * speed);
+                circle.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Add typing effect to header (optional enhancement)
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            // Add any additional initialization here
+            console.log('Sky Smart Technology - Privacy Policy & Terms loaded successfully!');
+        });
+    </script>
+</body>
+</html>
